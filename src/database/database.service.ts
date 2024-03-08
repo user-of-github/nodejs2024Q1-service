@@ -1,10 +1,10 @@
 import { type INestApplication, Injectable } from '@nestjs/common';
 import type { User } from '../types/User';
-import { TempDb } from './temp-db';
 import type { Album } from '../types/Album';
 import type { Artist } from '../types/Artist';
 import type { Track } from '../types/Track';
 import type { Favorites } from '../types/Favorites';
+import { TempDb } from './temp-db';
 
 @Injectable()
 export class DatabaseService {
