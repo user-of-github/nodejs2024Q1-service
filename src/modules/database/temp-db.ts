@@ -3,6 +3,7 @@ import type { Artist } from '../../types/Artist';
 import type { Favorites } from '../../types/Favorites';
 import type { Track } from '../../types/Track';
 import type { Album } from '../../types/Album';
+import { Exclude } from 'class-transformer';
 
 export interface DatabaseType {
   users: User[];
@@ -15,6 +16,11 @@ export interface DatabaseType {
 export type IndexedDbEntityName = Exclude<keyof DatabaseType, 'favorites'>;
 export type IndexedDbEntity = User | Artist | Track | Album;
 
+export type IndexedFavoritesEntityName = Exclude<
+  keyof DatabaseType,
+  'favorites' | 'users'
+>;
+
 export const TempDb: DatabaseType = {
   users: [
     {
@@ -26,11 +32,22 @@ export const TempDb: DatabaseType = {
       updatedAt: 1709924389352,
     },
   ],
-  artists: [],
+  artists: [
+    {
+      id: '9f691ac1-f565-14c5-9dae-a36e5b0e5ea3',
+      name: 'Snoop Dogg',
+      grammy: true,
+    },
+    {
+      id: '9f691ac1-f565-14c5-9dae-a63e5b8e5ea3',
+      name: 'Arianna Grande',
+      grammy: true,
+    },
+  ],
   favorites: {
     tracks: [],
     albums: [],
-    artists: []
+    artists: [],
   },
   tracks: [
     {

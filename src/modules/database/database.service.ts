@@ -13,6 +13,7 @@ import {
   type DatabaseType,
   type IndexedDbEntity,
   type IndexedDbEntityName,
+  type IndexedFavoritesEntityName,
   TempDb,
 } from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
@@ -239,15 +240,38 @@ export class DatabaseService {
   }
 
   public async removeTrackFromFavorites(id: string): Promise<void> {
-    const trackIndex = this.database.favorites.tracks.findIndex(
-      (track) => track === id,
+    return await this.removeEntityFromFavorites('tracks', id);
+  }
+
+  async addAlbumToFavorites(id: string) {
+    this.database.favorites.albums.push(id);
+  }
+
+  public async removeAlbumFromFavorites(id: string): Promise<void> {
+    return await this.removeEntityFromFavorites('albums', id);
+  }
+
+  public async addArtistToFavorites(id: string): Promise<void> {
+    this.database.favorites.artists.push(id);
+  }
+
+  public async removeArtistFromFavorites(id: string): Promise<void> {
+    return await this.removeEntityFromFavorites('artists', id);
+  }
+
+  private async removeEntityFromFavorites(
+    entityKey: IndexedFavoritesEntityName,
+    id: string,
+  ): Promise<void> {
+    const index = this.database.favorites[entityKey].findIndex(
+      (entity) => entity === id,
     );
 
-    if (!trackIndex) {
-      throw new NotFoundException('Track is not in favorites');
+    if (!index) {
+      throw new NotFoundException('Not in favorites');
     }
 
-    this.database.favorites.tracks.splice(trackIndex, 0);
+    this.database.favorites[entityKey].splice(index, 1);
 
     return;
   }
@@ -259,7 +283,7 @@ export class DatabaseService {
     const item = this.database[entity].findIndex((unit) => unit.id === id);
 
     if (item < 0) {
-      throw new NotFoundException('No track with such id exists');
+      throw new NotFoundException('No entity with such id exists');
     }
 
     return this.database[entity][item];
@@ -282,12 +306,17 @@ export class DatabaseService {
     ids: string[],
     getter: (id: string) => Promise<ValueType>,
   ): Promise<ValueType[]> {
-    const promises = ids.map((id) => {
-      return new Promise<ValueType>((resolve) => {
-        getter(id).then(resolve);
-      });
-    });
-
-    return await Promise.all<ValueType>(promises);
+    return [];
+    // TODO: FIX ERROR IN PROMISES ERROR
+    // const promises = ids.map((id) => {
+    //   return new Promise<ValueType>(async (resolve) => {
+    //     const result = await getter(id);
+    //     resolve(result);
+    //   });
+    // });
+    //
+    // return await Promise.all<ValueType>(promises).catch(() => {
+    //   throw new NotFoundException();
+    // });
   }
 }
