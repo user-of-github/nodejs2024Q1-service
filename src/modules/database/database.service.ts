@@ -91,6 +91,10 @@ export class DatabaseService {
     return (await this.findEntityById('tracks', id)) as Track;
   }
 
+  public async getTracksByIds(ids: string[]): Promise<Track[]> {
+    return await this.getEntitiesByIds<Track>(ids, this.getTrack.bind(this));
+  }
+
   public async createTrack(dto: CreateTrackDto): Promise<Track> {
     const newTrack: Track = {
       id: randomUUID(),
@@ -128,6 +132,10 @@ export class DatabaseService {
 
   public async getArtist(id: string): Promise<Artist> {
     return (await this.findEntityById('artists', id)) as Artist;
+  }
+
+  public async getArtistsByIds(ids: string[]): Promise<Artist[]> {
+    return await this.getEntitiesByIds<Artist>(ids, this.getArtist.bind(this));
   }
 
   public async createArtist(dto: ArtistDto): Promise<Artist> {
@@ -181,6 +189,10 @@ export class DatabaseService {
     return (await this.findEntityById('albums', id)) as Album;
   }
 
+  public async getAlbumsByIds(ids: string[]): Promise<Album[]> {
+    return await this.getEntitiesByIds<Album>(ids, this.getAlbum.bind(this));
+  }
+
   public async createAlbum(dto: AlbumDto): Promise<Album> {
     const newAlbum: Album = {
       id: randomUUID(),
@@ -218,8 +230,26 @@ export class DatabaseService {
     });
   }
 
-  public async getFavorites(): Promise<Favorites[]> {
+  public async getFavorites(): Promise<Favorites> {
     return this.database.favorites;
+  }
+
+  public async addTrackToFavorites(id: string): Promise<void> {
+    this.database.favorites.tracks.push(id);
+  }
+
+  public async removeTrackFromFavorites(id: string): Promise<void> {
+    const trackIndex = this.database.favorites.tracks.findIndex(
+      (track) => track === id,
+    );
+
+    if (!trackIndex) {
+      throw new NotFoundException('Track is not in favorites');
+    }
+
+    this.database.favorites.tracks.splice(trackIndex, 0);
+
+    return;
   }
 
   private async findEntityById(
@@ -246,5 +276,18 @@ export class DatabaseService {
     }
 
     this.database[entity].splice(index, 1);
+  }
+
+  private async getEntitiesByIds<ValueType>(
+    ids: string[],
+    getter: (id: string) => Promise<ValueType>,
+  ): Promise<ValueType[]> {
+    const promises = ids.map((id) => {
+      return new Promise<ValueType>((resolve) => {
+        getter(id).then(resolve);
+      });
+    });
+
+    return await Promise.all<ValueType>(promises);
   }
 }

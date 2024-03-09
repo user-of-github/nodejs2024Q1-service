@@ -7,7 +7,7 @@ import type { Album } from '../../types/Album';
 export interface DatabaseType {
   users: User[];
   artists: Artist[];
-  favorites: Favorites[];
+  favorites: Favorites;
   tracks: Track[];
   albums: Album[];
 }
@@ -27,7 +27,11 @@ export const TempDb: DatabaseType = {
     },
   ],
   artists: [],
-  favorites: [],
+  favorites: {
+    tracks: [],
+    albums: [],
+    artists: []
+  },
   tracks: [
     {
       id: '9f961ac1-f655-41c5-9dae-a36e5b0e5ea0',
