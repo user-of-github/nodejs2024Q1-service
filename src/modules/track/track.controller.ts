@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -10,7 +9,6 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { validate } from 'class-validator';
 import { TrackService } from './track.service';
 import type { Track } from '../../types/Track';
 import { UUIDParam } from '../../helpers/UUIDParam';
@@ -42,12 +40,6 @@ export class TrackController {
     @UUIDParam('id') id: string,
     @Body() dto: UpdateTrackDto,
   ): Promise<Track> {
-    const validationResult = await validate(dto);
-
-    if (validationResult.length > 0) {
-      throw new BadRequestException();
-    }
-
     return await this.trackService.updateTrack(id, dto as any);
   }
 

@@ -9,9 +9,15 @@ import type { Album } from '../../types/Album';
 import type { Artist } from '../../types/Artist';
 import type { Track } from '../../types/Track';
 import type { Favorites } from '../../types/Favorites';
-import { type DatabaseType, type IndexedDbEntity, TempDb } from './temp-db';
+import {
+  type DatabaseType,
+  type IndexedDbEntity,
+  type IndexedDbEntityName,
+  TempDb,
+} from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
+import type { ArtistDto } from '../artist/dto/artistDto';
 
 @Injectable()
 export class DatabaseService {
@@ -38,8 +44,8 @@ export class DatabaseService {
     return this.database.users;
   }
 
-  public async getUserById(id: string): Promise<User | undefined> {
-    return this.database.users.find((user) => user.id === id);
+  public async getUserById(id: string): Promise<User> {
+    return (await this.findEntityById('users', id)) as User;
   }
 
   public async createUser(dto: CreateUserDto): Promise<User> {
@@ -80,26 +86,12 @@ export class DatabaseService {
     return this.database.albums;
   }
 
-  public async getArtists(): Promise<Artist[]> {
-    return this.database.artists;
-  }
-
-  public async getFavorites(): Promise<Favorites[]> {
-    return this.database.favorites;
-  }
-
   public async getTracks(): Promise<Track[]> {
     return this.database.tracks;
   }
 
   public async getTrack(id: string): Promise<Track> {
-    const track = this.database.tracks.find((track) => track.id === id);
-
-    if (!track) {
-      throw new NotFoundException('No track with such id exists');
-    }
-
-    return track;
+    return (await this.findEntityById('tracks', id)) as Track;
   }
 
   public async createTrack(dto: CreateTrackDto): Promise<Track> {
@@ -133,8 +125,76 @@ export class DatabaseService {
     await this.deleteEntityById('tracks', id);
   }
 
+  public async getArtists(): Promise<Artist[]> {
+    return this.database.artists;
+  }
+
+  public async getArtist(id: string): Promise<Artist> {
+    return (await this.findEntityById('artists', id)) as Artist;
+  }
+
+  public async createArtist(dto: ArtistDto): Promise<Artist> {
+    const newArtist: Artist = {
+      id: randomUUID(),
+      ...dto,
+    };
+
+    this.database.artists.push(newArtist);
+
+    return newArtist;
+  }
+
+  public async updateArtist(
+    id: string,
+    newData: Partial<Artist>,
+  ): Promise<Artist> {
+    const index = this.database.artists.findIndex((artist) => artist.id === id);
+    if (index < 0) {
+      throw new NotFoundException();
+    }
+    this.database.artists[index] = {
+      ...this.database.artists[index],
+      ...newData,
+    };
+
+    return this.database.artists[index];
+  }
+
+  public async deleteArtist(id: string): Promise<void> {
+    await this.deleteEntityById('artists', id);
+
+    this.database.tracks.forEach((track) => {
+      if (track.artistId === id) {
+        track.artistId = null;
+      }
+    });
+
+    this.database.albums.forEach((album) => {
+      if (album.artistId === id) {
+        album.artistId = null;
+      }
+    });
+  }
+
+  public async getFavorites(): Promise<Favorites[]> {
+    return this.database.favorites;
+  }
+
+  private async findEntityById(
+    entity: IndexedDbEntityName,
+    id: string,
+  ): Promise<IndexedDbEntity> {
+    const item = this.database[entity].findIndex((unit) => unit.id === id);
+
+    if (item < 0) {
+      throw new NotFoundException('No track with such id exists');
+    }
+
+    return this.database[entity][item];
+  }
+
   private async deleteEntityById(
-    entity: IndexedDbEntity,
+    entity: IndexedDbEntityName,
     id: string,
   ): Promise<void> {
     const index = this.database[entity].findIndex((entity) => entity.id === id);

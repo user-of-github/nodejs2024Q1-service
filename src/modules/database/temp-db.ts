@@ -12,7 +12,8 @@ export interface DatabaseType {
   albums: Album[];
 }
 
-export type IndexedDbEntity = Exclude<keyof DatabaseType, 'favorites'>;
+export type IndexedDbEntityName = Exclude<keyof DatabaseType, 'favorites'>;
+export type IndexedDbEntity = User | Artist | Track | Album;
 
 export const TempDb: DatabaseType = {
   users: [
