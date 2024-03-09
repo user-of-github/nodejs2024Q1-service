@@ -2,12 +2,13 @@ import {
   Body,
   Controller,
   Delete,
-  Get, HttpCode,
+  Get,
+  HttpCode,
   Inject,
   Post,
   Put,
 } from '@nestjs/common';
-import type { User, UserResponse } from '../../types/User';
+import type { UserResponse } from '../../types/User';
 import { UUIDParam } from '../../helpers/UUIDParam';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/createUser';

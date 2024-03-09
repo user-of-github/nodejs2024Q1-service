@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
-import { toResponseUser, type User, type UserResponse } from '../../types/User';
+import { toResponseUser, type UserResponse } from '../../types/User';
 import type { CreateUserDto } from './dto/createUser';
 import type { UpdatePasswordDto } from './dto/updatePassword';
 
