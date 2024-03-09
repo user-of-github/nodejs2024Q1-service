@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
-import type { ArtistDto } from './dto/artistDto';
+import type { ArtistDto } from './dto/artist';
 import type { Artist } from '../../types/Artist';
 
 @Injectable()

@@ -17,7 +17,8 @@ import {
 } from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
-import type { ArtistDto } from '../artist/dto/artistDto';
+import type { ArtistDto } from '../artist/dto/artist';
+import type { AlbumDto } from '../album/dto/album';
 
 @Injectable()
 export class DatabaseService {
@@ -80,10 +81,6 @@ export class DatabaseService {
 
   public async deleteUser(id: string): Promise<void> {
     await this.deleteEntityById('users', id);
-  }
-
-  public async getAlbums(): Promise<Album[]> {
-    return this.database.albums;
   }
 
   public async getTracks(): Promise<Track[]> {
@@ -172,6 +169,51 @@ export class DatabaseService {
     this.database.albums.forEach((album) => {
       if (album.artistId === id) {
         album.artistId = null;
+      }
+    });
+  }
+
+  public async getAlbums(): Promise<Album[]> {
+    return this.database.albums;
+  }
+
+  public async getAlbum(id: string): Promise<Album> {
+    return (await this.findEntityById('albums', id)) as Album;
+  }
+
+  public async createAlbum(dto: AlbumDto): Promise<Album> {
+    const newAlbum: Album = {
+      id: randomUUID(),
+      ...dto,
+    };
+
+    this.database.albums.push(newAlbum);
+
+    return newAlbum;
+  }
+
+  public async updateAlbum(
+    id: string,
+    newData: Partial<Album>,
+  ): Promise<Album> {
+    const index = this.database.albums.findIndex((album) => album.id === id);
+    if (index < 0) {
+      throw new NotFoundException();
+    }
+    this.database.albums[index] = {
+      ...this.database.albums[index],
+      ...newData,
+    };
+
+    return this.database.albums[index];
+  }
+
+  public async deleteAlbum(id: string): Promise<void> {
+    await this.deleteEntityById('albums', id);
+
+    this.database.tracks.forEach((track) => {
+      if (track.albumId === id) {
+        track.albumId = null;
       }
     });
   }

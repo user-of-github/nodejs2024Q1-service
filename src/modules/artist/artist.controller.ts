@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { UUIDParam } from '../../helpers/UUIDParam';
 import { ArtistService } from './artist.service';
-import { ArtistDto } from './dto/artistDto';
+import { ArtistDto } from './dto/artist';
 import type { Artist } from '../../types/Artist';
 
 @Controller('artist')
