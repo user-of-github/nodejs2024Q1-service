@@ -9,8 +9,9 @@ import type { Album } from '../../types/Album';
 import type { Artist } from '../../types/Artist';
 import type { Track } from '../../types/Track';
 import type { Favorites } from '../../types/Favorites';
-import { type DatabaseType, TempDb } from './temp-db';
+import { type DatabaseType, type IndexedDbEntity, TempDb } from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
+import type { CreateTrackDto } from '../track/dto/createTrack';
 
 @Injectable()
 export class DatabaseService {
@@ -72,13 +73,7 @@ export class DatabaseService {
   }
 
   public async deleteUser(id: string): Promise<void> {
-    const index = this.database.users.findIndex((user) => user.id === id);
-
-    if (index < 0) {
-      throw new NotFoundException();
-    }
-
-    this.database.users.splice(index, 1);
+    await this.deleteEntityById('users', id);
   }
 
   public async getAlbums(): Promise<Album[]> {
@@ -89,11 +84,65 @@ export class DatabaseService {
     return this.database.artists;
   }
 
+  public async getFavorites(): Promise<Favorites[]> {
+    return this.database.favorites;
+  }
+
   public async getTracks(): Promise<Track[]> {
     return this.database.tracks;
   }
 
-  public async getFavorites(): Promise<Favorites[]> {
-    return this.database.favorites;
+  public async getTrack(id: string): Promise<Track> {
+    const track = this.database.tracks.find((track) => track.id === id);
+
+    if (!track) {
+      throw new NotFoundException('No track with such id exists');
+    }
+
+    return track;
+  }
+
+  public async createTrack(dto: CreateTrackDto): Promise<Track> {
+    const newTrack: Track = {
+      id: randomUUID(),
+      ...dto,
+    };
+
+    this.database.tracks.push(newTrack);
+
+    return newTrack;
+  }
+
+  public async updateTrack(
+    id: string,
+    newData: Partial<Track>,
+  ): Promise<Track> {
+    const index = this.database.tracks.findIndex((track) => track.id === id);
+    if (index < 0) {
+      throw new NotFoundException();
+    }
+    this.database.tracks[index] = {
+      ...this.database.tracks[index],
+      ...newData,
+    };
+
+    return this.database.tracks[index];
+  }
+
+  public async deleteTrack(id: string): Promise<void> {
+    await this.deleteEntityById('tracks', id);
+  }
+
+  private async deleteEntityById(
+    entity: IndexedDbEntity,
+    id: string,
+  ): Promise<void> {
+    const index = this.database[entity].findIndex((entity) => entity.id === id);
+
+    if (index < 0) {
+      throw new NotFoundException();
+    }
+
+    this.database[entity].splice(index, 1);
   }
 }

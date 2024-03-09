@@ -12,6 +12,8 @@ export interface DatabaseType {
   albums: Album[];
 }
 
+export type IndexedDbEntity = Exclude<keyof DatabaseType, 'favorites'>;
+
 export const TempDb: DatabaseType = {
   users: [
     {
@@ -25,6 +27,14 @@ export const TempDb: DatabaseType = {
   ],
   artists: [],
   favorites: [],
-  tracks: [],
+  tracks: [
+    {
+      id: '9f961ac1-f655-41c5-9dae-a36e5b0e5ea0',
+      artistId: null,
+      albumId: null,
+      duration: 123,
+      name: 'Song !!!',
+    },
+  ],
   albums: [],
 };

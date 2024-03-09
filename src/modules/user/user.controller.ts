@@ -3,7 +3,7 @@ import {
   Controller,
   Delete,
   Get,
-  HttpCode,
+  HttpCode, HttpStatus,
   Inject,
   Post,
   Put,
@@ -43,7 +43,7 @@ export class UserController {
   }
 
   @Delete(':id')
-  @HttpCode(204)
+  @HttpCode(HttpStatus.NO_CONTENT)
   public async deleteUser(@UUIDParam('id') id: string): Promise<void> {
     return await this.userService.deleteUser(id);
   }
