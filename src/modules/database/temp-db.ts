@@ -1,10 +1,10 @@
-import type { User } from '../types/User';
-import type { Artist } from '../types/Artist';
-import type { Favorites } from '../types/Favorites';
-import type { Track } from '../types/Track';
-import type { Album } from '../types/Album';
+import type { User } from '../../types/User';
+import type { Artist } from '../../types/Artist';
+import type { Favorites } from '../../types/Favorites';
+import type { Track } from '../../types/Track';
+import type { Album } from '../../types/Album';
 
-interface Database {
+export interface DatabaseType {
   users: User[];
   artists: Artist[];
   favorites: Favorites[];
@@ -12,7 +12,7 @@ interface Database {
   albums: Album[];
 }
 
-export const TempDb: Database = {
+export const TempDb: DatabaseType = {
   users: [
     {
       id: '9f961ac1-f655-41c5-9dae-a36e5b0e5ea3',
