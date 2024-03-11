@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
 import type { FavoritesResponse } from '../../types/Favorites';
 import type { Track } from '../../types/Track';
