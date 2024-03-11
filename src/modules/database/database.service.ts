@@ -306,17 +306,14 @@ export class DatabaseService {
     ids: string[],
     getter: (id: string) => Promise<ValueType>,
   ): Promise<ValueType[]> {
-    return [];
-    // TODO: FIX ERROR IN PROMISES ERROR
-    // const promises = ids.map((id) => {
-    //   return new Promise<ValueType>(async (resolve) => {
-    //     const result = await getter(id);
-    //     resolve(result);
-    //   });
-    // });
-    //
-    // return await Promise.all<ValueType>(promises).catch(() => {
-    //   throw new NotFoundException();
-    // });
+    //TODO: FIX ERROR IN PROMISES ERROR
+    const data: ValueType[] = [];
+
+    for (const id of ids) {
+      const value = await getter(id);
+      data.push(value);
+    }
+
+    return data;
   }
 }
