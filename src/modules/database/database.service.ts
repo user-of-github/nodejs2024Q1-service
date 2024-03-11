@@ -14,7 +14,7 @@ import {
   type IndexedDbEntity,
   type IndexedDbEntityName,
   type IndexedFavoritesEntityName,
-  TempDb,
+  TempDbForTest,
 } from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
@@ -26,7 +26,7 @@ export class DatabaseService {
   private readonly database: DatabaseType;
 
   public constructor() {
-    this.database = TempDb;
+    this.database = TempDbForTest;
   }
 
   public async onModuleInit(): Promise<void> {
@@ -125,6 +125,9 @@ export class DatabaseService {
 
   public async deleteTrack(id: string): Promise<void> {
     await this.deleteEntityById('tracks', id);
+    this.database.favorites.tracks = this.database.favorites.tracks.filter(
+      (trackId) => trackId !== id,
+    );
   }
 
   public async getArtists(): Promise<Artist[]> {
@@ -180,6 +183,10 @@ export class DatabaseService {
         album.artistId = null;
       }
     });
+
+    this.database.favorites.artists = this.database.favorites.artists.filter(
+      (artistId) => artistId !== id,
+    );
   }
 
   public async getAlbums(): Promise<Album[]> {
@@ -229,6 +236,10 @@ export class DatabaseService {
         track.albumId = null;
       }
     });
+
+    this.database.favorites.albums = this.database.favorites.albums.filter(
+      (albumId) => albumId !== id,
+    );
   }
 
   public async getFavorites(): Promise<Favorites> {
@@ -236,7 +247,9 @@ export class DatabaseService {
   }
 
   public async addTrackToFavorites(id: string): Promise<void> {
-    this.database.favorites.tracks.push(id);
+    if (!this.database.favorites.tracks.includes(id)) {
+      this.database.favorites.tracks.push(id);
+    }
   }
 
   public async removeTrackFromFavorites(id: string): Promise<void> {
@@ -244,7 +257,9 @@ export class DatabaseService {
   }
 
   async addAlbumToFavorites(id: string) {
-    this.database.favorites.albums.push(id);
+    if (!this.database.favorites.albums.includes(id)) {
+      this.database.favorites.albums.push(id);
+    }
   }
 
   public async removeAlbumFromFavorites(id: string): Promise<void> {
@@ -252,7 +267,9 @@ export class DatabaseService {
   }
 
   public async addArtistToFavorites(id: string): Promise<void> {
-    this.database.favorites.artists.push(id);
+    if (!this.database.favorites.artists.includes(id)) {
+      this.database.favorites.artists.push(id);
+    }
   }
 
   public async removeArtistFromFavorites(id: string): Promise<void> {
@@ -267,7 +284,7 @@ export class DatabaseService {
       (entity) => entity === id,
     );
 
-    if (!index) {
+    if (index < 0) {
       throw new NotFoundException('Not in favorites');
     }
 

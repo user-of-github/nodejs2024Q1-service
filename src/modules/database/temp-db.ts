@@ -20,6 +20,18 @@ export type IndexedFavoritesEntityName = Exclude<
   'favorites' | 'users'
 >;
 
+export const TempDbForTest: DatabaseType = {
+  users: [],
+  artists: [],
+  favorites: {
+    tracks: [],
+    artists: [],
+    albums: [],
+  },
+  tracks: [],
+  albums: [],
+};
+
 export const TempDb: DatabaseType = {
   users: [
     {
