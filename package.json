@@ -1,8 +1,11 @@
 {
   "name": "home-library",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "NodeJS (NestJS) REST service for RS NodeJS 2024Q1",
+  "author": {
+    "name": "Slutski Mikita",
+    "url": "https://github.com/user-of-github"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
