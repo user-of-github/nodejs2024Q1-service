@@ -1,15 +1,23 @@
-# _Home Library Service_
-## [ATTENTION!]:  How to run  
-* _Node.js 20+ required_  
+# _Home Library Service_  
+## How to run:  
+### Pre-run:  
+* _Node.js 20+ required_
 * _Clone repository_  
+* __[ATTENTION:]__* _Clone `.env.example` file to `.env` in project root (if there's no `.env`)_
+* __[ATTENTION FOR DOCKER:] `--watch` flag in `docker compose up` was introduced only in the end of February 2024. So make sure you have new enough version of Docker to use `(sudo) docker compose up --watch` to check hot reload in dev mode__
+### How to run without Docker:
 * _Run `npm install` from root_  
-* *__[ATTENTION:]__* _Clone `.env.example` file to `.env` in project root_  
 * _Run dev-server with `npm run start:dev` or just `npm run start`_  
-* _After that you can run tests: `npm run test`_
+* _After that you can run tests: `npm run test`_  
+### To run in Docker:  
+- Make sure that you have actual version of Docker. For example my one is `Docker version 26.0.0, build 2ae903e` (Docker for Linux Ubuntu 20.04.4 LTS) 
+- Run `docker compose up` or `sudo docker compose up` for just launching 
+- Or run `docker compose up --watch` or `sudo docker compose up --watch` for dev mode (hot reload)
 ___  
 ## _Technologies used:_  
 * _[TypeScript](https://www.typescriptlang.org/)_  
-* _[Nest](https://nestjs.com/)_
+* _[Nest](https://nestjs.com/)_  
+* _[Docker](https://www.docker.com/)_
 ___  
 ## _Features:_  
 * _Every entity is processed within its module_  
