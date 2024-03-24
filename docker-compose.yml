@@ -1,35 +1,44 @@
 services:
   db:
-    image: postgres:alpine
-    restart: always
+    image: postgres:bullseye
+    container_name: db
     environment:
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_USER: ${DATABASE_USER}
-      POSTGRES_DB: ${DATABASE_NAME}
-    container_name: postgres-for-nodejs-service
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_PORT=${DATABASE_PORT}
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
+    networks:
+      - backend
+
+    restart: always
     volumes:
       - ./pgdata:/var/lib/postgresql/data
-      - ./pgconf:/etc/postgresql
-      - ./pglog:/var/log/postgresql
-    ports:
-      - '${DATABASE_PORT}:${DATABASE_PORT}'
-
+      - ./pglogs:/var/logs/postgresql/postgresql.logs
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U admin' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: rsschool-nodejs-service
+    build: .
     restart: always
+    container_name: app
     environment:
       - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}
     ports:
-      - '${PORT}:${PORT}'
+      - ${PORT}:${PORT}
+    networks:
+      - backend
     depends_on:
-      - db
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: ./app/src
-        - action: rebuild
-          path: package.json
+      db:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+      - ./prisma:/app/prisma
+
+networks:
+  backend:
+    name: backend
+    driver: bridge

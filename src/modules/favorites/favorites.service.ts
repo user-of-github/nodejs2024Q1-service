@@ -15,13 +15,11 @@ export class FavoritesService {
   public async getAllFavorites(): Promise<FavoritesResponse> {
     const favorites = await this.databaseService.getFavorites();
 
-    const tracks = await this.databaseService.getTracksByIds(favorites.tracks);
-    const artists = await this.databaseService.getArtistsByIds(
-      favorites.artists,
-    );
-    const albums = await this.databaseService.getAlbumsByIds(favorites.albums);
+    const track = await this.databaseService.getTracksByIds(favorites.track);
+    const artist = await this.databaseService.getArtistsByIds(favorites.artist);
+    const album = await this.databaseService.getAlbumsByIds(favorites.album);
 
-    return { tracks, artists, albums };
+    return { track, artist, album };
   }
 
   public async addTrackToFavorites(id: string): Promise<void> {

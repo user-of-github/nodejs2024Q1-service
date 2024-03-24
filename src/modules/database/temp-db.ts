@@ -5,11 +5,11 @@ import type { Track } from '../../types/Track';
 import type { Album } from '../../types/Album';
 
 export interface DatabaseType {
-  users: User[];
-  artists: Artist[];
+  user: User[];
+  artist: Artist[];
   favorites: Favorites;
-  tracks: Track[];
-  albums: Album[];
+  track: Track[];
+  album: Album[];
 }
 
 export type IndexedDbEntityName = Exclude<keyof DatabaseType, 'favorites'>;
@@ -17,33 +17,33 @@ export type IndexedDbEntity = User | Artist | Track | Album;
 
 export type IndexedFavoritesEntityName = Exclude<
   keyof DatabaseType,
-  'favorites' | 'users'
+  'favorites' | 'user'
 >;
 
 export const TempDbForTest: DatabaseType = {
-  users: [],
-  artists: [],
+  user: [],
+  artist: [],
   favorites: {
-    tracks: [],
-    artists: [],
-    albums: [],
+    track: [],
+    artist: [],
+    album: [],
   },
-  tracks: [],
-  albums: [],
+  track: [],
+  album: [],
 };
 
 export const TempDb: DatabaseType = {
-  users: [
+  user: [
     {
       id: '9f961ac1-f655-41c5-9dae-a36e5b0e5ea3',
       login: 'Test user',
       password: '12345',
       version: 0,
-      createdAt: 1709924389352,
-      updatedAt: 1709924389352,
+      createdAt: new Date(1709924389352),
+      updatedAt: new Date(1709924389352),
     },
   ],
-  artists: [
+  artist: [
     {
       id: '9f691ac1-f565-14c5-9dae-a36e5b0e5ea3',
       name: 'Snoop Dogg',
@@ -56,14 +56,14 @@ export const TempDb: DatabaseType = {
     },
   ],
   favorites: {
-    tracks: ['9f961ac1-f655-41c5-9dae-a36e5b0e5ea0'],
-    albums: [],
-    artists: [
+    track: ['9f961ac1-f655-41c5-9dae-a36e5b0e5ea0'],
+    album: [],
+    artist: [
       '9f691ac1-f565-14c5-9dae-a36e5b0e5ea3',
       '9f691ac1-f565-14c5-9dae-a63e5b8e5ea3',
     ],
   },
-  tracks: [
+  track: [
     {
       id: '9f961ac1-f655-41c5-9dae-a36e5b0e5ea0',
       artistId: null,
@@ -72,7 +72,7 @@ export const TempDb: DatabaseType = {
       name: 'Song !!!',
     },
   ],
-  albums: [
+  album: [
     {
       artistId: '9f691ac1-f565-14c5-9dae-a36e5b0e5ea3',
       name: 'Doggy Style',

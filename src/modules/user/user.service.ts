@@ -56,7 +56,7 @@ export class UserService {
     const newUser = await this.databaseService.updateUser(id, {
       password: dto.newPassword,
       version: user.version + 1,
-      updatedAt: Date.now(),
+      updatedAt: new Date(),
     });
 
     return toResponseUser(newUser);
