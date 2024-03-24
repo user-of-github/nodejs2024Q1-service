@@ -1,31 +1,37 @@
 # _Home Library Service_
-
+___
 ## How to run:
+### Preparations  
+__Ensure that you have same or higher than my versions of tools. otherwise, the author is not responsible for the fact that the application did not start.__  
 
-### Pre-run:
+- `$ node --version`  
+`v20.11.1`
+- `$docker --version`  
+`Docker version 26.0.0, build 2ae903e`  
 
-* _Node.js 20+ required_
-* _Clone repository_
-* __[ATTENTION:]__* _Clone `.env.example` file to `.env` in project root (if there's no `.env`)_
+### Cloning & running 
+- Clone this repository:   
+`git clone https://github.com/user-of-github/nodejs2024Q1-service.git .`
+- Switch to actual branch (for task 2 it is `dev-2`, __see actual branch in PR__):  
+`git checkout dev-2` _// or other actual branch with most recent changes_  
+- Ensure that ports are free (:5432, :4000) (see them in `.env`)
+- Run `docker compose up` or `sudo docker compose up`
 
-### How to run without Docker:
-
-* _Run `npm install` from root_
-* _Run dev-server with `npm run start:dev` or just `npm run start`_
-* _After that you can run tests: `npm run test`_
-
-### To run in Docker:
-
-- Make sure that you have actual version of Docker. For example my one is `Docker version 26.0.0, build 2ae903e` (Docker
-  for Linux Ubuntu 20.04.4 LTS)
-- Run `docker compose up` or `sudo docker compose up` for launching | Or `compose watch`
-
-___  
-
+![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
+![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-00-44.png)    
+_... WAITING ..._  
+![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)      
+### Testing  
+- __ATTENTION: All dependencies where installed inside docker container. So you need to install them on host machine as well just to make `jest` available :)__  
+- `npm install`
+- `npm run test`  
+- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__  
+![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
 ## _Technologies used:_
 
 * _[TypeScript](https://www.typescriptlang.org/)_
-* _[Nest](https://nestjs.com/)_
+* _[Nest](https://nestjs.com/)_  
+* _[Prisma ORM](https://www.prisma.io/) with [PostgreSQL](https://www.postgresql.org/)_ 
 * _[Docker](https://www.docker.com/)_
 
 ___  
@@ -35,7 +41,8 @@ ___
 * _Every entity is processed within its module_
 * _Database has a separate module_
 * _Types_
-* _Linting_
+* _Linting_  
+* _Launch data stored in `.env`_
 
 ___  
 
