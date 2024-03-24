@@ -11,7 +11,7 @@ import { User } from '../../types/User';
 import type { Album } from '../../types/Album';
 import type { Artist } from '../../types/Artist';
 import type { Track } from '../../types/Track';
-import type { Favorites, FavoritesResponse } from '../../types/Favorites';
+import type { FavoritesResponse } from '../../types/Favorites';
 import {
   type DatabaseType,
   type IndexedDbEntity,
@@ -23,6 +23,7 @@ import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
 import type { ArtistDto } from '../artist/dto/artist';
 import type { AlbumDto } from '../album/dto/album';
+import { convertFavoritesSubItem } from '../../helpers/utils';
 
 
 @Injectable()
@@ -60,46 +61,23 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   public async createUser(dto: CreateUserDto): Promise<User> {
     const now = new Date();
 
-    const newUser: User = {
-      id: randomUUID(),
-      createdAt: now,
-      updatedAt: now,
-      login: dto.login,
-      password: dto.password,
-      version: 1,
-    };
-
-    const user = await this.user.create({
-      data: newUser
+    return await this.user.create({
+      data: {
+        id: randomUUID(),
+        createdAt: now,
+        updatedAt: now,
+        login: dto.login,
+        password: dto.password,
+        version: 1,
+      }
     });
-
-    return user;
   }
 
   public async updateUser(id: string, newData: Partial<User>): Promise<User> {
-    // const userIndex = this.database.user.findIndex((user) => user.id === id);
-    // if (userIndex < 0) {
-    //   throw new NotFoundException();
-    // }
-    // this.database.user[userIndex] = {
-    //   ...this.database.user[userIndex],
-    //   ...newData,
-    // };
-
-    return await this.user.update({
-      where: {
-        id: id
-      },
-      data: newData
-    });
+    return await this.updateEntityById('user', id, newData);
   }
 
   public async deleteUser(id: string): Promise<void> {
-    // await this.user.delete({
-    //   where: {
-    //     id: id
-    //   }
-    // });
     await this.deleteEntityById('user', id);
   }
 
@@ -116,15 +94,6 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   }
 
   public async createTrack(dto: CreateTrackDto): Promise<Track> {
-    // const newTrack: Track = {
-    //   id: randomUUID(),
-    //   ...dto,
-    // };
-    //
-    // this.database.track.push(newTrack);
-    //
-    // return newTrack;
-
     return await this.track.create({
       data: { ...dto, id: randomUUID() }
     });
@@ -134,37 +103,11 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     id: string,
     newData: Partial<Track>,
   ): Promise<Track> {
-    // const index = this.database.track.findIndex((track) => track.id === id);
-    // if (index < 0) {
-    //   throw new NotFoundException();
-    // }
-    // this.database.track[index] = {
-    //   ...this.database.track[index],
-    //   ...newData,
-    // };
-    //
-    // return this.database.track[index];
-    const updatedTrack: Track = await this.track.update({
-      where: {
-        id: id
-      },
-      data: newData
-    });
-    return updatedTrack;
+    return await this.updateEntityById<Track>('track', id, newData);
   }
 
   public async deleteTrack(id: string): Promise<void> {
     await this.deleteEntityById('track', id);
-    // this.database.favorites.track = this.database.favorites.track.filter(
-    //   (trackId) => trackId !== id,
-    // );
-
-
-    // await this.track.updateMany({
-    //   where: {
-    //     id
-    //   }
-    // })
   }
 
   public async getArtists(): Promise<Artist[]> {
@@ -180,66 +123,23 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   }
 
   public async createArtist(dto: ArtistDto): Promise<Artist> {
-    // const newArtist: Artist = {
-    //   id: randomUUID(),
-    //   ...dto,
-    // };
-    //
-    // this.database.artist.push(newArtist);
-    //
-    // return newArtist;
-    const newArtist = this.artist.create({
+    return await this.artist.create({
       data: {
         id: randomUUID(),
         ...dto
       }
     });
-
-    return newArtist;
   }
 
   public async updateArtist(
     id: string,
     newData: Partial<Artist>,
   ): Promise<Artist> {
-    // const index = this.database.artist.findIndex((artist) => artist.id === id);
-    // if (index < 0) {
-    //   throw new NotFoundException();
-    // }
-    // this.database.artist[index] = {
-    //   ...this.database.artist[index],
-    //   ...newData,
-    // };
-    //
-    // return this.database.artist[index];
-
-    const updatedArtist: Artist = await this.artist.update({
-      where: {
-        id: id
-      },
-      data: newData
-    });
-    return updatedArtist;
+   return await this.updateEntityById<Artist>('artist', id, newData);
   }
 
   public async deleteArtist(id: string): Promise<void> {
     await this.deleteEntityById('artist', id);
-
-    // this.database.track.forEach((track) => {
-    //   if (track.artistId === id) {
-    //     track.artistId = null;
-    //   }
-    // });
-    //
-    // this.database.album.forEach((album) => {
-    //   if (album.artistId === id) {
-    //     album.artistId = null;
-    //   }
-    // });
-    //
-    // this.database.favorites.artist = this.database.favorites.artist.filter(
-    //   (artistId) => artistId !== id,
-    // );
 
     await this.track.updateMany({
       where: {
@@ -258,14 +158,6 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
         artistId: null
       }
     });
-
-    // await this.favoritesArtists.deleteMany({
-    //   where: {
-    //     artists: {
-    //       has: id
-    //     }
-    //   }
-    // });
   }
 
   public async getAlbums(): Promise<Album[]> {
@@ -281,57 +173,22 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   }
 
   public async createAlbum(dto: AlbumDto): Promise<Album> {
-    // const newAlbum: Album = {
-    //   id: randomUUID(),
-    //   ...dto,
-    // };
-    //
-    // this.database.album.push(newAlbum);
-    const newAlbum = await this.album.create({
+    return await this.album.create({
       data: {
         id: randomUUID(), ...dto
       }
     });
-
-    return newAlbum;
   }
 
   public async updateAlbum(
     id: string,
     newData: Partial<Album>,
   ): Promise<Album> {
-    // const index = this.database.album.findIndex((album) => album.id === id);
-    // if (index < 0) {
-    //   throw new NotFoundException();
-    // }
-    // this.database.album[index] = {
-    //   ...this.database.album[index],
-    //   ...newData,
-    // };
-    //
-    // return this.database.album[index];
-    const updatedAlbum = await this.album.update({
-      where: {
-        id: id
-      },
-      data: newData
-    });
-
-    return updatedAlbum;
+    return await this.updateEntityById<Album>('album', id, newData);
   }
 
   public async deleteAlbum(id: string): Promise<void> {
     await this.deleteEntityById('album', id);
-
-    // this.database.track.forEach((track) => {
-    //   if (track.albumId === id) {
-    //     track.albumId = null;
-    //   }
-    // });
-    //
-    // this.database.favorites.album = this.database.favorites.album.filter(
-    //   (albumId) => albumId !== id,
-    // );
 
     await this.track.updateMany({
       where: {
@@ -341,73 +198,38 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
         albumId: null
       }
     });
-
-    // await this.favoritesAlbums.deleteMany({
-    //   where: {
-    //     albums: {
-    //       has: id
-    //     }
-    //   }
-    // });
   }
 
   public async getFavorites(): Promise<FavoritesResponse> {
-    type WithId = { id: string };
-    const extractId = (item: WithId): string => item.id;
-    const convert = (items: WithId[]): string[] => items.map(extractId);
+    const art = await this.artist.findMany({
+      where: { isFavorite: true }
+    });
+    const alb = await this.album.findMany({
+      where: { isFavorite: true }
+    });
+    const tr = await this.track.findMany({
+      where: { isFavorite: true }
+    });
 
-    const artists = await this.artist.findMany({
-      where: {
-        isFavorite: true
-      }
-    });
-    const albums = await this.album.findMany({
-      where: {
-        isFavorite: true
-      }
-    });
-    const tracks = await this.track.findMany({
-      where: {
-        isFavorite: true
-      }
-    });
+    // TODO: hack, will be removed in future, when implementing auth
+
+    const artists = convertFavoritesSubItem(art);
+    const albums = convertFavoritesSubItem(alb);
+    const tracks = convertFavoritesSubItem(tr);
 
     return {artists, albums, tracks};
   }
 
   public async addTrackToFavorites(id: string): Promise<void> {
-    await this.track.update({
-      where: {
-        id: id
-      },
-      data: {
-        isFavorite: true
-      }
-    });
-
-
-    // if (!this.database.favorites.track.includes(id)) {
-    //   this.database.favorites.track.push(id);
-    // }
+    await this.updateEntityById<Track>('track', id, { isFavorite: true });
   }
 
   public async removeTrackFromFavorites(id: string): Promise<void> {
     return await this.removeEntityFromFavorites('track', id);
   }
 
-  async addAlbumToFavorites(id: string) {
-    // if (!this.database.favorites.album.includes(id)) {
-    //   this.database.favorites.album.push(id);
-    // }
-
-    await this.album.update({
-      where: {
-        id: id
-      },
-      data: {
-        isFavorite: true
-      }
-    });
+  public async addAlbumToFavorites(id: string) {
+    await this.updateEntityById<Album>('album', id, { isFavorite: true });
   }
 
   public async removeAlbumFromFavorites(id: string): Promise<void> {
@@ -415,13 +237,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   }
 
   public async addArtistToFavorites(id: string): Promise<void> {
+    await this.updateEntityById<Artist>('artist', id, {isFavorite: true});
     await this.artist.update({
-      where: {
-        id: id
-      },
-      data: {
-        isFavorite: true
-      }
+      where: { id: id },
+      data: { isFavorite: true }
     });
   }
 
@@ -433,24 +252,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     entityKey: IndexedFavoritesEntityName,
     id: string,
   ): Promise<void> {
-    // const index = this.database.favorites[entityKey].findIndex(
-    //   (entity) => entity === id,
-    // );
-    //
-    // if (index < 0) {
-    //   throw new NotFoundException('Not in favorites');
-    // }
-    //
-    // this.database.favorites[entityKey].splice(index, 1);
-
     // @ts-ignore
     await this[entityKey].update({
-      where: {
-        id: id
-      },
-      data: {
-        isFavorite: false
-      }
+      where: { id: id },
+      data: { isFavorite: false }
     });
   }
 
@@ -483,12 +288,25 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
    } catch {
      throw new NotFoundException();
    }
+  }
 
-    // if (index < 0) {
-    //   throw new NotFoundException();
-    // }
-    //
-    // this.database[entity].splice(index, 1);
+
+  private async updateEntityById<ValueType extends User | Album | Artist | Track>(
+    entity: IndexedDbEntityName,
+    id: string,
+    newData: Partial<ValueType>,
+  ): Promise<ValueType> {
+    try {
+      // @ts-ignore
+      return await this[entity].update({
+        where: {
+          id: id
+        },
+        data: newData
+      });
+    } catch {
+      throw new NotFoundException();
+    }
   }
 
   private async getEntitiesByIds<ValueType>(
