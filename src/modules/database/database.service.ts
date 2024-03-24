@@ -213,9 +213,9 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
 
     // TODO: hack, will be removed in future, when implementing auth
 
-    const artists = convertFavoritesSubItem(art);
-    const albums = convertFavoritesSubItem(alb);
-    const tracks = convertFavoritesSubItem(tr);
+    const artists = convertFavoritesSubItem<Artist>(art);
+    const albums = convertFavoritesSubItem<Album>(alb);
+    const tracks = convertFavoritesSubItem<Track>(tr);
 
     return {artists, albums, tracks};
   }
