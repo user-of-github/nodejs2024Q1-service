@@ -19,6 +19,7 @@ services:
 
     restart: always
     volumes:
+      - ./node_modules:/app/node_modules
       - ./pgdata:/var/lib/postgresql/data
       - ./pglogs:/var/logs/postgresql/postgresql.logs
     healthcheck:

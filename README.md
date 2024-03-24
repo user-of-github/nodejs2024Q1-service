@@ -15,6 +15,7 @@ __Ensure that you have same or higher than my versions of tools. otherwise, the 
 - Switch to actual branch (for task 2 it is `dev-2`, __see actual branch in PR__):  
 `git checkout dev-2` _// or other actual branch with most recent changes_  
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
+- Run `npm install`  
 - Run `docker compose up` or `sudo docker compose up`
 
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
@@ -22,8 +23,7 @@ __Ensure that you have same or higher than my versions of tools. otherwise, the 
 _... WAITING ..._  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)      
 ### Testing  
-- __ATTENTION: All dependencies where installed inside docker container. So you need to install them on host machine as well just to make `jest` available :)__  
-- `npm install`
+- If you haven't done before, `npm install` 
 - `npm run test`  
 - __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
