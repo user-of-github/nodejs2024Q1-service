@@ -13,13 +13,7 @@ export class FavoritesService {
   private readonly databaseService: DatabaseService;
 
   public async getAllFavorites(): Promise<FavoritesResponse> {
-    const favorites = await this.databaseService.getFavorites();
-
-    const track = await this.databaseService.getTracksByIds(favorites.track);
-    const artist = await this.databaseService.getArtistsByIds(favorites.artist);
-    const album = await this.databaseService.getAlbumsByIds(favorites.album);
-
-    return { track, artist, album };
+    return await this.databaseService.getFavorites();
   }
 
   public async addTrackToFavorites(id: string): Promise<void> {

@@ -1,3 +1,9 @@
+# https://docs.docker.com/compose/networking/#specify-custom-networks
+networks:
+  backend:
+    name: backend
+    driver: bridge
+
 services:
   db:
     image: postgres:bullseye
@@ -19,14 +25,13 @@ services:
       test: [ 'CMD-SHELL', 'pg_isready -U admin' ]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
   app:
     build: .
     restart: always
     container_name: app
-    environment:
-      - PORT=${PORT}
-      - DATABASE_URL=${DATABASE_URL}
+    env_file:
+      - .env
     ports:
       - ${PORT}:${PORT}
     networks:
@@ -37,8 +42,13 @@ services:
     volumes:
       - ./src:/app/src
       - ./prisma:/app/prisma
-
-networks:
-  backend:
-    name: backend
-    driver: bridge
+    develop:
+      watch:
+        - action: sync
+          path: src
+          target: /app/src
+        - action: sync
+          path: prisma
+          target: /app/prisma
+        - action: rebuild
+          path: package.json

@@ -9,7 +9,7 @@ export interface Favorites {
 }
 
 export interface FavoritesResponse {
-  artist: Artist[];
-  album: Album[];
-  track: Track[];
+  artists: Artist[];
+  albums: Album[];
+  tracks: Track[];
 }

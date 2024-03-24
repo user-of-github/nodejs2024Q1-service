@@ -4,6 +4,7 @@ CREATE TABLE "Album" (
     "name" TEXT NOT NULL,
     "year" INTEGER NOT NULL,
     "artistId" TEXT,
+    "isFavorite" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "Album_pkey" PRIMARY KEY ("id")
 );
@@ -13,6 +14,7 @@ CREATE TABLE "Artist" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "grammy" BOOLEAN NOT NULL,
+    "isFavorite" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "Artist_pkey" PRIMARY KEY ("id")
 );
@@ -24,6 +26,7 @@ CREATE TABLE "Track" (
     "artistId" TEXT,
     "albumId" TEXT,
     "duration" INTEGER NOT NULL,
+    "isFavorite" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "Track_pkey" PRIMARY KEY ("id")
 );
@@ -38,28 +41,4 @@ CREATE TABLE "User" (
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "FavoritesAlbums" (
-    "id" TEXT NOT NULL DEFAULT 'favorite-albums',
-    "albums" TEXT[],
-
-    CONSTRAINT "FavoritesAlbums_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "FavoritesArtists" (
-    "id" TEXT NOT NULL DEFAULT 'favorite-artists',
-    "artists" TEXT[],
-
-    CONSTRAINT "FavoritesArtists_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "FavoritesTracks" (
-    "id" TEXT NOT NULL DEFAULT 'favorite-tracks',
-    "tracks" TEXT[],
-
-    CONSTRAINT "FavoritesTracks_pkey" PRIMARY KEY ("id")
 );

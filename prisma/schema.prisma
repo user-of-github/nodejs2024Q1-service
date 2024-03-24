@@ -12,12 +12,14 @@ model Album {
   name String
   year Int
   artistId String?
+  isFavorite Boolean @default(false)
 }
 
 model Artist {
   id String @id @default(uuid())
   name String
   grammy Boolean
+  isFavorite Boolean @default(false)
 }
 
 model Track {
@@ -26,6 +28,7 @@ model Track {
   artistId String?
   albumId String?
   duration Int
+  isFavorite Boolean @default(false)
 }
 
 
@@ -36,19 +39,4 @@ model User {
   version Int @default(1)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
-}
-
-model FavoritesAlbums {
-  id     String  @id @default("favorite-albums")
-  albums String[]
-}
-
-model FavoritesArtists {
-  id      String   @id @default("favorite-artists")
-  artists String[]
-}
-
-model FavoritesTracks {
-  id     String  @id @default("favorite-tracks")
-  tracks String[]
 }

@@ -7,9 +7,17 @@ export interface User {
   updatedAt: Date; // timestamp of last update
 }
 
-export type UserResponse = Omit<User, 'password'>;
+export type UserResponse = Omit<User, 'password' | 'createdAt' | 'updatedAt'> & {
+  createdAt: number;
+  updatedAt: number;
+};
 
 export const toResponseUser = (user: User): UserResponse => {
-  const { password, ...rest } = user;
-  return rest;
+  return {
+    id: user.id,
+    createdAt: new Date(user.createdAt).getTime(),
+    updatedAt: new Date(user.updatedAt).getTime(),
+    version: user.version,
+    login: user.login
+  };
 };
