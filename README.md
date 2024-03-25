@@ -17,8 +17,10 @@ __My ones are listed below:__
 - Switch to actual branch (for task 2 it is `dev-2`, __see actual branch in PR__):  
 `git checkout dev-2` _// or other actual branch with most recent changes_  
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
+  - _Note: On Linux you can use command `sudo lsof -i:5432` and `sudo lsof -i:4000` to check, if ports are free_
 - Run `npm install`  
 - Run `docker compose up` or `sudo docker compose up`
+
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-00-44.png)    
 _... WAITING ..._  
@@ -31,7 +33,7 @@ _... WAITING ..._
   ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
 
 ### 1.4 After everything:  
-- After testing and using, don't forget to run `sudo docker compose down` (even if u just pressed `ctrl+c` or `ctrl+z` in terminal)
+- After testing and using, don't forget to run `sudo docker compose down` (even if you already pressed `ctrl+c` or `ctrl+z` in terminal)
   
 ![](./demo-for-readme/Screenshot%20from%202024-03-25%2020-33-34.png)  
 
@@ -39,7 +41,7 @@ _... WAITING ..._
 `Error response from daemon: driver failed programming external connectivity on endpoint db ...
 Error starting userland proxy: listen tcp4 0.0.0.0:5432: bind: address already in use`,  
 then ensure that port is free. You need to stop all running containers, free up port.  
-You can check, which user uses this port by using: `sudo lsof -i:8080`. With sudo !! Because without it on my personal machine command showed nothing
+You can check, which process uses this port by using: `sudo lsof -i:5432`. With sudo !! Because without it on my personal machine command showed nothing. And then kill this process
 
 ## 2. Docker Hub link to my published image:  
 https://hub.docker.com/repository/docker/684684684/rs-nodejs-2024q1-service  
