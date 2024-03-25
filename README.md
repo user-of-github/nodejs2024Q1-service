@@ -1,7 +1,7 @@
 # _Home Library Service_
 ___
-## How to run:
-### Preparations  
+## 1. How to run:
+### 1.1 Preparations  
 __Ensure that you have actual versions of tools.__  
 __My ones are listed below:__  
 - `$ node --version`  
@@ -11,7 +11,7 @@ __My ones are listed below:__
 - `$ uname -a`  
 `Linux 5.13.0-40-generic #45~20.04.1-Ubuntu`
 
-### Cloning & running 
+### 1.2 Cloning & running 
 - Clone this repository:   
 `git clone https://github.com/user-of-github/nodejs2024Q1-service.git .`
 - Switch to actual branch (for task 2 it is `dev-2`, __see actual branch in PR__):  
@@ -19,21 +19,32 @@ __My ones are listed below:__
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
 - Run `npm install`  
 - Run `docker compose up` or `sudo docker compose up`
-
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-00-44.png)    
 _... WAITING ..._  
-![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)      
-### Testing  
-- If you haven't done before, `npm install` 
-- `npm run test` _// in separate terminal :)_  
-- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    
-![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)  
+![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)   
 
-## _Docker Hub link to my published image_:  
+### 1.3 Testing
+- If you haven't done before, `npm install`
+- `npm run test` _// in separate terminal :)_
+- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    
+  ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
+
+### 1.4 After everything:  
+- After testing and using, don't forget to run `sudo docker compose down` (even if u just pressed `ctrl+c` or `ctrl+z` in terminal)
+  
+![](./demo-for-readme/Screenshot%20from%202024-03-25%2020-33-34.png)  
+
+### 1.5 If you are getting some error when running `compose up`, like this:
+`Error response from daemon: driver failed programming external connectivity on endpoint db ...
+Error starting userland proxy: listen tcp4 0.0.0.0:5432: bind: address already in use`,  
+then ensure that port is free. You need to stop all running containers, free up port.  
+You can check, which user uses this port by using: `sudo lsof -i:8080`. With sudo !! Because without it on my personal machine command showed nothing
+
+## 2. Docker Hub link to my published image:  
 https://hub.docker.com/repository/docker/684684684/rs-nodejs-2024q1-service  
 
-## _Technologies used:_
+## 3. Technologies used:
 
 * _[TypeScript](https://www.typescriptlang.org/)_
 * _[Nest](https://nestjs.com/)_  
@@ -42,7 +53,7 @@ https://hub.docker.com/repository/docker/684684684/rs-nodejs-2024q1-service
 
 ___  
 
-## _Features:_
+## 4. Features:
 
 * _Every entity is processed within its module_
 * _Database has a separate module_
@@ -52,7 +63,7 @@ ___
 
 ___  
 
-## _Usage:_
+## 5. Usage:
 
 * `Users` (`/user` route)
     * `GET /user` - get all users
