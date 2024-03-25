@@ -48,13 +48,13 @@ export const TempDb: DatabaseType = {
       id: '9f691ac1-f565-14c5-9dae-a36e5b0e5ea3',
       name: 'Snoop Dogg',
       grammy: true,
-      isFavorite: false
+      isFavorite: false,
     },
     {
       id: '9f691ac1-f565-14c5-9dae-a63e5b8e5ea3',
       name: 'Arianna Grande',
       grammy: true,
-      isFavorite: false
+      isFavorite: false,
     },
   ],
   favorites: {
@@ -72,7 +72,7 @@ export const TempDb: DatabaseType = {
       albumId: null,
       duration: 123,
       name: 'Song !!!',
-      isFavorite: false
+      isFavorite: false,
     },
   ],
   album: [
@@ -81,7 +81,7 @@ export const TempDb: DatabaseType = {
       name: 'Doggy Style',
       id: '9f169ac1-f866-55c5-9dae-a36e0b0e5ea0',
       year: 2006,
-      isFavorite: false
+      isFavorite: false,
     },
   ],
 };

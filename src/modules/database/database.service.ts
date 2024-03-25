@@ -25,9 +25,11 @@ import type { ArtistDto } from '../artist/dto/artist';
 import type { AlbumDto } from '../album/dto/album';
 import { convertFavoritesSubItem } from '../../helpers/utils';
 
-
 @Injectable()
-export class DatabaseService extends PrismaClient implements OnModuleInit , OnModuleDestroy {
+export class DatabaseService
+  extends PrismaClient
+  implements OnModuleInit, OnModuleDestroy
+{
   private readonly database: DatabaseType;
 
   public constructor() {
@@ -69,7 +71,7 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
         login: dto.login,
         password: dto.password,
         version: 1,
-      }
+      },
     });
   }
 
@@ -95,7 +97,7 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
 
   public async createTrack(dto: CreateTrackDto): Promise<Track> {
     return await this.track.create({
-      data: { ...dto, id: randomUUID() }
+      data: { ...dto, id: randomUUID() },
     });
   }
 
@@ -111,7 +113,7 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   }
 
   public async getArtists(): Promise<Artist[]> {
-    return await this.artist.findMany()
+    return await this.artist.findMany();
   }
 
   public async getArtist(id: string): Promise<Artist> {
@@ -126,8 +128,8 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     return await this.artist.create({
       data: {
         id: randomUUID(),
-        ...dto
-      }
+        ...dto,
+      },
     });
   }
 
@@ -135,7 +137,7 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     id: string,
     newData: Partial<Artist>,
   ): Promise<Artist> {
-   return await this.updateEntityById<Artist>('artist', id, newData);
+    return await this.updateEntityById<Artist>('artist', id, newData);
   }
 
   public async deleteArtist(id: string): Promise<void> {
@@ -143,20 +145,20 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
 
     await this.track.updateMany({
       where: {
-        artistId: id
+        artistId: id,
       },
       data: {
-        artistId: null
-      }
+        artistId: null,
+      },
     });
 
     await this.album.updateMany({
       where: {
-        artistId: id
+        artistId: id,
       },
       data: {
-        artistId: null
-      }
+        artistId: null,
+      },
     });
   }
 
@@ -175,8 +177,9 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   public async createAlbum(dto: AlbumDto): Promise<Album> {
     return await this.album.create({
       data: {
-        id: randomUUID(), ...dto
-      }
+        id: randomUUID(),
+        ...dto,
+      },
     });
   }
 
@@ -192,23 +195,23 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
 
     await this.track.updateMany({
       where: {
-        albumId: id
+        albumId: id,
       },
       data: {
-        albumId: null
-      }
+        albumId: null,
+      },
     });
   }
 
   public async getFavorites(): Promise<FavoritesResponse> {
     const art = await this.artist.findMany({
-      where: { isFavorite: true }
+      where: { isFavorite: true },
     });
     const alb = await this.album.findMany({
-      where: { isFavorite: true }
+      where: { isFavorite: true },
     });
     const tr = await this.track.findMany({
-      where: { isFavorite: true }
+      where: { isFavorite: true },
     });
 
     // TODO: hack, will be removed in future, when implementing auth
@@ -217,7 +220,7 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     const albums = convertFavoritesSubItem<Album>(alb);
     const tracks = convertFavoritesSubItem<Track>(tr);
 
-    return {artists, albums, tracks};
+    return { artists, albums, tracks };
   }
 
   public async addTrackToFavorites(id: string): Promise<void> {
@@ -237,10 +240,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
   }
 
   public async addArtistToFavorites(id: string): Promise<void> {
-    await this.updateEntityById<Artist>('artist', id, {isFavorite: true});
+    await this.updateEntityById<Artist>('artist', id, { isFavorite: true });
     await this.artist.update({
       where: { id: id },
-      data: { isFavorite: true }
+      data: { isFavorite: true },
     });
   }
 
@@ -252,10 +255,11 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     entityKey: IndexedFavoritesEntityName,
     id: string,
   ): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     await this[entityKey].update({
       where: { id: id },
-      data: { isFavorite: false }
+      data: { isFavorite: false },
     });
   }
 
@@ -263,11 +267,12 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     entity: IndexedDbEntityName,
     id: string,
   ): Promise<IndexedDbEntity> {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const item = await this[entity].findUnique({
       where: {
-        id: id
-      }
+        id: id,
+      },
     });
 
     if (!item) {
@@ -277,32 +282,38 @@ export class DatabaseService extends PrismaClient implements OnModuleInit , OnMo
     return item;
   }
 
-  private async deleteEntityById(entity: IndexedDbEntityName, id: string): Promise<void> {
-   try {
-     // @ts-ignore
-     await this[entity].delete({
-       where: {
-         id: id
-       }
-     });
-   } catch {
-     throw new NotFoundException();
-   }
+  private async deleteEntityById(
+    entity: IndexedDbEntityName,
+    id: string,
+  ): Promise<void> {
+    try {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      await this[entity].delete({
+        where: {
+          id: id,
+        },
+      });
+    } catch {
+      throw new NotFoundException();
+    }
   }
 
-
-  private async updateEntityById<ValueType extends User | Album | Artist | Track>(
+  private async updateEntityById<
+    ValueType extends User | Album | Artist | Track,
+  >(
     entity: IndexedDbEntityName,
     id: string,
     newData: Partial<ValueType>,
   ): Promise<ValueType> {
     try {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       return await this[entity].update({
         where: {
-          id: id
+          id: id,
         },
-        data: newData
+        data: newData,
       });
     } catch {
       throw new NotFoundException();

@@ -2,12 +2,14 @@
 ___
 ## How to run:
 ### Preparations  
-__Ensure that you have same or higher than my versions of tools. otherwise, the author is not responsible for the fact that the application did not start.__  
-
+__Ensure that you have actual versions of tools.__  
+__My ones are listed below:__  
 - `$ node --version`  
 `v20.11.1`
 - `$docker --version`  
-`Docker version 26.0.0, build 2ae903e`  
+`Docker version 26.0.0, build 2ae903e`    
+- `$ uname -a`  
+`Linux 5.13.0-40-generic #45~20.04.1-Ubuntu`
 
 ### Cloning & running 
 - Clone this repository:   
@@ -24,9 +26,13 @@ _... WAITING ..._
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)      
 ### Testing  
 - If you haven't done before, `npm install` 
-- `npm run test`  
-- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__  
-![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
+- `npm run test` _// in separate terminal :)_  
+- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    
+![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)  
+
+## _Docker Hub link to my published image_:  
+https://hub.docker.com/repository/docker/684684684/rs-nodejs-2024q1-service  
+
 ## _Technologies used:_
 
 * _[TypeScript](https://www.typescriptlang.org/)_

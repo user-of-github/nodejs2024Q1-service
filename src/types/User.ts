@@ -7,7 +7,10 @@ export interface User {
   updatedAt: Date; // timestamp of last update
 }
 
-export type UserResponse = Omit<User, 'password' | 'createdAt' | 'updatedAt'> & {
+export type UserResponse = Omit<
+  User,
+  'password' | 'createdAt' | 'updatedAt'
+> & {
   createdAt: number;
   updatedAt: number;
 };
@@ -18,6 +21,6 @@ export const toResponseUser = (user: User): UserResponse => {
     createdAt: new Date(user.createdAt).getTime(),
     updatedAt: new Date(user.updatedAt).getTime(),
     version: user.version,
-    login: user.login
+    login: user.login,
   };
 };
