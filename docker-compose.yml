@@ -1,0 +1,56 @@
+# https://docs.docker.com/compose/networking/#specify-custom-networks
+networks:
+  backend:
+    name: backend
+    driver: bridge
+
+services:
+  db:
+    image: postgres:bullseye
+    container_name: db
+    environment:
+      - POSTGRES_PORT=${DATABASE_PORT}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
+    networks:
+      - backend
+
+    restart: always
+    volumes:
+      - ./node_modules:/app/node_modules
+      - ./pglogs:/var/logs/postgresql/postgresql.logs
+      - ./pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U admin' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    restart: always
+    container_name: app
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+      - ./prisma:/app/prisma
+    networks:
+      - backend
+    develop:
+      watch:
+        - action: sync
+          path: src
+          target: /app/src
+        - action: sync
+          path: prisma
+          target: /app/prisma
+        - action: rebuild
+          path: package.json

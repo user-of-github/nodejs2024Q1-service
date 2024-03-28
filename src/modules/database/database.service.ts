@@ -2,13 +2,16 @@ import {
   type INestApplication,
   Injectable,
   NotFoundException,
+  type OnModuleDestroy,
+  type OnModuleInit,
 } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
-import type { User } from '../../types/User';
+import { User } from '../../types/User';
 import type { Album } from '../../types/Album';
 import type { Artist } from '../../types/Artist';
 import type { Track } from '../../types/Track';
-import type { Favorites } from '../../types/Favorites';
+import type { FavoritesResponse } from '../../types/Favorites';
 import {
   type DatabaseType,
   type IndexedDbEntity,
@@ -20,76 +23,72 @@ import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
 import type { ArtistDto } from '../artist/dto/artist';
 import type { AlbumDto } from '../album/dto/album';
+import { convertFavoritesSubItem } from '../../helpers/utils';
 
 @Injectable()
-export class DatabaseService {
+export class DatabaseService
+  extends PrismaClient
+  implements OnModuleInit, OnModuleDestroy
+{
   private readonly database: DatabaseType;
 
   public constructor() {
+    super();
     this.database = TempDbForTest;
   }
 
   public async onModuleInit(): Promise<void> {
-    console.log('DB Module init');
+    await this.$connect();
+    console.log('Database Module init');
   }
 
   public async onModuleDestroy(): Promise<void> {
-    console.log('DB Module destroy');
+    await this.$disconnect();
+    console.log('Database Module destroy');
   }
 
   public async enableShutdownHooks(app: INestApplication): Promise<void> {
-    console.log('before app exit');
+    console.log('Before app exit');
     await app.close();
   }
 
   public async getUsers(): Promise<User[]> {
-    return this.database.users;
+    return await this.user.findMany();
   }
 
   public async getUserById(id: string): Promise<User> {
-    return (await this.findEntityById('users', id)) as User;
+    return (await this.findEntityById('user', id)) as User;
   }
 
   public async createUser(dto: CreateUserDto): Promise<User> {
-    const now = Date.now();
+    const now = new Date();
 
-    const newUser: User = {
-      id: randomUUID(),
-      createdAt: now,
-      updatedAt: now,
-      login: dto.login,
-      password: dto.password,
-      version: 1,
-    };
-
-    this.database.users.push(newUser);
-
-    return newUser;
+    return await this.user.create({
+      data: {
+        id: randomUUID(),
+        createdAt: now,
+        updatedAt: now,
+        login: dto.login,
+        password: dto.password,
+        version: 1,
+      },
+    });
   }
 
   public async updateUser(id: string, newData: Partial<User>): Promise<User> {
-    const userIndex = this.database.users.findIndex((user) => user.id === id);
-    if (userIndex < 0) {
-      throw new NotFoundException();
-    }
-    this.database.users[userIndex] = {
-      ...this.database.users[userIndex],
-      ...newData,
-    };
-
-    return this.database.users[userIndex];
+    return await this.updateEntityById('user', id, newData);
   }
 
   public async deleteUser(id: string): Promise<void> {
-    await this.deleteEntityById('users', id);
+    await this.deleteEntityById('user', id);
   }
 
   public async getTracks(): Promise<Track[]> {
-    return this.database.tracks;
+    return await this.track.findMany();
   }
 
   public async getTrack(id: string): Promise<Track> {
-    return (await this.findEntityById('tracks', id)) as Track;
+    return (await this.findEntityById('track', id)) as Track;
   }
 
   public async getTracksByIds(ids: string[]): Promise<Track[]> {
@@ -97,45 +96,28 @@ export class DatabaseService {
   }
 
   public async createTrack(dto: CreateTrackDto): Promise<Track> {
-    const newTrack: Track = {
-      id: randomUUID(),
-      ...dto,
-    };
-
-    this.database.tracks.push(newTrack);
-
-    return newTrack;
+    return await this.track.create({
+      data: { ...dto, id: randomUUID() },
+    });
   }
 
   public async updateTrack(
     id: string,
     newData: Partial<Track>,
   ): Promise<Track> {
-    const index = this.database.tracks.findIndex((track) => track.id === id);
-    if (index < 0) {
-      throw new NotFoundException();
-    }
-    this.database.tracks[index] = {
-      ...this.database.tracks[index],
-      ...newData,
-    };
-
-    return this.database.tracks[index];
+    return await this.updateEntityById<Track>('track', id, newData);
   }
 
   public async deleteTrack(id: string): Promise<void> {
-    await this.deleteEntityById('tracks', id);
-    this.database.favorites.tracks = this.database.favorites.tracks.filter(
-      (trackId) => trackId !== id,
-    );
+    await this.deleteEntityById('track', id);
   }
 
   public async getArtists(): Promise<Artist[]> {
-    return this.database.artists;
+    return await this.artist.findMany();
   }
 
   public async getArtist(id: string): Promise<Artist> {
-    return (await this.findEntityById('artists', id)) as Artist;
+    return (await this.findEntityById('artist', id)) as Artist;
   }
 
   public async getArtistsByIds(ids: string[]): Promise<Artist[]> {
@@ -143,58 +125,49 @@ export class DatabaseService {
   }
 
   public async createArtist(dto: ArtistDto): Promise<Artist> {
-    const newArtist: Artist = {
-      id: randomUUID(),
-      ...dto,
-    };
-
-    this.database.artists.push(newArtist);
-
-    return newArtist;
+    return await this.artist.create({
+      data: {
+        id: randomUUID(),
+        ...dto,
+      },
+    });
   }
 
   public async updateArtist(
     id: string,
     newData: Partial<Artist>,
   ): Promise<Artist> {
-    const index = this.database.artists.findIndex((artist) => artist.id === id);
-    if (index < 0) {
-      throw new NotFoundException();
-    }
-    this.database.artists[index] = {
-      ...this.database.artists[index],
-      ...newData,
-    };
-
-    return this.database.artists[index];
+    return await this.updateEntityById<Artist>('artist', id, newData);
   }
 
   public async deleteArtist(id: string): Promise<void> {
-    await this.deleteEntityById('artists', id);
+    await this.deleteEntityById('artist', id);
 
-    this.database.tracks.forEach((track) => {
-      if (track.artistId === id) {
-        track.artistId = null;
-      }
+    await this.track.updateMany({
+      where: {
+        artistId: id,
+      },
+      data: {
+        artistId: null,
+      },
     });
 
-    this.database.albums.forEach((album) => {
-      if (album.artistId === id) {
-        album.artistId = null;
-      }
+    await this.album.updateMany({
+      where: {
+        artistId: id,
+      },
+      data: {
+        artistId: null,
+      },
     });
-
-    this.database.favorites.artists = this.database.favorites.artists.filter(
-      (artistId) => artistId !== id,
-    );
   }
 
   public async getAlbums(): Promise<Album[]> {
-    return this.database.albums;
+    return await this.album.findMany();
   }
 
   public async getAlbum(id: string): Promise<Album> {
-    return (await this.findEntityById('albums', id)) as Album;
+    return (await this.findEntityById('album', id)) as Album;
   }
 
   public async getAlbumsByIds(ids: string[]): Promise<Album[]> {
@@ -202,121 +175,149 @@ export class DatabaseService {
   }
 
   public async createAlbum(dto: AlbumDto): Promise<Album> {
-    const newAlbum: Album = {
-      id: randomUUID(),
-      ...dto,
-    };
-
-    this.database.albums.push(newAlbum);
-
-    return newAlbum;
+    return await this.album.create({
+      data: {
+        id: randomUUID(),
+        ...dto,
+      },
+    });
   }
 
   public async updateAlbum(
     id: string,
     newData: Partial<Album>,
   ): Promise<Album> {
-    const index = this.database.albums.findIndex((album) => album.id === id);
-    if (index < 0) {
-      throw new NotFoundException();
-    }
-    this.database.albums[index] = {
-      ...this.database.albums[index],
-      ...newData,
-    };
-
-    return this.database.albums[index];
+    return await this.updateEntityById<Album>('album', id, newData);
   }
 
   public async deleteAlbum(id: string): Promise<void> {
-    await this.deleteEntityById('albums', id);
+    await this.deleteEntityById('album', id);
 
-    this.database.tracks.forEach((track) => {
-      if (track.albumId === id) {
-        track.albumId = null;
-      }
+    await this.track.updateMany({
+      where: {
+        albumId: id,
+      },
+      data: {
+        albumId: null,
+      },
     });
-
-    this.database.favorites.albums = this.database.favorites.albums.filter(
-      (albumId) => albumId !== id,
-    );
   }
 
-  public async getFavorites(): Promise<Favorites> {
-    return this.database.favorites;
+  public async getFavorites(): Promise<FavoritesResponse> {
+    const art = await this.artist.findMany({
+      where: { isFavorite: true },
+    });
+    const alb = await this.album.findMany({
+      where: { isFavorite: true },
+    });
+    const tr = await this.track.findMany({
+      where: { isFavorite: true },
+    });
+
+    // TODO: hack, will be removed in future, when implementing auth
+
+    const artists = convertFavoritesSubItem<Artist>(art);
+    const albums = convertFavoritesSubItem<Album>(alb);
+    const tracks = convertFavoritesSubItem<Track>(tr);
+
+    return { artists, albums, tracks };
   }
 
   public async addTrackToFavorites(id: string): Promise<void> {
-    if (!this.database.favorites.tracks.includes(id)) {
-      this.database.favorites.tracks.push(id);
-    }
+    await this.updateEntityById<Track>('track', id, { isFavorite: true });
   }
 
   public async removeTrackFromFavorites(id: string): Promise<void> {
-    return await this.removeEntityFromFavorites('tracks', id);
+    return await this.removeEntityFromFavorites('track', id);
   }
 
-  async addAlbumToFavorites(id: string) {
-    if (!this.database.favorites.albums.includes(id)) {
-      this.database.favorites.albums.push(id);
-    }
+  public async addAlbumToFavorites(id: string) {
+    await this.updateEntityById<Album>('album', id, { isFavorite: true });
   }
 
   public async removeAlbumFromFavorites(id: string): Promise<void> {
-    return await this.removeEntityFromFavorites('albums', id);
+    return await this.removeEntityFromFavorites('album', id);
   }
 
   public async addArtistToFavorites(id: string): Promise<void> {
-    if (!this.database.favorites.artists.includes(id)) {
-      this.database.favorites.artists.push(id);
-    }
+    await this.updateEntityById<Artist>('artist', id, { isFavorite: true });
+    await this.artist.update({
+      where: { id: id },
+      data: { isFavorite: true },
+    });
   }
 
   public async removeArtistFromFavorites(id: string): Promise<void> {
-    return await this.removeEntityFromFavorites('artists', id);
+    return await this.removeEntityFromFavorites('artist', id);
   }
 
   private async removeEntityFromFavorites(
     entityKey: IndexedFavoritesEntityName,
     id: string,
   ): Promise<void> {
-    const index = this.database.favorites[entityKey].findIndex(
-      (entity) => entity === id,
-    );
-
-    if (index < 0) {
-      throw new NotFoundException('Not in favorites');
-    }
-
-    this.database.favorites[entityKey].splice(index, 1);
-
-    return;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    await this[entityKey].update({
+      where: { id: id },
+      data: { isFavorite: false },
+    });
   }
 
   private async findEntityById(
     entity: IndexedDbEntityName,
     id: string,
   ): Promise<IndexedDbEntity> {
-    const item = this.database[entity].findIndex((unit) => unit.id === id);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const item = await this[entity].findUnique({
+      where: {
+        id: id,
+      },
+    });
 
-    if (item < 0) {
+    if (!item) {
       throw new NotFoundException('No entity with such id exists');
     }
 
-    return this.database[entity][item];
+    return item;
   }
 
   private async deleteEntityById(
     entity: IndexedDbEntityName,
     id: string,
   ): Promise<void> {
-    const index = this.database[entity].findIndex((entity) => entity.id === id);
-
-    if (index < 0) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      await this[entity].delete({
+        where: {
+          id: id,
+        },
+      });
+    } catch {
       throw new NotFoundException();
     }
+  }
 
-    this.database[entity].splice(index, 1);
+  private async updateEntityById<
+    ValueType extends User | Album | Artist | Track,
+  >(
+    entity: IndexedDbEntityName,
+    id: string,
+    newData: Partial<ValueType>,
+  ): Promise<ValueType> {
+    try {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      return await this[entity].update({
+        where: {
+          id: id,
+        },
+        data: newData,
+      });
+    } catch {
+      throw new NotFoundException();
+    }
   }
 
   private async getEntitiesByIds<ValueType>(

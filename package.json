@@ -1,8 +1,11 @@
 {
   "name": "home-library",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "NodeJS (NestJS) REST service for RS NodeJS 2024Q1",
+  "author": {
+    "name": "Slutski Mikita",
+    "url": "https://github.com/user-of-github"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -13,6 +16,7 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
+    "docker:cmd": "npx prisma generate && npx prisma migrate deploy && npm run start:dev",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest --testMatch \"<rootDir>/*.spec.ts\" --noStackTrace --runInBand",
     "test:auth": "cross-env TEST_MODE=auth jest --testPathIgnorePatterns refresh.e2e.spec.ts --noStackTrace --runInBand",
@@ -28,6 +32,7 @@
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/mapped-types": "^1.0.1",
     "@nestjs/platform-express": "^8.0.0",
+    "@prisma/client": "^5.11.0",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -57,6 +62,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.2.5",
     "prettier": "^2.3.2",
+    "prisma": "^5.11.0",
     "source-map-support": "^0.5.20",
     "supertest": "^6.2.3",
     "ts-jest": "^27.0.3",
