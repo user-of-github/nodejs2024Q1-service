@@ -1,14 +1,9 @@
-import {
-  HttpException,
-  HttpStatus,
-  Inject,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
-import { toResponseUser, type UserResponse } from '../../types/User';
+import { toResponseUser, User, type UserResponse } from '../../types/User';
 import type { CreateUserDto } from './dto/createUser';
 import type { UpdatePasswordDto } from './dto/updatePassword';
+
 
 @Injectable()
 export class UserService {
@@ -26,6 +21,10 @@ export class UserService {
       throw new NotFoundException();
     }
     return toResponseUser(response);
+  }
+
+  public async getUserByLoginAndPassword(login: string, encryptedPassword: string): Promise<User> {
+    return await this.databaseService.getUserByLoginAndPassword(login, encryptedPassword);
   }
 
   public async createUser(dto: CreateUserDto): Promise<UserResponse> {

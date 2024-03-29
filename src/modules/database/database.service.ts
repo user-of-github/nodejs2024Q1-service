@@ -3,7 +3,7 @@ import {
   Injectable,
   NotFoundException,
   type OnModuleDestroy,
-  type OnModuleInit,
+  type OnModuleInit, UnauthorizedException,
 } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
@@ -30,11 +30,9 @@ export class DatabaseService
   extends PrismaClient
   implements OnModuleInit, OnModuleDestroy
 {
-  private readonly database: DatabaseType;
 
   public constructor() {
     super();
-    this.database = TempDbForTest;
   }
 
   public async onModuleInit(): Promise<void> {
@@ -58,6 +56,30 @@ export class DatabaseService
 
   public async getUserById(id: string): Promise<User> {
     return (await this.findEntityById('user', id)) as User;
+  }
+
+  public async getUserByLoginAndPassword(login: string, password: string): Promise<User> {
+    let user: User;
+
+    try {
+      user = await this.user.findFirst({
+        where: {
+          login: login
+        }
+      });
+    } catch {
+      throw new NotFoundException();
+    }
+
+    if (!user) {
+      throw new NotFoundException();
+    }
+
+    if (user.password !== password) {
+      throw new UnauthorizedException();
+    }
+
+    return user;
   }
 
   public async createUser(dto: CreateUserDto): Promise<User> {
