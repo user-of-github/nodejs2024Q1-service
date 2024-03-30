@@ -19,7 +19,7 @@ import { AuthModule } from './modules/auth/auth.module';
     ArtistModule,
     AlbumModule,
     FavoritesModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

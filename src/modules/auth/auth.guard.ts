@@ -4,8 +4,6 @@ import {
   ExecutionContext,
   Injectable,
   UnauthorizedException,
-  type Request,
-  NotFoundException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Reflector } from '@nestjs/core';
@@ -13,14 +11,13 @@ import { IS_PUBLIC_KEY } from './public-route.decorator';
 import { ConfigService } from '@nestjs/config';
 import { UserService } from '../user/user.service';
 
-
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
     private readonly jwtService: JwtService,
     private readonly reflector: Reflector,
     private readonly configService: ConfigService,
-    private readonly userService: UserService
+    private readonly userService: UserService,
   ) {}
 
   public async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -40,7 +37,7 @@ export class AuthGuard implements CanActivate {
     }
     try {
       const payload = await this.jwtService.verifyAsync(token, {
-        secret: this.configService.get<string>('JWT_SECRET_KEY')
+        secret: this.configService.get<string>('JWT_SECRET_KEY'),
       });
 
       if (!payload || !payload.userId || !payload.login) {

@@ -3,7 +3,7 @@ import {
   Injectable,
   NotFoundException,
   type OnModuleDestroy,
-  type OnModuleInit, UnauthorizedException,
+  type OnModuleInit,
 } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
@@ -13,11 +13,9 @@ import type { Artist } from '../../types/Artist';
 import type { Track } from '../../types/Track';
 import type { FavoritesResponse } from '../../types/Favorites';
 import {
-  type DatabaseType,
   type IndexedDbEntity,
   type IndexedDbEntityName,
   type IndexedFavoritesEntityName,
-  TempDbForTest,
 } from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
@@ -30,7 +28,6 @@ export class DatabaseService
   extends PrismaClient
   implements OnModuleInit, OnModuleDestroy
 {
-
   public constructor() {
     super();
   }
@@ -64,7 +61,7 @@ export class DatabaseService
     try {
       user = await this.user.findFirst({ where: { login: login } });
     } catch {
-      console.log(`User ${login} not found`)
+      console.log(`User ${login} not found`);
     }
 
     return user;
