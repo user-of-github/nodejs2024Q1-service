@@ -1,15 +1,36 @@
-import { Controller, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Post, Request, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LocalAuthGuard } from './local-auth.guard';
-
+import { CreateUserDto } from '../user/dto/createUser';
+import { TokenResponse } from '../../types/Auth';
+import { UserResponse } from '../../types/User';
+import { LogInDto } from './dto/signIn';
 
 @Controller('auth')
 export class AuthController {
   public constructor(private readonly authService: AuthService) {}
 
-  @UseGuards(LocalAuthGuard)
   @Post('login')
-  public async login(@Request() req): Promise<any> {
-    return await this.authService.login(req.user);
+  public async login(@Body() data: LogInDto): Promise<TokenResponse> {
+    return await this.authService.login(data);
+  }
+
+  @Post('signup')
+  public async signup(@Body() createUserDto: CreateUserDto): Promise<UserResponse> {
+    return await this.authService.signUp(createUserDto);
+  }
+
+  @Post('refresh')
+  @HttpCode(200)
+  public async refresh(@Request() request): Promise<TokenResponse> {
+    if (!request.body.refreshToken) {
+      throw new UnauthorizedException();
+    }
+    return await this.authService.updateRefreshToken(request.body.refreshToken);
+  }
+
+
+  @Get('profile')
+  getProfile(@Request() req) {
+    return req.user;
   }
 }

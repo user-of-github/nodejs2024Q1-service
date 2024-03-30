@@ -5,6 +5,7 @@ export interface User {
   version: number; // integer number, increments on update
   createdAt: Date; // timestamp of creation
   updatedAt: Date; // timestamp of last update
+  refreshToken?: string;
 }
 
 export type UserResponse = Omit<
@@ -21,6 +22,6 @@ export const toResponseUser = (user: User): UserResponse => {
     createdAt: new Date(user.createdAt).getTime(),
     updatedAt: new Date(user.updatedAt).getTime(),
     version: user.version,
-    login: user.login,
+    login: user.login
   };
 };

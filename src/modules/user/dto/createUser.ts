@@ -9,6 +9,5 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsString()
-  @Transform(({ value }) => hash(value))
   public readonly password: string;
 }

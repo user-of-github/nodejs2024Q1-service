@@ -62,13 +62,9 @@ export class DatabaseService
     let user: User;
 
     try {
-      user = await this.user.findFirst({
-        where: {
-          login: login
-        }
-      });
+      user = await this.user.findFirst({ where: { login: login } });
     } catch {
-      throw new NotFoundException();
+      console.log(`User ${login} not found`)
     }
 
     return user;

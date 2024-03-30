@@ -12,7 +12,7 @@ export class UserService {
 
   public async getAllUsers(): Promise<UserResponse[]> {
     const allUsers = await this.databaseService.getUsers();
-    return allUsers as unknown as UserResponse[];
+    return allUsers.map(toResponseUser);
   }
 
   public async getUserById(id: string): Promise<UserResponse> {
@@ -29,7 +29,7 @@ export class UserService {
 
   public async createUser(dto: CreateUserDto): Promise<UserResponse> {
     const createdUser = await this.databaseService.createUser(dto);
-    return { ...toResponseUser(createdUser), password: createdUser.password } as UserResponse;
+    return toResponseUser(createdUser);
   }
 
   public async updateUserPassword(
@@ -63,5 +63,15 @@ export class UserService {
 
   public async deleteUser(id: string): Promise<void> {
     return await this.databaseService.deleteUser(id);
+  }
+
+  public async updateRefreshToken(id: string, token: string): Promise<void> {
+    await this.databaseService.user.update({
+      where: {
+        id: id
+      }, data: {
+        refreshToken: token
+      }
+    })
   }
 }
