@@ -1,9 +1,8 @@
-import { Get, Injectable, UseGuards, Request } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user/user.service';
 import { hash } from '../../helpers/utils';
-import { JwtService } from '@nestjs/jwt';
-import { LogInResponse } from '../../types/Auth';
-import { AuthGuard } from './auth.guard';
+import { User } from '../../types/User';
 
 
 @Injectable()
@@ -13,15 +12,23 @@ export class AuthService {
     private readonly jwtService: JwtService
   ) {}
 
-  public async logIn(login: string, password: string): Promise<LogInResponse> {
-    const encryptedPassword = hash(password);
-    const user = await this.userService.getUserByLoginAndPassword(login, encryptedPassword);
-    const payload = { sub: user.id, login: user.login } as const;
 
-    const accessToken = await this.jwtService.signAsync(payload);
+  public async validateUser(login: string, password: string): Promise<User> {
+    const user = await this.userService.getUserByLogin(login);
+    const encryptedPassword = hash(password);
+
+    if (user && user.password === encryptedPassword) {
+      return user;
+    }
+
+    throw new UnauthorizedException('Incorrect login or password');
+  }
+
+  public async login(user: User) {
+    const payload = { login: user.login, id: user.id };
 
     return {
-      access_token: accessToken
+      access_token: this.jwtService.sign(payload),
     };
   }
 }

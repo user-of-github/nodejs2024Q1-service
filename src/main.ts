@@ -6,7 +6,7 @@ import * as process from 'process';
 async function bootstrap() {
   const port = Number(process.env.PORT);
 
-  console.log(process.env.DATABASE_URL);
+  console.log('Database port: ', process.env.DATABASE_URL);
 
   if (Number.isNaN(port)) {
     throw new Error('No port provided in .env file');

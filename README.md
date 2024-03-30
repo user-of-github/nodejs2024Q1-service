@@ -14,8 +14,8 @@ __My ones are listed below:__
 ### 1.2 Cloning & running 
 - Clone this repository:   
 `git clone https://github.com/user-of-github/nodejs2024Q1-service.git .`
-- Switch to actual branch (for task 2 it is `dev-2`, __see actual branch in PR__):  
-`git checkout dev-2` _// or other actual branch with most recent changes_  
+- Switch to actual branch (for task 3 it is `dev-3`, __see actual branch in PR__. Or after course completion it should be just `master`):  
+`git checkout dev-3` _// or other actual branch with most recent changes_  
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
   - _Note: On Linux you can use command `sudo lsof -i:5432` and `sudo lsof -i:4000` to check, if ports are free_
 - Run `npm install`  

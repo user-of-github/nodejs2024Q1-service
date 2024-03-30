@@ -12,7 +12,7 @@ export class UserService {
 
   public async getAllUsers(): Promise<UserResponse[]> {
     const allUsers = await this.databaseService.getUsers();
-    return allUsers.map(toResponseUser);
+    return allUsers as unknown as UserResponse[];
   }
 
   public async getUserById(id: string): Promise<UserResponse> {
@@ -20,11 +20,11 @@ export class UserService {
     if (!response) {
       throw new NotFoundException();
     }
-    return toResponseUser(response);
+    return response as unknown as UserResponse;
   }
 
-  public async getUserByLoginAndPassword(login: string, encryptedPassword: string): Promise<User> {
-    return await this.databaseService.getUserByLoginAndPassword(login, encryptedPassword);
+  public async getUserByLogin(login: string): Promise<User | null> {
+    return await this.databaseService.getUserByLogin(login);
   }
 
   public async createUser(dto: CreateUserDto): Promise<UserResponse> {

@@ -58,7 +58,7 @@ export class DatabaseService
     return (await this.findEntityById('user', id)) as User;
   }
 
-  public async getUserByLoginAndPassword(login: string, password: string): Promise<User> {
+  public async getUserByLogin(login: string): Promise<User | null> {
     let user: User;
 
     try {
@@ -69,14 +69,6 @@ export class DatabaseService
       });
     } catch {
       throw new NotFoundException();
-    }
-
-    if (!user) {
-      throw new NotFoundException();
-    }
-
-    if (user.password !== password) {
-      throw new UnauthorizedException();
     }
 
     return user;

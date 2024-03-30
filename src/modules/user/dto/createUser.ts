@@ -1,4 +1,6 @@
 import { IsNotEmpty, IsString } from 'class-validator';
+import { Transform } from 'class-transformer';
+import { hash } from '../../../helpers/utils';
 
 export class CreateUserDto {
   @IsNotEmpty()
@@ -7,5 +9,6 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) => hash(value))
   public readonly password: string;
 }
