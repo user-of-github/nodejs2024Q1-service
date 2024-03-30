@@ -28,29 +28,29 @@ services:
       timeout: 5s
       retries: 10
 
-#  app:
-#    build: .
-#    restart: always
-#    container_name: app
-#    env_file:
-#      - .env
-#    ports:
-#      - ${PORT}:${PORT}
-#    depends_on:
-#      db:
-#        condition: service_healthy
-#    volumes:
-#      - ./src:/app/src
-#      - ./prisma:/app/prisma
-#    networks:
-#      - backend
-#    develop:
-#      watch:
-#        - action: sync
-#          path: src
-#          target: /app/src
-#        - action: sync
-#          path: prisma
-#          target: /app/prisma
-#        - action: rebuild
-#          path: package.json
+  app:
+    build: .
+    restart: always
+    container_name: app
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+      - ./prisma:/app/prisma
+    networks:
+      - backend
+    develop:
+      watch:
+        - action: sync
+          path: src
+          target: /app/src
+        - action: sync
+          path: prisma
+          target: /app/prisma
+        - action: rebuild
+          path: package.json
