@@ -34,8 +34,7 @@ export class AuthService {
   }
 
   public async updateRefreshToken(oldRefreshToken: string): Promise<TokenResponse> {
-    //const verification = this.jwtService.verify(oldRefreshToken);
-
+    // OR const payload = this.jwtService.verify(oldRefreshToken); ??
     const payload = this.jwtService.decode(oldRefreshToken, {
       json: true
     });
