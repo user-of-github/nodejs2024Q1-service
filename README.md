@@ -30,12 +30,15 @@ Run `docker compose up` or `sudo docker compose up`
 
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-00-44.png)    
-_... WAITING ..._  
+_... waiting some time ..._  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)   
 
 ### 1.3 Testing
-- If you haven't done before, `npm install`
-- `npm run test` _// in separate terminal :)_
+- _// in separate terminal :)_
+- If you haven't done before, `npm install`  
+- `npm run test`  
+- `npm run test:auth`  
+- `npm run test:refresh`  
 - __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    
   ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
 
@@ -58,7 +61,9 @@ https://hub.docker.com/repository/docker/684684684/rs-nodejs-2024q1-service
 * _[TypeScript](https://www.typescriptlang.org/)_
 * _[Nest](https://nestjs.com/)_  
 * _[Prisma ORM](https://www.prisma.io/) with [PostgreSQL](https://www.postgresql.org/)_ 
-* _[Docker](https://www.docker.com/)_
+* _[Docker](https://www.docker.com/)_  
+* _[JWT Tokens](https://jwt.io/)_  
+* _[Passport](https://www.passportjs.org/)_
 
 ___  
 
@@ -68,7 +73,8 @@ ___
 * _Database has a separate module_
 * _Types_
 * _Linting_  
-* _Launch data stored in `.env`_
+* _Launch data stored in `.env`_  
+* _Auth via `passport.js` and `JWT`-tokens_ (for now entities are not binded to users, as it was not in task statement and there are no tests for it; But actually it is not a problem now to make reference of favourites to user)
 
 ___  
 
@@ -109,7 +115,11 @@ ___
     * `POST /favs/album/:id` - add album to the favorites
     * `DELETE /favs/album/:id` - delete album from favorites
     * `POST /favs/artist/:id` - add artist to the favorites
-    * `DELETE /favs/artist/:id` - delete artist from favorites
+    * `DELETE /favs/artist/:id` - delete artist from favorites  
+* `Auth`  
+    * `POST /auth/signup` - register with body `{login, password}`  
+    * `POST /auth/login` - login with  body `{login, password}`  
+    * `POST /auth/refresh` - refresh tokens with body `{refreshToken}`
 
 ___  
 &nbsp;
@@ -118,4 +128,6 @@ ___
 
 ###### _Created by Slutski Mikita_
 
-###### _RS NodeJS 2024Q1_
+###### _RS NodeJS 2024Q1_  
+
+###### © 2024

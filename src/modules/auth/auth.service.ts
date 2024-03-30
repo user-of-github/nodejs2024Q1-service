@@ -2,7 +2,7 @@ import { BadRequestException, ForbiddenException, Injectable, UnauthorizedExcept
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user/user.service';
 import { hash } from '../../helpers/utils';
-import { User, UserResponse } from '../../types/User';
+import { UserResponse } from '../../types/User';
 import { JWTPayloadRaw, TokenResponse } from '../../types/Auth';
 import { ConfigService } from '@nestjs/config';
 import { CreateUserDto } from '../user/dto/createUser';
@@ -18,13 +18,11 @@ export class AuthService {
   ) {}
 
   public async signUp(createUserDto: CreateUserDto): Promise<UserResponse> {
-    // Check if user exists
     const userExists = await this.userService.getUserByLogin(createUserDto.login);
     if (userExists) {
       throw new BadRequestException('User with such login already exists');
     }
 
-    // Hash password
     const hashedPassword = hash(createUserDto.password);
 
     return await this.userService.createUser({
@@ -34,7 +32,6 @@ export class AuthService {
   }
 
   public async updateRefreshToken(oldRefreshToken: string): Promise<TokenResponse> {
-    // OR const payload = this.jwtService.verify(oldRefreshToken); ??
     const payload = this.jwtService.decode(oldRefreshToken, {
       json: true
     });
@@ -58,17 +55,6 @@ export class AuthService {
     return tokens;
   }
 
-
-  public async validateUser(login: string, password: string): Promise<User> {
-    const user = await this.userService.getUserByLogin(login);
-    const encryptedPassword = hash(password);
-
-    if (user && user.password === encryptedPassword) {
-      return user;
-    }
-
-    throw new UnauthorizedException('Incorrect login or password');
-  }
 
   public async login(data: LogInDto): Promise<TokenResponse> {
     const user = await this.userService.getUserByLogin(data.login);
