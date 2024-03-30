@@ -19,7 +19,14 @@ __My ones are listed below:__
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
   - _Note: On Linux you can use command `sudo lsof -i:5432` and `sudo lsof -i:4000` to check, if ports are free_
 - Run `npm install`  
-- Run `docker compose up` or `sudo docker compose up`
+- Uncomment whole `docker-compose`, in `.env` make sure, that `DATABASE_URL` for DOCKER is used (see comments in `env`).  
+Run `docker compose up` or `sudo docker compose up`
+#### To run app without docker:  
+- Run your postgres instance locally from params in `.env` or you just can:  
+  - Comment `app` service in `docker-compose` (so only DB will be run in container)
+  - in `.env` make sure, that `DATABASE_URL` for LOCAL is used (see comments in `env`)
+- Run `npm run start` or `npm run start:dev`.
+- Before running, you can check, that 4000 and 5432 ports are free by using command (in Linux): `sudo lsof -i:5432`, `sudo lsof -i:4000`. And kill processes if they occupy these ports (`sudo kill <PROCESS_ID>`)  
 
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-00-44.png)    
