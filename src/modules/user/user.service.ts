@@ -29,7 +29,7 @@ export class UserService {
 
   public async createUser(dto: CreateUserDto): Promise<UserResponse> {
     const createdUser = await this.databaseService.createUser(dto);
-    return toResponseUser(createdUser);
+    return { ...toResponseUser(createdUser), password: createdUser.password } as UserResponse;
   }
 
   public async updateUserPassword(
