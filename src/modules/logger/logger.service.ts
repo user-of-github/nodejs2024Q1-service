@@ -23,11 +23,20 @@ export class CustomLoggerService extends ConsoleLogger {
 
   public constructor(private readonly configService: ConfigService) {
     super();
-    this.logsFilePath = path.resolve(__dirname, '../../../', configService.get('LOGS_FILE_PATH'));
-    this.errorsFilePath = path.resolve(__dirname, '../../../', configService.get('LOGS_ERRORS_FILE_PATH'));
+    this.logsFilePath = path.resolve(
+      __dirname,
+      '../../../',
+      configService.get('LOGS_FILE_PATH'),
+    );
+    this.errorsFilePath = path.resolve(
+      __dirname,
+      '../../../',
+      configService.get('LOGS_ERRORS_FILE_PATH'),
+    );
 
     this.loggingLevel = Number(configService.get('LOGGING_LEVEL') || 0);
-    this.logFileMaxSizeBytes = Number(configService.get('LOGS_FILE_MAX_SIZE_KB') || 512) * 1024;
+    this.logFileMaxSizeBytes =
+      Number(configService.get('LOGS_FILE_MAX_SIZE_KB') || 512) * 1024;
   }
 
   public log(message, ...optionalParams): void {
@@ -85,14 +94,20 @@ export class CustomLoggerService extends ConsoleLogger {
   }
 
   private logToFile(loggingLevel: LogTypeName, messageText: string): void {
-    const filePath = loggingLevel !== 'error' ? this.logsFilePath : this.errorsFilePath;
+    const filePath =
+      loggingLevel !== 'error' ? this.logsFilePath : this.errorsFilePath;
     const message = `${new Date().toISOString()} | ${messageText}`;
     const writeLog = (): void => {
-      fs.appendFile(filePath, message + '\n', { encoding: 'utf-8' }, (error) => {
-        if (error) {
-          throw error;
-        }
-      });
+      fs.appendFile(
+        filePath,
+        message + '\n',
+        { encoding: 'utf-8' },
+        (error) => {
+          if (error) {
+            throw error;
+          }
+        },
+      );
     };
 
     // Important! Best practise: Logging must not block base thread
@@ -104,7 +119,10 @@ export class CustomLoggerService extends ConsoleLogger {
 
       // Log file Rotation: https://en.wikipedia.org/wiki/Log_rotation
       if (stats.size >= this.logFileMaxSizeBytes) {
-        const newPath = filePath.replace(`.${CustomLoggerService.logFileExtension}`, `-rotated-${new Date().getTime()}.log`);
+        const newPath = filePath.replace(
+          `.${CustomLoggerService.logFileExtension}`,
+          `-rotated-${new Date().getTime()}.log`,
+        );
 
         fs.rename(filePath, newPath, (error) => {
           if (error) {

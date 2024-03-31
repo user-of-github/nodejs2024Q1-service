@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Inject, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Inject,
+  Post,
+  Put,
+} from '@nestjs/common';
 import type { Album } from '../../types/Album';
 import { UUIDParam } from '../../helpers/UUIDParam';
 import { AlbumService } from './album.service';
@@ -25,7 +35,10 @@ export class AlbumController {
   }
 
   @Put(':id')
-  public async updateAlbum(@UUIDParam('id') id: string, @Body() dto: AlbumDto): Promise<Album> {
+  public async updateAlbum(
+    @UUIDParam('id') id: string,
+    @Body() dto: AlbumDto,
+  ): Promise<Album> {
     return await this.albumService.updateAlbum(id, dto as any);
   }
 

@@ -17,19 +17,29 @@ describe('Tracks (e2e)', () => {
 
   describe('GET all tracks', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.get(tracksRoutes.getAll).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .get(tracksRoutes.getAll)
+        .set(commonHeaders)
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('GET track by id', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.get(tracksRoutes.getById(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .get(tracksRoutes.getById(randomUUID))
+        .set(commonHeaders)
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('POST', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.post(tracksRoutes.create).set(commonHeaders).send(createTrackDto).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .post(tracksRoutes.create)
+        .set(commonHeaders)
+        .send(createTrackDto)
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
@@ -50,7 +60,10 @@ describe('Tracks (e2e)', () => {
 
   describe('DELETE', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.delete(tracksRoutes.delete(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .delete(tracksRoutes.delete(randomUUID))
+        .set(commonHeaders)
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 });

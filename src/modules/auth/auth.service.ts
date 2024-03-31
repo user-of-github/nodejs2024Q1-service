@@ -1,4 +1,8 @@
-import { BadRequestException, ForbiddenException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user/user.service';
 import { hash } from '../../helpers/utils';
@@ -17,7 +21,9 @@ export class AuthService {
   ) {}
 
   public async signUp(createUserDto: CreateUserDto): Promise<UserResponse> {
-    const userExists = await this.userService.getUserByLogin(createUserDto.login);
+    const userExists = await this.userService.getUserByLogin(
+      createUserDto.login,
+    );
     if (userExists) {
       throw new BadRequestException('User with such login already exists');
     }
@@ -30,7 +36,9 @@ export class AuthService {
     });
   }
 
-  public async updateRefreshToken(oldRefreshToken: string): Promise<TokenResponse> {
+  public async updateRefreshToken(
+    oldRefreshToken: string,
+  ): Promise<TokenResponse> {
     const payload = this.jwtService.decode(oldRefreshToken, {
       json: true,
     });
@@ -69,7 +77,10 @@ export class AuthService {
     return tokens;
   }
 
-  private async getTokens(userId: string, login: string): Promise<TokenResponse> {
+  private async getTokens(
+    userId: string,
+    login: string,
+  ): Promise<TokenResponse> {
     const payload: JWTPayloadRaw = { userId, login };
 
     const [accessToken, refreshToken] = await Promise.all([

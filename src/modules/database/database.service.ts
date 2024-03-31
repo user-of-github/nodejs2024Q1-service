@@ -1,4 +1,10 @@
-import { type INestApplication, Injectable, NotFoundException, type OnModuleDestroy, type OnModuleInit } from '@nestjs/common';
+import {
+  type INestApplication,
+  Injectable,
+  NotFoundException,
+  type OnModuleDestroy,
+  type OnModuleInit,
+} from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
 import { User } from '../../types/User';
@@ -6,7 +12,11 @@ import type { Album } from '../../types/Album';
 import type { Artist } from '../../types/Artist';
 import type { Track } from '../../types/Track';
 import type { FavoritesResponse } from '../../types/Favorites';
-import { type IndexedDbEntity, type IndexedDbEntityName, type IndexedFavoritesEntityName } from './temp-db';
+import {
+  type IndexedDbEntity,
+  type IndexedDbEntityName,
+  type IndexedFavoritesEntityName,
+} from './temp-db';
 import type { CreateUserDto } from '../user/dto/createUser';
 import type { CreateTrackDto } from '../track/dto/createTrack';
 import type { ArtistDto } from '../artist/dto/artist';
@@ -14,7 +24,10 @@ import type { AlbumDto } from '../album/dto/album';
 import { convertFavoritesSubItem } from '../../helpers/utils';
 
 @Injectable()
-export class DatabaseService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
+export class DatabaseService
+  extends PrismaClient
+  implements OnModuleInit, OnModuleDestroy
+{
   public constructor() {
     super();
   }
@@ -95,7 +108,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     });
   }
 
-  public async updateTrack(id: string, newData: Partial<Track>): Promise<Track> {
+  public async updateTrack(
+    id: string,
+    newData: Partial<Track>,
+  ): Promise<Track> {
     return await this.updateEntityById<Track>('track', id, newData);
   }
 
@@ -124,7 +140,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     });
   }
 
-  public async updateArtist(id: string, newData: Partial<Artist>): Promise<Artist> {
+  public async updateArtist(
+    id: string,
+    newData: Partial<Artist>,
+  ): Promise<Artist> {
     return await this.updateEntityById<Artist>('artist', id, newData);
   }
 
@@ -171,7 +190,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     });
   }
 
-  public async updateAlbum(id: string, newData: Partial<Album>): Promise<Album> {
+  public async updateAlbum(
+    id: string,
+    newData: Partial<Album>,
+  ): Promise<Album> {
     return await this.updateEntityById<Album>('album', id, newData);
   }
 
@@ -236,7 +258,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     return await this.removeEntityFromFavorites('artist', id);
   }
 
-  private async removeEntityFromFavorites(entityKey: IndexedFavoritesEntityName, id: string): Promise<void> {
+  private async removeEntityFromFavorites(
+    entityKey: IndexedFavoritesEntityName,
+    id: string,
+  ): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     await this[entityKey].update({
@@ -245,7 +270,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     });
   }
 
-  private async findEntityById(entity: IndexedDbEntityName, id: string): Promise<IndexedDbEntity> {
+  private async findEntityById(
+    entity: IndexedDbEntityName,
+    id: string,
+  ): Promise<IndexedDbEntity> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const item = await this[entity].findUnique({
@@ -261,7 +289,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     return item;
   }
 
-  private async deleteEntityById(entity: IndexedDbEntityName, id: string): Promise<void> {
+  private async deleteEntityById(
+    entity: IndexedDbEntityName,
+    id: string,
+  ): Promise<void> {
     try {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -275,7 +306,9 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     }
   }
 
-  private async updateEntityById<ValueType extends User | Album | Artist | Track>(
+  private async updateEntityById<
+    ValueType extends User | Album | Artist | Track,
+  >(
     entity: IndexedDbEntityName,
     id: string,
     newData: Partial<ValueType>,
@@ -294,7 +327,10 @@ export class DatabaseService extends PrismaClient implements OnModuleInit, OnMod
     }
   }
 
-  private async getEntitiesByIds<ValueType>(ids: string[], getter: (id: string) => Promise<ValueType>): Promise<ValueType[]> {
+  private async getEntitiesByIds<ValueType>(
+    ids: string[],
+    getter: (id: string) => Promise<ValueType>,
+  ): Promise<ValueType[]> {
     //TODO: FIX ERROR IN PROMISES ERROR
     const data: ValueType[] = [];
 

@@ -8,7 +8,10 @@ export interface User {
   refreshToken?: string;
 }
 
-export type UserResponse = Omit<User, 'password' | 'createdAt' | 'updatedAt'> & {
+export type UserResponse = Omit<
+  User,
+  'password' | 'createdAt' | 'updatedAt'
+> & {
   createdAt: number;
   updatedAt: number;
 };

@@ -15,7 +15,10 @@ export interface DatabaseType {
 export type IndexedDbEntityName = Exclude<keyof DatabaseType, 'favorites'>;
 export type IndexedDbEntity = User | Artist | Track | Album;
 
-export type IndexedFavoritesEntityName = Exclude<keyof DatabaseType, 'favorites' | 'user'>;
+export type IndexedFavoritesEntityName = Exclude<
+  keyof DatabaseType,
+  'favorites' | 'user'
+>;
 
 export const TempDbForTest: DatabaseType = {
   user: [],
@@ -57,7 +60,10 @@ export const TempDb: DatabaseType = {
   favorites: {
     track: ['9f961ac1-f655-41c5-9dae-a36e5b0e5ea0'],
     album: [],
-    artist: ['9f691ac1-f565-14c5-9dae-a36e5b0e5ea3', '9f691ac1-f565-14c5-9dae-a63e5b8e5ea3'],
+    artist: [
+      '9f691ac1-f565-14c5-9dae-a36e5b0e5ea3',
+      '9f691ac1-f565-14c5-9dae-a63e5b8e5ea3',
+    ],
   },
   track: [
     {

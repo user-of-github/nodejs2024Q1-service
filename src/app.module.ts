@@ -22,7 +22,10 @@ import { ExceptionsFilter } from './modules/logger/exception.filter';
     AuthModule,
   ],
   controllers: [],
-  providers: [CustomLoggerService, { provide: APP_FILTER, useClass: ExceptionsFilter }],
+  providers: [
+    CustomLoggerService,
+    { provide: APP_FILTER, useClass: ExceptionsFilter },
+  ],
 })
 export class AppModule {
   public configure(consumer: MiddlewareConsumer): void {

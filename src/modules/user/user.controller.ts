@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Inject, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Inject,
+  Post,
+  Put,
+} from '@nestjs/common';
 import type { UserResponse } from '../../types/User';
 import { UUIDParam } from '../../helpers/UUIDParam';
 import { UserService } from './user.service';
@@ -26,7 +36,10 @@ export class UserController {
   }
 
   @Put(':id')
-  public async updateUserPassword(@UUIDParam('id') id: string, @Body() dto: UpdatePasswordDto): Promise<UserResponse> {
+  public async updateUserPassword(
+    @UUIDParam('id') id: string,
+    @Body() dto: UpdatePasswordDto,
+  ): Promise<UserResponse> {
     return await this.userService.updateUserPassword(id, dto);
   }
 

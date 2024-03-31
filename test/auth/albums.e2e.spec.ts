@@ -22,13 +22,19 @@ describe('Album (e2e)', () => {
 
   describe('GET album by id', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.get(albumsRoutes.getById(randomUUID)).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .get(albumsRoutes.getById(randomUUID))
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('POST', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.post(albumsRoutes.create).set(commonHeaders).send(createAlbumDto).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .post(albumsRoutes.create)
+        .set(commonHeaders)
+        .send(createAlbumDto)
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
@@ -50,7 +56,10 @@ describe('Album (e2e)', () => {
 
   describe('DELETE', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request.delete(albumsRoutes.delete(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
+      await request
+        .delete(albumsRoutes.delete(randomUUID))
+        .set(commonHeaders)
+        .expect(StatusCodes.UNAUTHORIZED);
     });
   });
 });

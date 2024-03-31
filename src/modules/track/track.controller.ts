@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Inject, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Inject,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { TrackService } from './track.service';
 import type { Track } from '../../types/Track';
 import { UUIDParam } from '../../helpers/UUIDParam';
@@ -26,7 +36,10 @@ export class TrackController {
   }
 
   @Put(':id')
-  public async updateTrack(@UUIDParam('id') id: string, @Body() dto: UpdateTrackDto): Promise<Track> {
+  public async updateTrack(
+    @UUIDParam('id') id: string,
+    @Body() dto: UpdateTrackDto,
+  ): Promise<Track> {
     return await this.trackService.updateTrack(id, dto as any);
   }
 

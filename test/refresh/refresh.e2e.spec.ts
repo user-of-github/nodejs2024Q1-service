@@ -1,6 +1,11 @@
 import request from '../lib/request';
 import { authRoutes } from '../endpoints';
-import { shouldAuthorizationBeTested, removeTokenUser, getTokenAndUserId, generateRefreshToken } from '../utils';
+import {
+  shouldAuthorizationBeTested,
+  removeTokenUser,
+  getTokenAndUserId,
+  generateRefreshToken,
+} from '../utils';
 import { HttpStatus } from '@nestjs/common';
 import { decode, JwtPayload } from 'jsonwebtoken';
 import { validate } from 'uuid';
@@ -46,7 +51,8 @@ describe('Refresh (e2e)', () => {
 
   beforeAll(async () => {
     if (shouldAuthorizationBeTested) {
-      const { accessToken, refreshToken, mockUserId, login, token } = await getTokenAndUserId(request);
+      const { accessToken, refreshToken, mockUserId, login, token } =
+        await getTokenAndUserId(request);
       userTokens = { userId: mockUserId, login, accessToken, refreshToken };
       headers['Authorization'] = token;
     }
@@ -61,7 +67,9 @@ describe('Refresh (e2e)', () => {
 
   describe('Refresh', () => {
     it('should correctly get new tokens pair', async () => {
-      const response = await request.post(authRoutes.refresh).send({ refreshToken: userTokens.refreshToken });
+      const response = await request
+        .post(authRoutes.refresh)
+        .send({ refreshToken: userTokens.refreshToken });
 
       expect(response.statusCode).toBe(HttpStatus.OK);
       expect(response.body).toBeInstanceOf(Object);
@@ -80,7 +88,9 @@ describe('Refresh (e2e)', () => {
 
     it('should fail with 403 (invalid refresh token)', async () => {
       const invalidRefreshToken = Math.random().toString();
-      const response = await request.post(authRoutes.refresh).send({ refreshToken: invalidRefreshToken });
+      const response = await request
+        .post(authRoutes.refresh)
+        .send({ refreshToken: invalidRefreshToken });
 
       expect(response.statusCode).toBe(HttpStatus.FORBIDDEN);
     });
@@ -96,7 +106,9 @@ describe('Refresh (e2e)', () => {
         login: userTokens.login,
       };
       const refreshToken = generateRefreshToken(payload, { expiresIn: '0s' });
-      const response = await request.post(authRoutes.refresh).send({ refreshToken });
+      const response = await request
+        .post(authRoutes.refresh)
+        .send({ refreshToken });
       expect(response.statusCode).toBe(HttpStatus.FORBIDDEN);
     });
   });
