@@ -76,8 +76,8 @@ ___
 * _Types_
 * _Linting_  
 * _Launch data stored in `.env`_  
-* _Auth via `passport.js` and `JWT`-tokens_ (for now entities are not binded to users, as it was not in task statement and there are no tests for it; But actually it is not a problem now to make reference of favourites to user)
-
+* _Auth via `passport.js` and `JWT`-tokens_ (for now entities are not binded to users, as it was not in task statement and there are no tests for it; But actually it is not a problem now to make reference of favourites to user)  
+* _Custom logging to file and logs-rotation; Logger Module; Middleware_
 ___  
 
 ## 5. Usage:

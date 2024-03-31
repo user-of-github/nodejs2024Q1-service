@@ -11,7 +11,6 @@ import { CustomLoggerService } from './modules/logger/logger.service';
 import { LoggerMiddleware } from './modules/logger/logger.middleware';
 import { ExceptionsFilter } from './modules/logger/exception.filter';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env' }),
@@ -23,10 +22,7 @@ import { ExceptionsFilter } from './modules/logger/exception.filter';
     AuthModule,
   ],
   controllers: [],
-  providers: [
-    CustomLoggerService,
-    { provide: APP_FILTER, useClass: ExceptionsFilter }
-  ]
+  providers: [CustomLoggerService, { provide: APP_FILTER, useClass: ExceptionsFilter }],
 })
 export class AppModule {
   public configure(consumer: MiddlewareConsumer): void {

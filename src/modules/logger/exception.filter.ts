@@ -17,17 +17,15 @@ export class ExceptionsFilter implements ExceptionFilter {
 
     this.customLoggerService.error(message);
 
-    response
-      .status(status)
-      .json({
-        statusCode: status,
-        timestamp: new Date().toISOString(),
-        path: request.url,
-      });
+    response.status(status).json({
+      statusCode: status,
+      timestamp: new Date().toISOString(),
+      path: request.url,
+    });
   }
 
   private getErrorMessage(request: Request, status: number): string {
-    let message: string = `${new Date().toISOString()} Internal Server Error (500) |`;
+    let message = `${new Date().toISOString()} Internal Server Error (500) |`;
 
     message += `Code: ${status} , `;
     message += `${request.originalUrl} ${request.method} , `;

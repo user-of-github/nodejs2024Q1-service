@@ -7,9 +7,9 @@ export class LoggerMiddleware implements NestMiddleware {
   public constructor(private readonly customLoggerService: CustomLoggerService) {}
 
   public use(request: Request, response: Response, next: NextFunction): void {
-    const reqMessage = `Request: ${request.originalUrl} , ${request.method} , ${JSON.stringify(request.params)} , ${JSON.stringify(
-      request.body,
-    )}`;
+    const reqMessage = `Request: ${request.originalUrl} , ${request.method} , ${JSON.stringify(
+      request.params,
+    )} , ${JSON.stringify(request.body)}`;
 
     response.on('finish', () => {
       const resMessage = `, Response: ${response.statusCode} ${response.statusMessage}`;
