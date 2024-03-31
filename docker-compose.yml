@@ -42,6 +42,7 @@ services:
     volumes:
       - ./src:/app/src
       - ./prisma:/app/prisma
+      - ./app_logs:/app/app_logs
     networks:
       - backend
     develop:
