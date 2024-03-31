@@ -6,7 +6,7 @@ networks:
 
 services:
   db:
-    image: postgres:bullseye
+    image: postgres:16-bullseye
     container_name: db
     environment:
       - POSTGRES_PORT=${DATABASE_PORT}

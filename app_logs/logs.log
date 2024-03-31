@@ -1,0 +1,357 @@
+2024-03-31T15:45:29.224Z | Starting Nest application...
+2024-03-31T15:45:29.250Z | DatabaseModule dependencies initialized
+2024-03-31T15:45:29.250Z | JwtModule dependencies initialized
+2024-03-31T15:45:29.250Z | ConfigHostModule dependencies initialized
+2024-03-31T15:45:29.250Z | ConfigModule dependencies initialized
+2024-03-31T15:45:29.250Z | ConfigModule dependencies initialized
+2024-03-31T15:45:29.250Z | UserModule dependencies initialized
+2024-03-31T15:45:29.251Z | TrackModule dependencies initialized
+2024-03-31T15:45:29.251Z | ArtistModule dependencies initialized
+2024-03-31T15:45:29.251Z | FavoritesModule dependencies initialized
+2024-03-31T15:45:29.252Z | AppModule dependencies initialized
+2024-03-31T15:45:29.251Z | AlbumModule dependencies initialized
+2024-03-31T15:45:29.252Z | AuthModule dependencies initialized
+2024-03-31T15:45:29.252Z | UserController {/user}:
+2024-03-31T15:45:29.252Z | Mapped {/user, GET} route
+2024-03-31T15:45:29.252Z | Mapped {/user/:id, GET} route
+2024-03-31T15:45:29.253Z | Mapped {/user, POST} route
+2024-03-31T15:45:29.253Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:45:29.253Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:45:29.253Z | TrackController {/track}:
+2024-03-31T15:45:29.253Z | Mapped {/track, GET} route
+2024-03-31T15:45:29.254Z | Mapped {/track/:id, GET} route
+2024-03-31T15:45:29.254Z | Mapped {/track, POST} route
+2024-03-31T15:45:29.254Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:45:29.254Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:45:29.254Z | ArtistController {/artist}:
+2024-03-31T15:45:29.255Z | Mapped {/artist, GET} route
+2024-03-31T15:45:29.255Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:45:29.255Z | Mapped {/artist, POST} route
+2024-03-31T15:45:29.255Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:45:29.255Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:45:29.255Z | AlbumController {/album}:
+2024-03-31T15:45:29.256Z | Mapped {/album, GET} route
+2024-03-31T15:45:29.256Z | Mapped {/album/:id, GET} route
+2024-03-31T15:45:29.256Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:45:29.256Z | Mapped {/album, POST} route
+2024-03-31T15:45:29.256Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:45:29.256Z | FavoritesController {/favs}:
+2024-03-31T15:45:29.257Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:45:29.256Z | Mapped {/favs, GET} route
+2024-03-31T15:45:29.257Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:45:29.257Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:45:29.257Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:45:29.257Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:45:29.257Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:45:29.257Z | AuthController {/auth}:
+2024-03-31T15:45:29.258Z | Mapped {/auth/login, POST} route
+2024-03-31T15:45:29.258Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:45:29.258Z | Nest application successfully started
+2024-03-31T15:45:29.258Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:45:29.258Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:47:39.275Z | JwtModule dependencies initialized
+2024-03-31T15:47:39.275Z | DatabaseModule dependencies initialized
+2024-03-31T15:47:39.276Z | ConfigHostModule dependencies initialized
+2024-03-31T15:47:39.256Z | Starting Nest application...
+2024-03-31T15:47:39.276Z | ConfigModule dependencies initialized
+2024-03-31T15:47:39.276Z | ConfigModule dependencies initialized
+2024-03-31T15:47:39.276Z | UserModule dependencies initialized
+2024-03-31T15:47:39.276Z | TrackModule dependencies initialized
+2024-03-31T15:47:39.276Z | ArtistModule dependencies initialized
+2024-03-31T15:47:39.277Z | AlbumModule dependencies initialized
+2024-03-31T15:47:39.277Z | AppModule dependencies initialized
+2024-03-31T15:47:39.277Z | FavoritesModule dependencies initialized
+2024-03-31T15:47:39.277Z | AuthModule dependencies initialized
+2024-03-31T15:47:39.277Z | UserController {/user}:
+2024-03-31T15:47:39.278Z | Mapped {/user, GET} route
+2024-03-31T15:47:39.278Z | Mapped {/user/:id, GET} route
+2024-03-31T15:47:39.278Z | Mapped {/user, POST} route
+2024-03-31T15:47:39.278Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:47:39.278Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:47:39.279Z | TrackController {/track}:
+2024-03-31T15:47:39.279Z | Mapped {/track, GET} route
+2024-03-31T15:47:39.279Z | Mapped {/track/:id, GET} route
+2024-03-31T15:47:39.279Z | Mapped {/track, POST} route
+2024-03-31T15:47:39.279Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:47:39.280Z | ArtistController {/artist}:
+2024-03-31T15:47:39.280Z | Mapped {/artist, GET} route
+2024-03-31T15:47:39.279Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:47:39.280Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:47:39.280Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:47:39.280Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:47:39.280Z | Mapped {/artist, POST} route
+2024-03-31T15:47:39.280Z | AlbumController {/album}:
+2024-03-31T15:47:39.281Z | Mapped {/album, GET} route
+2024-03-31T15:47:39.281Z | Mapped {/album/:id, GET} route
+2024-03-31T15:47:39.281Z | Mapped {/album, POST} route
+2024-03-31T15:47:39.281Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:47:39.281Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:47:39.281Z | FavoritesController {/favs}:
+2024-03-31T15:47:39.281Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:47:39.282Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:47:39.281Z | Mapped {/favs, GET} route
+2024-03-31T15:47:39.282Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:47:39.282Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:47:39.282Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:47:39.282Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:47:39.282Z | AuthController {/auth}:
+2024-03-31T15:47:39.282Z | Mapped {/auth/login, POST} route
+2024-03-31T15:47:39.283Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:47:39.282Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:47:39.283Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:47:39.283Z | Nest application successfully started
+2024-03-31T15:49:27.690Z | Starting Nest application...
+2024-03-31T15:49:27.714Z | ConfigHostModule dependencies initialized
+2024-03-31T15:49:27.714Z | UserModule dependencies initialized
+2024-03-31T15:49:27.713Z | DatabaseModule dependencies initialized
+2024-03-31T15:49:27.714Z | ConfigModule dependencies initialized
+2024-03-31T15:49:27.715Z | TrackModule dependencies initialized
+2024-03-31T15:49:27.714Z | ConfigModule dependencies initialized
+2024-03-31T15:49:27.716Z | AlbumModule dependencies initialized
+2024-03-31T15:49:27.715Z | ArtistModule dependencies initialized
+2024-03-31T15:49:27.716Z | FavoritesModule dependencies initialized
+2024-03-31T15:49:27.716Z | AppModule dependencies initialized
+2024-03-31T15:49:27.716Z | AuthModule dependencies initialized
+2024-03-31T15:49:27.716Z | UserController {/user}:
+2024-03-31T15:49:27.717Z | Mapped {/user, GET} route
+2024-03-31T15:49:27.717Z | Mapped {/user/:id, GET} route
+2024-03-31T15:49:27.714Z | JwtModule dependencies initialized
+2024-03-31T15:49:27.717Z | Mapped {/user, POST} route
+2024-03-31T15:49:27.718Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:49:27.718Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:49:27.718Z | TrackController {/track}:
+2024-03-31T15:49:27.718Z | Mapped {/track/:id, GET} route
+2024-03-31T15:49:27.718Z | Mapped {/track, GET} route
+2024-03-31T15:49:27.719Z | Mapped {/track, POST} route
+2024-03-31T15:49:27.719Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:49:27.719Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:49:27.719Z | ArtistController {/artist}:
+2024-03-31T15:49:27.719Z | Mapped {/artist, GET} route
+2024-03-31T15:49:27.719Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:49:27.719Z | Mapped {/artist, POST} route
+2024-03-31T15:49:27.720Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:49:27.720Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:49:27.720Z | AlbumController {/album}:
+2024-03-31T15:49:27.720Z | Mapped {/album, GET} route
+2024-03-31T15:49:27.720Z | Mapped {/album/:id, GET} route
+2024-03-31T15:49:27.720Z | Mapped {/album, POST} route
+2024-03-31T15:49:27.721Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:49:27.721Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:49:27.721Z | FavoritesController {/favs}:
+2024-03-31T15:49:27.721Z | Mapped {/favs, GET} route
+2024-03-31T15:49:27.722Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:49:27.722Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:49:27.722Z | AuthController {/auth}:
+2024-03-31T15:49:27.722Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:49:27.721Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:49:27.721Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:49:27.721Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:49:27.722Z | Mapped {/auth/login, POST} route
+2024-03-31T15:49:27.723Z | Nest application successfully started
+2024-03-31T15:49:27.722Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:49:27.722Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:49:27.723Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:49:41.238Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:41.263Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:41.278Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNDI0NDE4Yy0yODI4LTRjNmQtYmUxNC05MmUxZTBjZmRjZmEiLCJsb2dpbiI6IlRFU1RfQVVUSF9MT0dJTiIsImlhdCI6MTcxMTkwMDE4MSwiZXhwIjoxNzExOTg2NTgxfQ.p658pZdlQv3rFh3eQmCQ5jfD_eUsqvLuUM-DtnkYp1A"} , Response: 200 OK
+2024-03-31T15:49:41.293Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {"refreshToken":"0.43688478939741016"} , Response: 403 Forbidden
+2024-03-31T15:49:41.300Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:41.312Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwNDI0NDE4Yy0yODI4LTRjNmQtYmUxNC05MmUxZTBjZmRjZmEiLCJsb2dpbiI6IlRFU1RfQVVUSF9MT0dJTiIsImlhdCI6MTcxMTkwMDE4MSwiZXhwIjoxNzExOTAwMTgxfQ.OuA8a9jMsgxQT6jvxp4Ms6Eue58IjaEqdMrFS45uPns"} , Response: 403 Forbidden
+2024-03-31T15:49:41.341Z | Request: /user/0424418c-2828-4c6d-be14-92e1e0cfdcfa , DELETE , {"0":"user/0424418c-2828-4c6d-be14-92e1e0cfdcfa"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.547Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:53.563Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:53.581Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.601Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:53.614Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":"2773f73c-0042-48be-95f4-2e8c80dfd043"} , Response: 201 Created
+2024-03-31T15:49:53.627Z | Request: /track , POST , {"0":"track"} , {"name":"Test track","duration":335,"artistId":"2773f73c-0042-48be-95f4-2e8c80dfd043","albumId":"4e644455-52fb-4168-b8b8-0a97e2b01131"} , Response: 201 Created
+2024-03-31T15:49:53.638Z | Request: /favs/track/d8c7a8c5-6758-4236-9c6a-b5ad43fcd214 , POST , {"0":"favs/track/d8c7a8c5-6758-4236-9c6a-b5ad43fcd214"} , {} , Response: 201 Created
+2024-03-31T15:49:53.650Z | Request: /favs/album/4e644455-52fb-4168-b8b8-0a97e2b01131 , POST , {"0":"favs/album/4e644455-52fb-4168-b8b8-0a97e2b01131"} , {} , Response: 201 Created
+2024-03-31T15:49:53.666Z | Request: /favs/artist/2773f73c-0042-48be-95f4-2e8c80dfd043 , POST , {"0":"favs/artist/2773f73c-0042-48be-95f4-2e8c80dfd043"} , {} , Response: 201 Created
+2024-03-31T15:49:53.677Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.696Z | Request: /artist/2773f73c-0042-48be-95f4-2e8c80dfd043 , DELETE , {"0":"artist/2773f73c-0042-48be-95f4-2e8c80dfd043"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.710Z | Request: /album/4e644455-52fb-4168-b8b8-0a97e2b01131 , DELETE , {"0":"album/4e644455-52fb-4168-b8b8-0a97e2b01131"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.721Z | Request: /track/d8c7a8c5-6758-4236-9c6a-b5ad43fcd214 , DELETE , {"0":"track/d8c7a8c5-6758-4236-9c6a-b5ad43fcd214"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.732Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.745Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:53.756Z | Request: /favs/artist/114c91ef-d2ae-4b40-a3b5-2ba1f63f94b3 , POST , {"0":"favs/artist/114c91ef-d2ae-4b40-a3b5-2ba1f63f94b3"} , {} , Response: 201 Created
+2024-03-31T15:49:53.767Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.778Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:53.788Z | Request: /favs/album/7a35f454-214c-4e19-a334-655c00f5fb8e , POST , {"0":"favs/album/7a35f454-214c-4e19-a334-655c00f5fb8e"} , {} , Response: 201 Created
+2024-03-31T15:49:53.795Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.806Z | Request: /track , POST , {"0":"track"} , {"name":"Test track","duration":335,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:53.816Z | Request: /favs/track/4a5ea988-85e0-48da-90b5-64fa2e4b5622 , POST , {"0":"favs/track/4a5ea988-85e0-48da-90b5-64fa2e4b5622"} , {} , Response: 201 Created
+2024-03-31T15:49:53.826Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.833Z | Request: /favs/artist/invalid , POST , {"0":"favs/artist/invalid"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:53.839Z | Request: /favs/album/invalid , POST , {"0":"favs/album/invalid"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:53.843Z | Request: /favs/track/invalid , POST , {"0":"favs/track/invalid"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:53.849Z | Request: /favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 422 Unprocessable Entity
+2024-03-31T15:49:53.856Z | Request: /favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 422 Unprocessable Entity
+2024-03-31T15:49:53.861Z | Request: /favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 422 Unprocessable Entity
+2024-03-31T15:49:53.870Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:53.880Z | Request: /favs/album/7dc07c5a-5d2f-4ecd-8a34-09f0b2ec058b , POST , {"0":"favs/album/7dc07c5a-5d2f-4ecd-8a34-09f0b2ec058b"} , {} , Response: 201 Created
+2024-03-31T15:49:53.888Z | Request: /favs/album/7dc07c5a-5d2f-4ecd-8a34-09f0b2ec058b , DELETE , {"0":"favs/album/7dc07c5a-5d2f-4ecd-8a34-09f0b2ec058b"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.894Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.904Z | Request: /album/7dc07c5a-5d2f-4ecd-8a34-09f0b2ec058b , DELETE , {"0":"album/7dc07c5a-5d2f-4ecd-8a34-09f0b2ec058b"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.913Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:53.925Z | Request: /favs/artist/694ab616-fee8-48e5-950c-48d9a74da3bd , POST , {"0":"favs/artist/694ab616-fee8-48e5-950c-48d9a74da3bd"} , {} , Response: 201 Created
+2024-03-31T15:49:53.933Z | Request: /favs/artist/694ab616-fee8-48e5-950c-48d9a74da3bd , DELETE , {"0":"favs/artist/694ab616-fee8-48e5-950c-48d9a74da3bd"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.942Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.951Z | Request: /artist/694ab616-fee8-48e5-950c-48d9a74da3bd , DELETE , {"0":"artist/694ab616-fee8-48e5-950c-48d9a74da3bd"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.960Z | Request: /track , POST , {"0":"track"} , {"name":"Test track","duration":335,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:53.968Z | Request: /favs/track/fc2e5d40-574b-406a-95a8-58ba5fceae50 , POST , {"0":"favs/track/fc2e5d40-574b-406a-95a8-58ba5fceae50"} , {} , Response: 201 Created
+2024-03-31T15:49:53.975Z | Request: /favs/track/fc2e5d40-574b-406a-95a8-58ba5fceae50 , DELETE , {"0":"favs/track/fc2e5d40-574b-406a-95a8-58ba5fceae50"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.983Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:49:53.990Z | Request: /track/fc2e5d40-574b-406a-95a8-58ba5fceae50 , DELETE , {"0":"track/fc2e5d40-574b-406a-95a8-58ba5fceae50"} , {} , Response: 204 No Content
+2024-03-31T15:49:53.995Z | Request: /album/some-invalid-id , DELETE , {"0":"album/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.025Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.033Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.039Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.047Z | Request: /user/881d3d56-f475-4d36-93dc-b22799285c1b , DELETE , {"0":"user/881d3d56-f475-4d36-93dc-b22799285c1b"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.124Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.135Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.143Z | Request: /artist , GET , {"0":"artist"} , {} , Response: 200 OK
+2024-03-31T15:49:54.154Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.161Z | Request: /artist/b3767f3c-66b8-4a24-9ec5-5c7a6c03c381 , GET , {"0":"artist/b3767f3c-66b8-4a24-9ec5-5c7a6c03c381"} , {} , Response: 200 OK
+2024-03-31T15:49:54.170Z | Request: /artist/b3767f3c-66b8-4a24-9ec5-5c7a6c03c381 , DELETE , {"0":"artist/b3767f3c-66b8-4a24-9ec5-5c7a6c03c381"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.176Z | Request: /artist/some-invalid-id , GET , {"0":"artist/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.184Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.192Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.204Z | Request: /artist/f42a9068-b007-47da-977c-8d755f212919 , DELETE , {"0":"artist/f42a9068-b007-47da-977c-8d755f212919"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.214Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist"} , Response: 400 Bad Request
+2024-03-31T15:49:54.216Z | Request: /artist , POST , {"0":"artist"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.221Z | Request: /artist , POST , {"0":"artist"} , {"grammy":true} , Response: 400 Bad Request
+2024-03-31T15:49:54.220Z | Request: /artist , POST , {"0":"artist"} , {"name":null,"grammy":"true"} , Response: 400 Bad Request
+2024-03-31T15:49:54.229Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.236Z | Request: /artist/f3475692-a00f-4ad2-b108-34e3112dc201 , PUT , {"0":"artist/f3475692-a00f-4ad2-b108-34e3112dc201"} , {"name":"TEST_artist","grammy":false} , Response: 200 OK
+2024-03-31T15:49:54.246Z | Request: /artist/f3475692-a00f-4ad2-b108-34e3112dc201 , DELETE , {"0":"artist/f3475692-a00f-4ad2-b108-34e3112dc201"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.253Z | Request: /artist/some-invalid-id , PUT , {"0":"artist/some-invalid-id"} , {"name":"TEST_artist","grammy":false} , Response: 400 Bad Request
+2024-03-31T15:49:54.261Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.265Z | Request: /artist/3135a1dc-8ba2-4ebc-ab88-6083c511ec83 , PUT , {"0":"artist/3135a1dc-8ba2-4ebc-ab88-6083c511ec83"} , {"name":12345,"grammy":"false"} , Response: 400 Bad Request
+2024-03-31T15:49:54.275Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_artist","grammy":false} , Response: 404 Not Found
+2024-03-31T15:49:54.283Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.297Z | Request: /artist/87766082-a0d1-497b-bf48-ede160a62ae1 , DELETE , {"0":"artist/87766082-a0d1-497b-bf48-ede160a62ae1"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.304Z | Request: /artist/87766082-a0d1-497b-bf48-ede160a62ae1 , GET , {"0":"artist/87766082-a0d1-497b-bf48-ede160a62ae1"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.310Z | Request: /artist/some-invalid-id , DELETE , {"0":"artist/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.318Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.327Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.335Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_track","albumId":null,"artistId":"21676894-42b2-4587-ab1d-40d212dd1bc4","duration":200} , Response: 201 Created
+2024-03-31T15:49:54.346Z | Request: /artist/21676894-42b2-4587-ab1d-40d212dd1bc4 , DELETE , {"0":"artist/21676894-42b2-4587-ab1d-40d212dd1bc4"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.353Z | Request: /track/5b9a09b9-6367-4257-a0a2-7c1a60c9c614 , GET , {"0":"track/5b9a09b9-6367-4257-a0a2-7c1a60c9c614"} , {} , Response: 200 OK
+2024-03-31T15:49:54.362Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.371Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_album","year":2023,"artistId":"19063325-24ef-42f5-9c6b-0ae23b901964"} , Response: 201 Created
+2024-03-31T15:49:54.382Z | Request: /artist/19063325-24ef-42f5-9c6b-0ae23b901964 , DELETE , {"0":"artist/19063325-24ef-42f5-9c6b-0ae23b901964"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.389Z | Request: /album/45e2afef-43d6-482f-85c2-e54926b96329 , GET , {"0":"album/45e2afef-43d6-482f-85c2-e54926b96329"} , {} , Response: 200 OK
+2024-03-31T15:49:54.397Z | Request: /user/8a401747-a392-4a80-a875-ba9c568b8560 , DELETE , {"0":"user/8a401747-a392-4a80-a875-ba9c568b8560"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.457Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.467Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.475Z | Request: /album , GET , {"0":"album"} , {} , Response: 200 OK
+2024-03-31T15:49:54.486Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:54.492Z | Request: /album/24a086ff-9bcd-4cdc-aef4-a716c8197424 , GET , {"0":"album/24a086ff-9bcd-4cdc-aef4-a716c8197424"} , {} , Response: 200 OK
+2024-03-31T15:49:54.502Z | Request: /album/24a086ff-9bcd-4cdc-aef4-a716c8197424 , DELETE , {"0":"album/24a086ff-9bcd-4cdc-aef4-a716c8197424"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.508Z | Request: /album/some-invalid-id , GET , {"0":"album/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.515Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.525Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:54.536Z | Request: /album/dcd68893-75b7-484d-9822-0c6fcba5990c , DELETE , {"0":"album/dcd68893-75b7-484d-9822-0c6fcba5990c"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.544Z | Request: /album , POST , {"0":"album"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.545Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM"} , Response: 400 Bad Request
+2024-03-31T15:49:54.548Z | Request: /album , POST , {"0":"album"} , {"year":2022} , Response: 400 Bad Request
+2024-03-31T15:49:54.549Z | Request: /album , POST , {"0":"album"} , {"name":null,"year":"2022"} , Response: 400 Bad Request
+2024-03-31T15:49:54.556Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:54.564Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:49:54.572Z | Request: /album/8696a97e-dfd9-4f5d-b1b6-a3a8716c8253 , PUT , {"0":"album/8696a97e-dfd9-4f5d-b1b6-a3a8716c8253"} , {"name":"TEST_ALBUM","year":2021,"artistId":"d39eb5d9-1c16-4f4a-9baf-678cdd708e01"} , Response: 200 OK
+2024-03-31T15:49:54.581Z | Request: /album/8696a97e-dfd9-4f5d-b1b6-a3a8716c8253 , DELETE , {"0":"album/8696a97e-dfd9-4f5d-b1b6-a3a8716c8253"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.589Z | Request: /album/some-invalid-id , PUT , {"0":"album/some-invalid-id"} , {"name":"TEST_ALBUM","year":2021,"artistId":null} , Response: 400 Bad Request
+2024-03-31T15:49:54.598Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:54.604Z | Request: /album/94796d5a-4936-46f3-bdd8-970a481d0bf6 , PUT , {"0":"album/94796d5a-4936-46f3-bdd8-970a481d0bf6"} , {"name":true,"year":"2021","artistId":123} , Response: 400 Bad Request
+2024-03-31T15:49:54.612Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_ALBUM","year":2021,"artistId":null} , Response: 404 Not Found
+2024-03-31T15:49:54.621Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:54.631Z | Request: /album/25184335-757e-40a8-b4a2-babeea3db215 , DELETE , {"0":"album/25184335-757e-40a8-b4a2-babeea3db215"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.637Z | Request: /album/25184335-757e-40a8-b4a2-babeea3db215 , GET , {"0":"album/25184335-757e-40a8-b4a2-babeea3db215"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.642Z | Request: /album/some-invalid-id , DELETE , {"0":"album/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.649Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.658Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:49:54.668Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":"9e3cdf66-4239-4b8f-8393-b8efa88319e2"} , Response: 201 Created
+2024-03-31T15:49:54.676Z | Request: /album/9e3cdf66-4239-4b8f-8393-b8efa88319e2 , DELETE , {"0":"album/9e3cdf66-4239-4b8f-8393-b8efa88319e2"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.682Z | Request: /track/e5b8f182-2b37-4370-a90d-3b02bf3be86e , GET , {"0":"track/e5b8f182-2b37-4370-a90d-3b02bf3be86e"} , {} , Response: 200 OK
+2024-03-31T15:49:54.690Z | Request: /user/4de931c2-21b7-4cde-93b2-8a9785fab647 , DELETE , {"0":"user/4de931c2-21b7-4cde-93b2-8a9785fab647"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.747Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.755Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.762Z | Request: /track , GET , {"0":"track"} , {} , Response: 200 OK
+2024-03-31T15:49:54.772Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:54.778Z | Request: /track/b35f6ac5-a80d-4f94-b4d9-6048b18b9d97 , GET , {"0":"track/b35f6ac5-a80d-4f94-b4d9-6048b18b9d97"} , {} , Response: 200 OK
+2024-03-31T15:49:54.785Z | Request: /track/b35f6ac5-a80d-4f94-b4d9-6048b18b9d97 , DELETE , {"0":"track/b35f6ac5-a80d-4f94-b4d9-6048b18b9d97"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.792Z | Request: /track/some-invalid-id , GET , {"0":"track/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.798Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.805Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:54.812Z | Request: /track/bf3f44fb-c527-44ce-a9aa-7488f3e14f51 , DELETE , {"0":"track/bf3f44fb-c527-44ce-a9aa-7488f3e14f51"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.821Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK"} , Response: 400 Bad Request
+2024-03-31T15:49:54.820Z | Request: /track , POST , {"0":"track"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.825Z | Request: /track , POST , {"0":"track"} , {"duration":99} , Response: 400 Bad Request
+2024-03-31T15:49:54.826Z | Request: /track , POST , {"0":"track"} , {"name":null,"duration":"99"} , Response: 400 Bad Request
+2024-03-31T15:49:54.833Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:54.842Z | Request: /track/0b4610db-ccc7-41a9-b352-12d47ec78fe8 , PUT , {"0":"track/0b4610db-ccc7-41a9-b352-12d47ec78fe8"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 200 OK
+2024-03-31T15:49:54.850Z | Request: /track/0b4610db-ccc7-41a9-b352-12d47ec78fe8 , DELETE , {"0":"track/0b4610db-ccc7-41a9-b352-12d47ec78fe8"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.855Z | Request: /track/some-invalid-id , PUT , {"0":"track/some-invalid-id"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 400 Bad Request
+2024-03-31T15:49:54.862Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:54.868Z | Request: /track/07ae8601-f2c9-4a9b-8418-7bddbb346074 , PUT , {"0":"track/07ae8601-f2c9-4a9b-8418-7bddbb346074"} , {"name":null,"duration":"188","artistId":123,"albumId":123} , Response: 400 Bad Request
+2024-03-31T15:49:54.875Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 404 Not Found
+2024-03-31T15:49:54.883Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:49:54.890Z | Request: /track/661d2470-da62-4698-9ead-ffd586682033 , DELETE , {"0":"track/661d2470-da62-4698-9ead-ffd586682033"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.896Z | Request: /track/661d2470-da62-4698-9ead-ffd586682033 , GET , {"0":"track/661d2470-da62-4698-9ead-ffd586682033"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.903Z | Request: /track/some-invalid-id , DELETE , {"0":"track/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:54.910Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:54.916Z | Request: /user/a466880a-21a4-4b38-9e50-31df9e68106a , DELETE , {"0":"user/a466880a-21a4-4b38-9e50-31df9e68106a"} , {} , Response: 204 No Content
+2024-03-31T15:49:54.971Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.979Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:49:54.987Z | Request: /user , GET , {"0":"user"} , {} , Response: 200 OK
+2024-03-31T15:49:54.997Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:49:55.003Z | Request: /user/17511e5b-b33e-4430-87b7-257508330744 , GET , {"0":"user/17511e5b-b33e-4430-87b7-257508330744"} , {} , Response: 200 OK
+2024-03-31T15:49:55.010Z | Request: /user/17511e5b-b33e-4430-87b7-257508330744 , DELETE , {"0":"user/17511e5b-b33e-4430-87b7-257508330744"} , {} , Response: 204 No Content
+2024-03-31T15:49:55.015Z | Request: /user/some-invalid-id , GET , {"0":"user/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:55.023Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:55.031Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:49:55.039Z | Request: /user/b1045cb9-47d0-4ce8-93ca-2bd38c0e91a3 , DELETE , {"0":"user/b1045cb9-47d0-4ce8-93ca-2bd38c0e91a3"} , {} , Response: 204 No Content
+2024-03-31T15:49:55.047Z | Request: /user , POST , {"0":"user"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:55.048Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN"} , Response: 400 Bad Request
+2024-03-31T15:49:55.053Z | Request: /user , POST , {"0":"user"} , {"password":"TEST_PASSWORD"} , Response: 400 Bad Request
+2024-03-31T15:49:55.055Z | Request: /user , POST , {"0":"user"} , {"login":null,"password":12345} , Response: 400 Bad Request
+2024-03-31T15:49:55.063Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:49:55.075Z | Request: /user/641eb4d5-dbcb-4334-86f1-8c1e2214e516 , PUT , {"0":"user/641eb4d5-dbcb-4334-86f1-8c1e2214e516"} , {"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} , Response: 200 OK
+2024-03-31T15:49:55.083Z | Request: /user/641eb4d5-dbcb-4334-86f1-8c1e2214e516 , PUT , {"0":"user/641eb4d5-dbcb-4334-86f1-8c1e2214e516"} , {"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} , Response: 403 Forbidden
+2024-03-31T15:49:55.089Z | Request: /user/641eb4d5-dbcb-4334-86f1-8c1e2214e516 , DELETE , {"0":"user/641eb4d5-dbcb-4334-86f1-8c1e2214e516"} , {} , Response: 204 No Content
+2024-03-31T15:49:55.096Z | Request: /user/some-invalid-id , PUT , {"0":"user/some-invalid-id"} , {"oldPassword":"test","newPassword":"fake"} , Response: 400 Bad Request
+2024-03-31T15:49:55.101Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:55.107Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"oldPassword":"test","newPassword":"fake"} , Response: 404 Not Found
+2024-03-31T15:49:55.114Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:49:55.119Z | Request: /user/349d9ac5-7b9a-4475-a0c2-d9d27509d940 , DELETE , {"0":"user/349d9ac5-7b9a-4475-a0c2-d9d27509d940"} , {} , Response: 204 No Content
+2024-03-31T15:49:55.123Z | Request: /user/349d9ac5-7b9a-4475-a0c2-d9d27509d940 , GET , {"0":"user/349d9ac5-7b9a-4475-a0c2-d9d27509d940"} , {} , Response: 404 Not Found
+2024-03-31T15:49:55.129Z | Request: /user/some-invalid-id , DELETE , {"0":"user/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:49:55.138Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:49:55.148Z | Request: /user/ad233e0e-0462-4e1d-8918-b02061ee0ee2 , DELETE , {"0":"user/ad233e0e-0462-4e1d-8918-b02061ee0ee2"} , {} , Response: 204 No Content
+2024-03-31T15:49:55.204Z | Request: /track , GET , {"0":"track"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.208Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.211Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 401 Unauthorized
+2024-03-31T15:49:55.213Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 401 Unauthorized
+2024-03-31T15:49:55.216Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.259Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.262Z | Request: /favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.267Z | Request: /favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.271Z | Request: /favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.275Z | Request: /favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.278Z | Request: /favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.281Z | Request: /favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.330Z | Request: /artist , GET , {"0":"artist"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.333Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.337Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 401 Unauthorized
+2024-03-31T15:49:55.340Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_artist","grammy":false} , Response: 401 Unauthorized
+2024-03-31T15:49:55.342Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.394Z | Request: /user , GET , {"0":"user"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.397Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.400Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 401 Unauthorized
+2024-03-31T15:49:55.403Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} , Response: 401 Unauthorized
+2024-03-31T15:49:55.405Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.448Z | Request: /album , GET , {"0":"album"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.450Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:49:55.453Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 401 Unauthorized
+2024-03-31T15:49:55.455Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_ALBUM","year":2021,"artistId":"0a35dd62-e09f-444b-a628-f4e7c6954f57"} , Response: 401 Unauthorized
+2024-03-31T15:49:55.458Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
