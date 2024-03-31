@@ -37,3 +37,6 @@ lerna-debug.log*
 pgdata/
 pglog/
 pgconf/
+
+# LOGS
+app_logs/*-rotated-*.log

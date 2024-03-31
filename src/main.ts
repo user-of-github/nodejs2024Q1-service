@@ -13,13 +13,13 @@ const bootstrap = async (): Promise<void> => {
   }
 
   const app = await NestFactory.create(AppModule, {
-    bufferLogs: true
+    bufferLogs: true,
   });
 
   app.useLogger(app.get(CustomLoggerService));
-  app.useGlobalPipes(new ValidationPipe({ transform: true}));
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
   await app.listen(port);
-}
+};
 
 bootstrap();

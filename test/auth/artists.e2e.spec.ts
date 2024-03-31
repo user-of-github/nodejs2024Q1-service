@@ -14,29 +14,19 @@ describe('artist (e2e)', () => {
   const commonHeaders = { Accept: 'application/json' };
   describe('GET all artists', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .get(artistsRoutes.getAll)
-        .set(commonHeaders)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.get(artistsRoutes.getAll).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('GET artist by id', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .get(artistsRoutes.getById(randomUUID))
-        .set(commonHeaders)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.get(artistsRoutes.getById(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('POST', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .post(artistsRoutes.create)
-        .set(commonHeaders)
-        .send(createArtistDto)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.post(artistsRoutes.create).set(commonHeaders).send(createArtistDto).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
@@ -55,10 +45,7 @@ describe('artist (e2e)', () => {
 
   describe('DELETE', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .delete(artistsRoutes.delete(randomUUID))
-        .set(commonHeaders)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.delete(artistsRoutes.delete(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 });

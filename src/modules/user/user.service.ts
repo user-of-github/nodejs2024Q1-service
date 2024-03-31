@@ -1,10 +1,4 @@
-import {
-  HttpException,
-  HttpStatus,
-  Inject,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
 import { toResponseUser, User, type UserResponse } from '../../types/User';
 import type { CreateUserDto } from './dto/createUser';
@@ -37,10 +31,7 @@ export class UserService {
     return toResponseUser(createdUser);
   }
 
-  public async updateUserPassword(
-    id: string,
-    dto: UpdatePasswordDto,
-  ): Promise<UserResponse> {
+  public async updateUserPassword(id: string, dto: UpdatePasswordDto): Promise<UserResponse> {
     const user = await this.databaseService.getUserById(id);
 
     if (!user) {

@@ -84,14 +84,11 @@ export class CustomLoggerService extends ConsoleLogger {
     return CustomLoggerService.levels[logTypeName] <= this.loggingLevel;
   }
 
-  private logToFile(
-    loggingLevel: LogTypeName,
-    messageText: string,
-  ): void {
+  private logToFile(loggingLevel: LogTypeName, messageText: string): void {
     const filePath = loggingLevel !== 'error' ? this.logsFilePath : this.errorsFilePath;
     const message = `${new Date().toISOString()} | ${messageText}`;
     const writeLog = (): void => {
-      fs.appendFile(filePath, '\n' + message, { encoding: 'utf-8' }, error => {
+      fs.appendFile(filePath, message + '\n', { encoding: 'utf-8' }, (error) => {
         if (error) {
           throw error;
         }
@@ -106,14 +103,10 @@ export class CustomLoggerService extends ConsoleLogger {
       }
 
       // Log file Rotation: https://en.wikipedia.org/wiki/Log_rotation
-
       if (stats.size >= this.logFileMaxSizeBytes) {
-        const newPath = filePath.replace(
-          `.${CustomLoggerService.logFileExtension}`,
-          `rotated-${new Date().getTime()}.log`
-        );
+        const newPath = filePath.replace(`.${CustomLoggerService.logFileExtension}`, `-rotated-${new Date().getTime()}.log`);
 
-        fs.rename(filePath, newPath, error => {
+        fs.rename(filePath, newPath, (error) => {
           if (error) {
             throw error;
           } else {

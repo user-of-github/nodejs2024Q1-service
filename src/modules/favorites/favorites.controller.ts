@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Delete,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Inject,
-  Post,
-} from '@nestjs/common';
+import { Controller, Delete, Get, HttpCode, HttpStatus, Inject, Post } from '@nestjs/common';
 import type { FavoritesResponse } from '../../types/Favorites';
 import { FavoritesService } from './favorites.service';
 import { UUIDParam } from '../../helpers/UUIDParam';
@@ -28,9 +20,7 @@ export class FavoritesController {
 
   @Delete('track/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  public async removeTrackFromFavorites(
-    @UUIDParam('id') id: string,
-  ): Promise<void> {
+  public async removeTrackFromFavorites(@UUIDParam('id') id: string): Promise<void> {
     return await this.favoritesService.removeTrackFromFavorites(id);
   }
 
@@ -41,24 +31,18 @@ export class FavoritesController {
 
   @Delete('album/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  public async removeAlbumFromFavorites(
-    @UUIDParam('id') id: string,
-  ): Promise<void> {
+  public async removeAlbumFromFavorites(@UUIDParam('id') id: string): Promise<void> {
     return await this.favoritesService.removeAlbumFromFavorites(id);
   }
 
   @Post('artist/:id')
-  public async addArtistToFavorites(
-    @UUIDParam('id') id: string,
-  ): Promise<void> {
+  public async addArtistToFavorites(@UUIDParam('id') id: string): Promise<void> {
     return await this.favoritesService.addArtistToFavorites(id);
   }
 
   @Delete('artist/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  public async removeArtistFromFavorites(
-    @UUIDParam('id') id: string,
-  ): Promise<void> {
+  public async removeArtistFromFavorites(@UUIDParam('id') id: string): Promise<void> {
     return await this.favoritesService.removeArtistFromFavorites(id);
   }
 }

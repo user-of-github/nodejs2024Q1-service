@@ -15,29 +15,19 @@ describe('Users (e2e)', () => {
 
   describe('GET all users', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .get(usersRoutes.getAll)
-        .set(commonHeaders)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.get(usersRoutes.getAll).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('GET user by id', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .get(usersRoutes.getById(randomUUID))
-        .set(commonHeaders)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.get(usersRoutes.getById(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
   describe('POST', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .post(usersRoutes.create)
-        .set(commonHeaders)
-        .send(createUserDto)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.post(usersRoutes.create).set(commonHeaders).send(createUserDto).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 
@@ -56,10 +46,7 @@ describe('Users (e2e)', () => {
 
   describe('DELETE', () => {
     it('should get UNAUTHORIZED without token presented', async () => {
-      await request
-        .delete(usersRoutes.delete(randomUUID))
-        .set(commonHeaders)
-        .expect(StatusCodes.UNAUTHORIZED);
+      await request.delete(usersRoutes.delete(randomUUID)).set(commonHeaders).expect(StatusCodes.UNAUTHORIZED);
     });
   });
 });
