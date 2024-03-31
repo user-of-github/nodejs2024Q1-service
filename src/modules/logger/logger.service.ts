@@ -95,7 +95,7 @@ export class CustomLoggerService extends ConsoleLogger {
       });
     };
 
-    // Logging must not block base thread
+    // Important! Best practise: Logging must not block base thread
     // @TODO: check if callbacks solve this problem (instead of using await)
     fs.stat(filePath, (error, stats) => {
       if (error) {

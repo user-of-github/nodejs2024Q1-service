@@ -16,6 +16,7 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js', 'pgdata', 'pglogs', 'node_modules'],
   rules: {
+    'max-len': ['warn', 120],
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',

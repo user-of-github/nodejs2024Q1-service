@@ -19,6 +19,7 @@ __My ones are listed below:__
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
   - _Note: On Linux you can use command `sudo lsof -i:5432` and `sudo lsof -i:4000` to check, if ports are free_
 - Run `npm install`  
+- Ensure that there is `app_logs/logs.log` file and `app_logs/errors.log` file (towards project root) (check relevant paths of lof-files in `.env` file). While running program you will be able to see online content of log-files, even if app is in docker, because directory is mounted  
 - Uncomment whole `docker-compose`, in `.env` make sure, that `DATABASE_URL` for DOCKER is used (see comments in `env`).  
 Run `docker compose up` or `sudo docker compose up`
 #### To run app without docker:  
@@ -35,8 +36,7 @@ _... waiting some time ..._
 
 ### 1.3 Testing
 - _// in separate terminal :)_
-- If you haven't done before, `npm install`  
-- `npm run test`  
+- If you haven't done before, `npm install`    
 - `npm run test:auth`  
 - `npm run test:refresh`  
 - __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    

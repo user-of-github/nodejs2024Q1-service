@@ -1,0 +1,671 @@
+2024-03-31T14:57:55.727Z | DatabaseModule dependencies initialized
+2024-03-31T14:57:55.727Z | JwtModule dependencies initialized
+2024-03-31T14:57:55.709Z | Starting Nest application...
+2024-03-31T14:57:55.728Z | ConfigHostModule dependencies initialized
+2024-03-31T14:57:55.728Z | ConfigModule dependencies initialized
+2024-03-31T14:57:55.728Z | ConfigModule dependencies initialized
+2024-03-31T14:57:55.728Z | UserModule dependencies initialized
+2024-03-31T14:57:55.728Z | TrackModule dependencies initialized
+2024-03-31T14:57:55.729Z | ArtistModule dependencies initialized
+2024-03-31T14:57:55.729Z | AlbumModule dependencies initialized
+2024-03-31T14:57:55.730Z | FavoritesModule dependencies initialized
+2024-03-31T14:57:55.730Z | AppModule dependencies initialized
+2024-03-31T14:57:55.731Z | AuthModule dependencies initialized
+2024-03-31T14:57:55.731Z | UserController {/user}:
+2024-03-31T14:57:55.731Z | Mapped {/user, GET} route
+2024-03-31T14:57:55.732Z | Mapped {/user, POST} route
+2024-03-31T14:57:55.732Z | Mapped {/user/:id, GET} route
+2024-03-31T14:57:55.732Z | Mapped {/user/:id, PUT} route
+2024-03-31T14:57:55.733Z | TrackController {/track}:
+2024-03-31T14:57:55.732Z | Mapped {/user/:id, DELETE} route
+2024-03-31T14:57:55.733Z | Mapped {/track, GET} route
+2024-03-31T14:57:55.733Z | Mapped {/track/:id, GET} route
+2024-03-31T14:57:55.733Z | Mapped {/track/:id, PUT} route
+2024-03-31T14:57:55.733Z | Mapped {/track, POST} route
+2024-03-31T14:57:55.733Z | Mapped {/track/:id, DELETE} route
+2024-03-31T14:57:55.734Z | ArtistController {/artist}:
+2024-03-31T14:57:55.734Z | Mapped {/artist, GET} route
+2024-03-31T14:57:55.734Z | Mapped {/artist/:id, GET} route
+2024-03-31T14:57:55.734Z | Mapped {/artist/:id, PUT} route
+2024-03-31T14:57:55.734Z | Mapped {/artist, POST} route
+2024-03-31T14:57:55.734Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T14:57:55.735Z | Mapped {/album, GET} route
+2024-03-31T14:57:55.735Z | AlbumController {/album}:
+2024-03-31T14:57:55.735Z | Mapped {/album/:id, GET} route
+2024-03-31T14:57:55.735Z | Mapped {/album, POST} route
+2024-03-31T14:57:55.735Z | Mapped {/album/:id, PUT} route
+2024-03-31T14:57:55.736Z | Mapped {/favs, GET} route
+2024-03-31T14:57:55.736Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T14:57:55.736Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T14:57:55.736Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T14:57:55.736Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T14:57:55.735Z | Mapped {/album/:id, DELETE} route
+2024-03-31T14:57:55.736Z | FavoritesController {/favs}:
+2024-03-31T14:57:55.736Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T14:57:55.737Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T14:57:55.737Z | Mapped {/auth/signup, POST} route
+2024-03-31T14:57:55.737Z | Mapped {/auth/refresh, POST} route
+2024-03-31T14:57:55.737Z | AuthController {/auth}:
+2024-03-31T14:57:55.737Z | Mapped {/auth/login, POST} route
+2024-03-31T14:57:55.737Z | Mapped {/auth/profile, GET} route
+2024-03-31T14:57:55.738Z | Nest application successfully started
+2024-03-31T15:03:52.814Z | Starting Nest application...
+2024-03-31T15:03:52.844Z | DatabaseModule dependencies initialized
+2024-03-31T15:03:52.844Z | JwtModule dependencies initialized
+2024-03-31T15:03:52.844Z | ConfigHostModule dependencies initialized
+2024-03-31T15:03:52.845Z | ConfigModule dependencies initialized
+2024-03-31T15:03:52.845Z | ConfigModule dependencies initialized
+2024-03-31T15:03:52.845Z | UserModule dependencies initialized
+2024-03-31T15:03:52.846Z | TrackModule dependencies initialized
+2024-03-31T15:03:52.846Z | ArtistModule dependencies initialized
+2024-03-31T15:03:52.847Z | AlbumModule dependencies initialized
+2024-03-31T15:03:52.847Z | FavoritesModule dependencies initialized
+2024-03-31T15:03:52.848Z | AppModule dependencies initialized
+2024-03-31T15:03:52.848Z | AuthModule dependencies initialized
+2024-03-31T15:03:52.848Z | Mapped {/user, GET} route
+2024-03-31T15:03:52.848Z | UserController {/user}:
+2024-03-31T15:03:52.849Z | Mapped {/user/:id, GET} route
+2024-03-31T15:03:52.849Z | Mapped {/user, POST} route
+2024-03-31T15:03:52.850Z | TrackController {/track}:
+2024-03-31T15:03:52.849Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:03:52.849Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:03:52.850Z | Mapped {/track, GET} route
+2024-03-31T15:03:52.850Z | Mapped {/track/:id, GET} route
+2024-03-31T15:03:52.851Z | Mapped {/track, POST} route
+2024-03-31T15:03:52.851Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:03:52.851Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:03:52.851Z | ArtistController {/artist}:
+2024-03-31T15:03:52.851Z | Mapped {/artist, GET} route
+2024-03-31T15:03:52.852Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:03:52.852Z | Mapped {/artist, POST} route
+2024-03-31T15:03:52.852Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:03:52.852Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:03:52.853Z | AlbumController {/album}:
+2024-03-31T15:03:52.853Z | Mapped {/album, GET} route
+2024-03-31T15:03:52.853Z | Mapped {/album/:id, GET} route
+2024-03-31T15:03:52.853Z | Mapped {/album, POST} route
+2024-03-31T15:03:52.853Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:03:52.854Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:03:52.854Z | FavoritesController {/favs}:
+2024-03-31T15:03:52.854Z | Mapped {/favs, GET} route
+2024-03-31T15:03:52.855Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:03:52.856Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:03:52.856Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:03:52.856Z | AuthController {/auth}:
+2024-03-31T15:03:52.856Z | Mapped {/auth/login, POST} route
+2024-03-31T15:03:52.857Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:03:52.857Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:03:52.857Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:03:52.857Z | Nest application successfully started
+2024-03-31T15:03:52.855Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:03:52.855Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:03:52.855Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:05:15.209Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:15.234Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:15.251Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYjY5YTRiMi1iOWViLTQ1YzgtYjUwYS1lNDM0ZWY1MDQ1MDYiLCJsb2dpbiI6IlRFU1RfQVVUSF9MT0dJTiIsImlhdCI6MTcxMTg5NzUxNSwiZXhwIjoxNzExOTgzOTE1fQ.n9tUD-IEuG4hHbawQ2BbJkq4PXCuvv7uChBdWPtq68g"} , Response: 200 OK
+2024-03-31T15:05:15.272Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {"refreshToken":"0.24584257570197665"} , Response: 403 Forbidden
+2024-03-31T15:05:15.279Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:15.290Z | Request: /auth/refresh , POST , {"0":"auth/refresh"} , {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYjY5YTRiMi1iOWViLTQ1YzgtYjUwYS1lNDM0ZWY1MDQ1MDYiLCJsb2dpbiI6IlRFU1RfQVVUSF9MT0dJTiIsImlhdCI6MTcxMTg5NzUxNSwiZXhwIjoxNzExODk3NTE1fQ.TQkn1r_0mmFUvy8EuelwKh1cWPbRHuax9mQPOqokdBA"} , Response: 403 Forbidden
+2024-03-31T15:05:15.311Z | Request: /user/2b69a4b2-b9eb-45c8-b50a-e434ef504506 , DELETE , {"0":"user/2b69a4b2-b9eb-45c8-b50a-e434ef504506"} , {} , Response: 204 No Content
+2024-03-31T15:05:20.951Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:20.970Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:20.989Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.010Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.023Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":"90786db1-c396-4699-8c6c-4469a72e45d6"} , Response: 201 Created
+2024-03-31T15:05:21.032Z | Request: /track , POST , {"0":"track"} , {"name":"Test track","duration":335,"artistId":"90786db1-c396-4699-8c6c-4469a72e45d6","albumId":"02b8fa16-1751-4a6b-b086-b46c153d293c"} , Response: 201 Created
+2024-03-31T15:05:21.043Z | Request: /favs/track/4c34b11c-8777-4152-972b-a8b6164abef8 , POST , {"0":"favs/track/4c34b11c-8777-4152-972b-a8b6164abef8"} , {} , Response: 201 Created
+2024-03-31T15:05:21.054Z | Request: /favs/album/02b8fa16-1751-4a6b-b086-b46c153d293c , POST , {"0":"favs/album/02b8fa16-1751-4a6b-b086-b46c153d293c"} , {} , Response: 201 Created
+2024-03-31T15:05:21.068Z | Request: /favs/artist/90786db1-c396-4699-8c6c-4469a72e45d6 , POST , {"0":"favs/artist/90786db1-c396-4699-8c6c-4469a72e45d6"} , {} , Response: 201 Created
+2024-03-31T15:05:21.080Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.095Z | Request: /artist/90786db1-c396-4699-8c6c-4469a72e45d6 , DELETE , {"0":"artist/90786db1-c396-4699-8c6c-4469a72e45d6"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.108Z | Request: /album/02b8fa16-1751-4a6b-b086-b46c153d293c , DELETE , {"0":"album/02b8fa16-1751-4a6b-b086-b46c153d293c"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.117Z | Request: /track/4c34b11c-8777-4152-972b-a8b6164abef8 , DELETE , {"0":"track/4c34b11c-8777-4152-972b-a8b6164abef8"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.126Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.138Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.149Z | Request: /favs/artist/7c619023-ecf7-46ec-9147-46728a35bc0c , POST , {"0":"favs/artist/7c619023-ecf7-46ec-9147-46728a35bc0c"} , {} , Response: 201 Created
+2024-03-31T15:05:21.157Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.168Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:21.178Z | Request: /favs/album/a4459394-716b-4b65-beea-44e2d3a31e38 , POST , {"0":"favs/album/a4459394-716b-4b65-beea-44e2d3a31e38"} , {} , Response: 201 Created
+2024-03-31T15:05:21.187Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.198Z | Request: /track , POST , {"0":"track"} , {"name":"Test track","duration":335,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:21.207Z | Request: /favs/track/61ac671e-2616-4616-ade9-41c752c0e33c , POST , {"0":"favs/track/61ac671e-2616-4616-ade9-41c752c0e33c"} , {} , Response: 201 Created
+2024-03-31T15:05:21.216Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.223Z | Request: /favs/artist/invalid , POST , {"0":"favs/artist/invalid"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.228Z | Request: /favs/album/invalid , POST , {"0":"favs/album/invalid"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.235Z | Request: /favs/track/invalid , POST , {"0":"favs/track/invalid"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.242Z | Request: /favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 422 Unprocessable Entity
+2024-03-31T15:05:21.248Z | Request: /favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 422 Unprocessable Entity
+2024-03-31T15:05:21.259Z | Request: /favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 422 Unprocessable Entity
+2024-03-31T15:05:21.269Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:21.279Z | Request: /favs/album/e73fbaee-7ebb-4d3a-ab2f-07eefddef169 , POST , {"0":"favs/album/e73fbaee-7ebb-4d3a-ab2f-07eefddef169"} , {} , Response: 201 Created
+2024-03-31T15:05:21.287Z | Request: /favs/album/e73fbaee-7ebb-4d3a-ab2f-07eefddef169 , DELETE , {"0":"favs/album/e73fbaee-7ebb-4d3a-ab2f-07eefddef169"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.295Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.304Z | Request: /album/e73fbaee-7ebb-4d3a-ab2f-07eefddef169 , DELETE , {"0":"album/e73fbaee-7ebb-4d3a-ab2f-07eefddef169"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.313Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.324Z | Request: /favs/artist/8505b0cd-4875-409d-bcbd-37a694f8a743 , POST , {"0":"favs/artist/8505b0cd-4875-409d-bcbd-37a694f8a743"} , {} , Response: 201 Created
+2024-03-31T15:05:21.330Z | Request: /favs/artist/8505b0cd-4875-409d-bcbd-37a694f8a743 , DELETE , {"0":"favs/artist/8505b0cd-4875-409d-bcbd-37a694f8a743"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.338Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.348Z | Request: /artist/8505b0cd-4875-409d-bcbd-37a694f8a743 , DELETE , {"0":"artist/8505b0cd-4875-409d-bcbd-37a694f8a743"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.357Z | Request: /track , POST , {"0":"track"} , {"name":"Test track","duration":335,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:21.366Z | Request: /favs/track/1deec23e-1872-45bc-be35-8ef6c3496d45 , POST , {"0":"favs/track/1deec23e-1872-45bc-be35-8ef6c3496d45"} , {} , Response: 201 Created
+2024-03-31T15:05:21.374Z | Request: /favs/track/1deec23e-1872-45bc-be35-8ef6c3496d45 , DELETE , {"0":"favs/track/1deec23e-1872-45bc-be35-8ef6c3496d45"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.383Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 200 OK
+2024-03-31T15:05:21.391Z | Request: /track/1deec23e-1872-45bc-be35-8ef6c3496d45 , DELETE , {"0":"track/1deec23e-1872-45bc-be35-8ef6c3496d45"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.397Z | Request: /album/some-invalid-id , DELETE , {"0":"album/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.419Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:21.429Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:21.436Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:21.443Z | Request: /user/a6c05350-0be3-48c7-874c-1743fc950471 , DELETE , {"0":"user/a6c05350-0be3-48c7-874c-1743fc950471"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.656Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:21.667Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:21.674Z | Request: /artist , GET , {"0":"artist"} , {} , Response: 200 OK
+2024-03-31T15:05:21.684Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.691Z | Request: /artist/adbc9e2a-8e5f-4698-a0f8-a98a46c8099c , GET , {"0":"artist/adbc9e2a-8e5f-4698-a0f8-a98a46c8099c"} , {} , Response: 200 OK
+2024-03-31T15:05:21.702Z | Request: /artist/adbc9e2a-8e5f-4698-a0f8-a98a46c8099c , DELETE , {"0":"artist/adbc9e2a-8e5f-4698-a0f8-a98a46c8099c"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.708Z | Request: /artist/some-invalid-id , GET , {"0":"artist/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.716Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:21.724Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.735Z | Request: /artist/920f85fb-7a5b-4dac-a9dd-db0529d08067 , DELETE , {"0":"artist/920f85fb-7a5b-4dac-a9dd-db0529d08067"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.745Z | Request: /artist , POST , {"0":"artist"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.747Z | Request: /artist , POST , {"0":"artist"} , {"grammy":true} , Response: 400 Bad Request
+2024-03-31T15:05:21.751Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist"} , Response: 400 Bad Request
+2024-03-31T15:05:21.754Z | Request: /artist , POST , {"0":"artist"} , {"name":null,"grammy":"true"} , Response: 400 Bad Request
+2024-03-31T15:05:21.759Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.769Z | Request: /artist/04539e6f-ec24-426e-a62e-02b6e0f93ab7 , PUT , {"0":"artist/04539e6f-ec24-426e-a62e-02b6e0f93ab7"} , {"name":"TEST_artist","grammy":false} , Response: 200 OK
+2024-03-31T15:05:21.778Z | Request: /artist/04539e6f-ec24-426e-a62e-02b6e0f93ab7 , DELETE , {"0":"artist/04539e6f-ec24-426e-a62e-02b6e0f93ab7"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.784Z | Request: /artist/some-invalid-id , PUT , {"0":"artist/some-invalid-id"} , {"name":"TEST_artist","grammy":false} , Response: 400 Bad Request
+2024-03-31T15:05:21.792Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.797Z | Request: /artist/248761a7-d545-4778-9f4c-0a0a77475384 , PUT , {"0":"artist/248761a7-d545-4778-9f4c-0a0a77475384"} , {"name":12345,"grammy":"false"} , Response: 400 Bad Request
+2024-03-31T15:05:21.807Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_artist","grammy":false} , Response: 404 Not Found
+2024-03-31T15:05:21.815Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.825Z | Request: /artist/2efa8693-fbb7-4cc0-b04c-95b68ce25b9c , DELETE , {"0":"artist/2efa8693-fbb7-4cc0-b04c-95b68ce25b9c"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.831Z | Request: /artist/2efa8693-fbb7-4cc0-b04c-95b68ce25b9c , GET , {"0":"artist/2efa8693-fbb7-4cc0-b04c-95b68ce25b9c"} , {} , Response: 404 Not Found
+2024-03-31T15:05:21.837Z | Request: /artist/some-invalid-id , DELETE , {"0":"artist/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:21.844Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:21.854Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.860Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_track","albumId":null,"artistId":"61e521f0-d2bf-4c5e-b0b4-ead5847cec24","duration":200} , Response: 201 Created
+2024-03-31T15:05:21.874Z | Request: /artist/61e521f0-d2bf-4c5e-b0b4-ead5847cec24 , DELETE , {"0":"artist/61e521f0-d2bf-4c5e-b0b4-ead5847cec24"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.878Z | Request: /track/e7e0283e-efcb-4138-bb4e-3134da1f599e , GET , {"0":"track/e7e0283e-efcb-4138-bb4e-3134da1f599e"} , {} , Response: 200 OK
+2024-03-31T15:05:21.883Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:21.891Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_album","year":2023,"artistId":"67689866-3c2a-4427-92ea-8612d6f951ed"} , Response: 201 Created
+2024-03-31T15:05:21.900Z | Request: /artist/67689866-3c2a-4427-92ea-8612d6f951ed , DELETE , {"0":"artist/67689866-3c2a-4427-92ea-8612d6f951ed"} , {} , Response: 204 No Content
+2024-03-31T15:05:21.906Z | Request: /album/4565be23-190c-4a50-8d98-411824fb1c4c , GET , {"0":"album/4565be23-190c-4a50-8d98-411824fb1c4c"} , {} , Response: 200 OK
+2024-03-31T15:05:21.914Z | Request: /user/9875b07c-0afd-4c68-8a77-acb6b1bcbe04 , DELETE , {"0":"user/9875b07c-0afd-4c68-8a77-acb6b1bcbe04"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.093Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:22.102Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:22.110Z | Request: /album , GET , {"0":"album"} , {} , Response: 200 OK
+2024-03-31T15:05:22.120Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:22.126Z | Request: /album/42a7f7b5-27f0-465d-b188-249b12ed3bdc , GET , {"0":"album/42a7f7b5-27f0-465d-b188-249b12ed3bdc"} , {} , Response: 200 OK
+2024-03-31T15:05:22.135Z | Request: /album/42a7f7b5-27f0-465d-b188-249b12ed3bdc , DELETE , {"0":"album/42a7f7b5-27f0-465d-b188-249b12ed3bdc"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.141Z | Request: /album/some-invalid-id , GET , {"0":"album/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.148Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.156Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:22.166Z | Request: /album/12f9bab0-ec36-4761-980e-da98936227a6 , DELETE , {"0":"album/12f9bab0-ec36-4761-980e-da98936227a6"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.175Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM"} , Response: 400 Bad Request
+2024-03-31T15:05:22.174Z | Request: /album , POST , {"0":"album"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.177Z | Request: /album , POST , {"0":"album"} , {"year":2022} , Response: 400 Bad Request
+2024-03-31T15:05:22.178Z | Request: /album , POST , {"0":"album"} , {"name":null,"year":"2022"} , Response: 400 Bad Request
+2024-03-31T15:05:22.186Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:22.193Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 201 Created
+2024-03-31T15:05:22.202Z | Request: /album/a8fb1a30-c215-4b24-82a2-3e8f5eb82e33 , PUT , {"0":"album/a8fb1a30-c215-4b24-82a2-3e8f5eb82e33"} , {"name":"TEST_ALBUM","year":2021,"artistId":"c963254d-5725-4f03-98aa-e27e6d1b9058"} , Response: 200 OK
+2024-03-31T15:05:22.213Z | Request: /album/a8fb1a30-c215-4b24-82a2-3e8f5eb82e33 , DELETE , {"0":"album/a8fb1a30-c215-4b24-82a2-3e8f5eb82e33"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.218Z | Request: /album/some-invalid-id , PUT , {"0":"album/some-invalid-id"} , {"name":"TEST_ALBUM","year":2021,"artistId":null} , Response: 400 Bad Request
+2024-03-31T15:05:22.226Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:22.233Z | Request: /album/8ffebbb1-ad36-4008-9e05-f3244e587b83 , PUT , {"0":"album/8ffebbb1-ad36-4008-9e05-f3244e587b83"} , {"name":true,"year":"2021","artistId":123} , Response: 400 Bad Request
+2024-03-31T15:05:22.240Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_ALBUM","year":2021,"artistId":null} , Response: 404 Not Found
+2024-03-31T15:05:22.249Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:22.257Z | Request: /album/e2e7e3d8-bc4b-4b39-9a57-e468b4a77af3 , DELETE , {"0":"album/e2e7e3d8-bc4b-4b39-9a57-e468b4a77af3"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.262Z | Request: /album/e2e7e3d8-bc4b-4b39-9a57-e468b4a77af3 , GET , {"0":"album/e2e7e3d8-bc4b-4b39-9a57-e468b4a77af3"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.268Z | Request: /album/some-invalid-id , DELETE , {"0":"album/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.275Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.284Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 201 Created
+2024-03-31T15:05:22.293Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":"e56538b6-0703-4322-b099-e703715e1f03"} , Response: 201 Created
+2024-03-31T15:05:22.302Z | Request: /album/e56538b6-0703-4322-b099-e703715e1f03 , DELETE , {"0":"album/e56538b6-0703-4322-b099-e703715e1f03"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.307Z | Request: /track/c3c6ebcf-69d6-4cf2-98b4-44b656a2c83c , GET , {"0":"track/c3c6ebcf-69d6-4cf2-98b4-44b656a2c83c"} , {} , Response: 200 OK
+2024-03-31T15:05:22.314Z | Request: /user/c767446b-bcb1-44f9-a514-8962064e46a1 , DELETE , {"0":"user/c767446b-bcb1-44f9-a514-8962064e46a1"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.477Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:22.487Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:22.494Z | Request: /track , GET , {"0":"track"} , {} , Response: 200 OK
+2024-03-31T15:05:22.503Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:22.509Z | Request: /track/00c58a83-70f9-4571-8319-c50d5c64dbcd , GET , {"0":"track/00c58a83-70f9-4571-8319-c50d5c64dbcd"} , {} , Response: 200 OK
+2024-03-31T15:05:22.516Z | Request: /track/00c58a83-70f9-4571-8319-c50d5c64dbcd , DELETE , {"0":"track/00c58a83-70f9-4571-8319-c50d5c64dbcd"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.521Z | Request: /track/some-invalid-id , GET , {"0":"track/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.527Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.536Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:22.545Z | Request: /track/2f9c4df6-f0e5-4643-ad1a-a2e055821ca5 , DELETE , {"0":"track/2f9c4df6-f0e5-4643-ad1a-a2e055821ca5"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.557Z | Request: /track , POST , {"0":"track"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.555Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK"} , Response: 400 Bad Request
+2024-03-31T15:05:22.562Z | Request: /track , POST , {"0":"track"} , {"name":null,"duration":"99"} , Response: 400 Bad Request
+2024-03-31T15:05:22.561Z | Request: /track , POST , {"0":"track"} , {"duration":99} , Response: 400 Bad Request
+2024-03-31T15:05:22.569Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:22.577Z | Request: /track/da890503-aae4-421a-beb9-6ff83f65039c , PUT , {"0":"track/da890503-aae4-421a-beb9-6ff83f65039c"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 200 OK
+2024-03-31T15:05:22.585Z | Request: /track/da890503-aae4-421a-beb9-6ff83f65039c , DELETE , {"0":"track/da890503-aae4-421a-beb9-6ff83f65039c"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.591Z | Request: /track/some-invalid-id , PUT , {"0":"track/some-invalid-id"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 400 Bad Request
+2024-03-31T15:05:22.600Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:22.605Z | Request: /track/e70203e1-4bc8-44aa-a829-13bc2e43621a , PUT , {"0":"track/e70203e1-4bc8-44aa-a829-13bc2e43621a"} , {"name":null,"duration":"188","artistId":123,"albumId":123} , Response: 400 Bad Request
+2024-03-31T15:05:22.614Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 404 Not Found
+2024-03-31T15:05:22.623Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 201 Created
+2024-03-31T15:05:22.629Z | Request: /track/b056a57d-c33a-4d92-af96-514a21b8ded3 , DELETE , {"0":"track/b056a57d-c33a-4d92-af96-514a21b8ded3"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.634Z | Request: /track/b056a57d-c33a-4d92-af96-514a21b8ded3 , GET , {"0":"track/b056a57d-c33a-4d92-af96-514a21b8ded3"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.638Z | Request: /track/some-invalid-id , DELETE , {"0":"track/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.644Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.652Z | Request: /user/ee6f010d-eef3-4838-9dc9-30983e16c47b , DELETE , {"0":"user/ee6f010d-eef3-4838-9dc9-30983e16c47b"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.822Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:22.831Z | Request: /auth/login , POST , {"0":"auth/login"} , {"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} , Response: 201 Created
+2024-03-31T15:05:22.838Z | Request: /user , GET , {"0":"user"} , {} , Response: 200 OK
+2024-03-31T15:05:22.847Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:05:22.853Z | Request: /user/3eb38000-8519-4b93-abb1-87e51d5361c3 , GET , {"0":"user/3eb38000-8519-4b93-abb1-87e51d5361c3"} , {} , Response: 200 OK
+2024-03-31T15:05:22.860Z | Request: /user/3eb38000-8519-4b93-abb1-87e51d5361c3 , DELETE , {"0":"user/3eb38000-8519-4b93-abb1-87e51d5361c3"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.864Z | Request: /user/some-invalid-id , GET , {"0":"user/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.869Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.876Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:05:22.882Z | Request: /user/efc12f8a-43c9-4feb-8323-393f586aca3d , DELETE , {"0":"user/efc12f8a-43c9-4feb-8323-393f586aca3d"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.890Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN"} , Response: 400 Bad Request
+2024-03-31T15:05:22.892Z | Request: /user , POST , {"0":"user"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.897Z | Request: /user , POST , {"0":"user"} , {"password":"TEST_PASSWORD"} , Response: 400 Bad Request
+2024-03-31T15:05:22.896Z | Request: /user , POST , {"0":"user"} , {"login":null,"password":12345} , Response: 400 Bad Request
+2024-03-31T15:05:22.904Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:05:22.914Z | Request: /user/8f6a6be5-4314-4fdd-ae2c-5ef39ca61eee , PUT , {"0":"user/8f6a6be5-4314-4fdd-ae2c-5ef39ca61eee"} , {"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} , Response: 200 OK
+2024-03-31T15:05:22.923Z | Request: /user/8f6a6be5-4314-4fdd-ae2c-5ef39ca61eee , PUT , {"0":"user/8f6a6be5-4314-4fdd-ae2c-5ef39ca61eee"} , {"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} , Response: 403 Forbidden
+2024-03-31T15:05:22.928Z | Request: /user/8f6a6be5-4314-4fdd-ae2c-5ef39ca61eee , DELETE , {"0":"user/8f6a6be5-4314-4fdd-ae2c-5ef39ca61eee"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.938Z | Request: /user/some-invalid-id , PUT , {"0":"user/some-invalid-id"} , {"oldPassword":"test","newPassword":"fake"} , Response: 400 Bad Request
+2024-03-31T15:05:22.942Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.948Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"oldPassword":"test","newPassword":"fake"} , Response: 404 Not Found
+2024-03-31T15:05:22.956Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 201 Created
+2024-03-31T15:05:22.963Z | Request: /user/6a7ee2e5-d5ca-4d2f-88d2-4c36dcca0660 , DELETE , {"0":"user/6a7ee2e5-d5ca-4d2f-88d2-4c36dcca0660"} , {} , Response: 204 No Content
+2024-03-31T15:05:22.968Z | Request: /user/6a7ee2e5-d5ca-4d2f-88d2-4c36dcca0660 , GET , {"0":"user/6a7ee2e5-d5ca-4d2f-88d2-4c36dcca0660"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.974Z | Request: /user/some-invalid-id , DELETE , {"0":"user/some-invalid-id"} , {} , Response: 400 Bad Request
+2024-03-31T15:05:22.982Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 404 Not Found
+2024-03-31T15:05:22.989Z | Request: /user/17108503-3d06-408d-a5e3-15ebb27694ec , DELETE , {"0":"user/17108503-3d06-408d-a5e3-15ebb27694ec"} , {} , Response: 204 No Content
+2024-03-31T15:05:23.095Z | Request: /favs , GET , {"0":"favs"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.098Z | Request: /favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.101Z | Request: /favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.104Z | Request: /favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , POST , {"0":"favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.107Z | Request: /favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.112Z | Request: /favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.117Z | Request: /favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.223Z | Request: /track , GET , {"0":"track"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.225Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.228Z | Request: /track , POST , {"0":"track"} , {"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null} , Response: 401 Unauthorized
+2024-03-31T15:05:23.231Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} , Response: 401 Unauthorized
+2024-03-31T15:05:23.234Z | Request: /track/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"track/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.336Z | Request: /album , GET , {"0":"album"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.339Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.343Z | Request: /album , POST , {"0":"album"} , {"name":"TEST_ALBUM","year":2022,"artistId":null} , Response: 401 Unauthorized
+2024-03-31T15:05:23.346Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_ALBUM","year":2021,"artistId":"0a35dd62-e09f-444b-a628-f4e7c6954f57"} , Response: 401 Unauthorized
+2024-03-31T15:05:23.349Z | Request: /album/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"album/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.459Z | Request: /user , GET , {"0":"user"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.462Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.465Z | Request: /user , POST , {"0":"user"} , {"login":"TEST_LOGIN","password":"TEST_PASSWORD"} , Response: 401 Unauthorized
+2024-03-31T15:05:23.469Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} , Response: 401 Unauthorized
+2024-03-31T15:05:23.473Z | Request: /user/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"user/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.568Z | Request: /artist , GET , {"0":"artist"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.571Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , GET , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:23.574Z | Request: /artist , POST , {"0":"artist"} , {"name":"TEST_artist","grammy":true} , Response: 401 Unauthorized
+2024-03-31T15:05:23.578Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , PUT , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {"name":"TEST_artist","grammy":false} , Response: 401 Unauthorized
+2024-03-31T15:05:23.581Z | Request: /artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 , DELETE , {"0":"artist/0a35dd62-e09f-444b-a628-f4e7c6954f57"} , {} , Response: 401 Unauthorized
+2024-03-31T15:05:41.320Z | DatabaseModule dependencies initialized
+2024-03-31T15:05:41.320Z | JwtModule dependencies initialized
+2024-03-31T15:05:41.302Z | Starting Nest application...
+2024-03-31T15:05:41.320Z | ConfigHostModule dependencies initialized
+2024-03-31T15:05:41.321Z | ConfigModule dependencies initialized
+2024-03-31T15:05:41.321Z | ConfigModule dependencies initialized
+2024-03-31T15:05:41.321Z | UserModule dependencies initialized
+2024-03-31T15:05:41.321Z | TrackModule dependencies initialized
+2024-03-31T15:05:41.321Z | ArtistModule dependencies initialized
+2024-03-31T15:05:41.322Z | AlbumModule dependencies initialized
+2024-03-31T15:05:41.322Z | FavoritesModule dependencies initialized
+2024-03-31T15:05:41.322Z | AppModule dependencies initialized
+2024-03-31T15:05:41.322Z | AuthModule dependencies initialized
+2024-03-31T15:05:41.322Z | UserController {/user}:
+2024-03-31T15:05:41.323Z | Mapped {/user, GET} route
+2024-03-31T15:05:41.323Z | Mapped {/user/:id, GET} route
+2024-03-31T15:05:41.323Z | Mapped {/user, POST} route
+2024-03-31T15:05:41.323Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:05:41.323Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:05:41.324Z | TrackController {/track}:
+2024-03-31T15:05:41.324Z | Mapped {/track, GET} route
+2024-03-31T15:05:41.324Z | Mapped {/track/:id, GET} route
+2024-03-31T15:05:41.324Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:05:41.324Z | Mapped {/track, POST} route
+2024-03-31T15:05:41.324Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:05:41.325Z | ArtistController {/artist}:
+2024-03-31T15:05:41.325Z | Mapped {/artist, GET} route
+2024-03-31T15:05:41.325Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:05:41.325Z | Mapped {/artist, POST} route
+2024-03-31T15:05:41.325Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:05:41.325Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:05:41.325Z | AlbumController {/album}:
+2024-03-31T15:05:41.326Z | Mapped {/album, GET} route
+2024-03-31T15:05:41.326Z | Mapped {/album/:id, GET} route
+2024-03-31T15:05:41.326Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:05:41.326Z | Mapped {/album, POST} route
+2024-03-31T15:05:41.326Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:05:41.326Z | FavoritesController {/favs}:
+2024-03-31T15:05:41.327Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:05:41.327Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:05:41.326Z | Mapped {/favs, GET} route
+2024-03-31T15:05:41.327Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:05:41.327Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:05:41.327Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:05:41.327Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:05:41.327Z | AuthController {/auth}:
+2024-03-31T15:05:41.327Z | Mapped {/auth/login, POST} route
+2024-03-31T15:05:41.328Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:05:41.328Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:05:41.328Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:05:41.328Z | Nest application successfully started
+2024-03-31T15:05:58.240Z | Starting Nest application...
+2024-03-31T15:05:58.256Z | DatabaseModule dependencies initialized
+2024-03-31T15:05:58.257Z | JwtModule dependencies initialized
+2024-03-31T15:05:58.257Z | ConfigHostModule dependencies initialized
+2024-03-31T15:05:58.257Z | ConfigModule dependencies initialized
+2024-03-31T15:05:58.257Z | ConfigModule dependencies initialized
+2024-03-31T15:05:58.257Z | UserModule dependencies initialized
+2024-03-31T15:05:58.258Z | ArtistModule dependencies initialized
+2024-03-31T15:05:58.257Z | TrackModule dependencies initialized
+2024-03-31T15:05:58.258Z | AlbumModule dependencies initialized
+2024-03-31T15:05:58.258Z | FavoritesModule dependencies initialized
+2024-03-31T15:05:58.258Z | AppModule dependencies initialized
+2024-03-31T15:05:58.259Z | UserController {/user}:
+2024-03-31T15:05:58.259Z | AuthModule dependencies initialized
+2024-03-31T15:05:58.259Z | Mapped {/user, GET} route
+2024-03-31T15:05:58.259Z | Mapped {/user/:id, GET} route
+2024-03-31T15:05:58.259Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:05:58.259Z | Mapped {/user, POST} route
+2024-03-31T15:05:58.260Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:05:58.260Z | TrackController {/track}:
+2024-03-31T15:05:58.260Z | Mapped {/track, GET} route
+2024-03-31T15:05:58.260Z | Mapped {/track/:id, GET} route
+2024-03-31T15:05:58.260Z | Mapped {/track, POST} route
+2024-03-31T15:05:58.260Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:05:58.261Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:05:58.261Z | ArtistController {/artist}:
+2024-03-31T15:05:58.261Z | Mapped {/artist, GET} route
+2024-03-31T15:05:58.261Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:05:58.261Z | Mapped {/artist, POST} route
+2024-03-31T15:05:58.261Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:05:58.261Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:05:58.261Z | AlbumController {/album}:
+2024-03-31T15:05:58.262Z | Mapped {/album, GET} route
+2024-03-31T15:05:58.262Z | Mapped {/album/:id, GET} route
+2024-03-31T15:05:58.262Z | Mapped {/album, POST} route
+2024-03-31T15:05:58.262Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:05:58.262Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:05:58.262Z | FavoritesController {/favs}:
+2024-03-31T15:05:58.262Z | Mapped {/favs, GET} route
+2024-03-31T15:05:58.262Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:05:58.263Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:05:58.263Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:05:58.263Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:05:58.263Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:05:58.263Z | AuthController {/auth}:
+2024-03-31T15:05:58.263Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:05:58.263Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:05:58.263Z | Mapped {/auth/login, POST} route
+2024-03-31T15:05:58.264Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:05:58.264Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:05:58.264Z | Nest application successfully started
+2024-03-31T15:07:50.873Z | Starting Nest application...
+2024-03-31T15:07:50.894Z | DatabaseModule dependencies initialized
+2024-03-31T15:07:50.894Z | JwtModule dependencies initialized
+2024-03-31T15:07:50.894Z | ConfigHostModule dependencies initialized
+2024-03-31T15:07:50.894Z | ConfigModule dependencies initialized
+2024-03-31T15:07:50.894Z | ConfigModule dependencies initialized
+2024-03-31T15:07:50.895Z | UserModule dependencies initialized
+2024-03-31T15:07:50.895Z | TrackModule dependencies initialized
+2024-03-31T15:07:50.895Z | ArtistModule dependencies initialized
+2024-03-31T15:07:50.895Z | AlbumModule dependencies initialized
+2024-03-31T15:07:50.896Z | FavoritesModule dependencies initialized
+2024-03-31T15:07:50.896Z | AppModule dependencies initialized
+2024-03-31T15:07:50.896Z | AuthModule dependencies initialized
+2024-03-31T15:07:50.896Z | UserController {/user}:
+2024-03-31T15:07:50.896Z | Mapped {/user, GET} route
+2024-03-31T15:07:50.897Z | Mapped {/user/:id, GET} route
+2024-03-31T15:07:50.897Z | Mapped {/user, POST} route
+2024-03-31T15:07:50.898Z | Mapped {/track, GET} route
+2024-03-31T15:07:50.897Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:07:50.898Z | Mapped {/track/:id, GET} route
+2024-03-31T15:07:50.898Z | Mapped {/track, POST} route
+2024-03-31T15:07:50.897Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:07:50.898Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:07:50.898Z | ArtistController {/artist}:
+2024-03-31T15:07:50.898Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:07:50.899Z | Mapped {/artist, GET} route
+2024-03-31T15:07:50.899Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:07:50.899Z | Mapped {/artist, POST} route
+2024-03-31T15:07:50.899Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:07:50.899Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:07:50.899Z | AlbumController {/album}:
+2024-03-31T15:07:50.900Z | Mapped {/album, GET} route
+2024-03-31T15:07:50.897Z | TrackController {/track}:
+2024-03-31T15:07:50.900Z | Mapped {/album/:id, GET} route
+2024-03-31T15:07:50.900Z | Mapped {/album, POST} route
+2024-03-31T15:07:50.900Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:07:50.900Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:07:50.900Z | FavoritesController {/favs}:
+2024-03-31T15:07:50.901Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:07:50.900Z | Mapped {/favs, GET} route
+2024-03-31T15:07:50.901Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:07:50.901Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:07:50.901Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:07:50.901Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:07:50.901Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:07:50.902Z | Mapped {/auth/login, POST} route
+2024-03-31T15:07:50.902Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:07:50.902Z | AuthController {/auth}:
+2024-03-31T15:07:50.902Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:07:50.902Z | Nest application successfully started
+2024-03-31T15:07:50.902Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:08:39.081Z | Starting Nest application...
+2024-03-31T15:08:39.104Z | DatabaseModule dependencies initialized
+2024-03-31T15:08:39.104Z | JwtModule dependencies initialized
+2024-03-31T15:08:39.104Z | ConfigHostModule dependencies initialized
+2024-03-31T15:08:39.104Z | ConfigModule dependencies initialized
+2024-03-31T15:08:39.105Z | ConfigModule dependencies initialized
+2024-03-31T15:08:39.105Z | UserModule dependencies initialized
+2024-03-31T15:08:39.105Z | TrackModule dependencies initialized
+2024-03-31T15:08:39.105Z | AlbumModule dependencies initialized
+2024-03-31T15:08:39.105Z | ArtistModule dependencies initialized
+2024-03-31T15:08:39.106Z | FavoritesModule dependencies initialized
+2024-03-31T15:08:39.106Z | AppModule dependencies initialized
+2024-03-31T15:08:39.106Z | AuthModule dependencies initialized
+2024-03-31T15:08:39.106Z | UserController {/user}:
+2024-03-31T15:08:39.106Z | Mapped {/user, GET} route
+2024-03-31T15:08:39.106Z | Mapped {/user/:id, GET} route
+2024-03-31T15:08:39.107Z | Mapped {/user, POST} route
+2024-03-31T15:08:39.107Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:08:39.107Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:08:39.107Z | Mapped {/track, GET} route
+2024-03-31T15:08:39.107Z | TrackController {/track}:
+2024-03-31T15:08:39.108Z | Mapped {/track/:id, GET} route
+2024-03-31T15:08:39.108Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:08:39.108Z | Mapped {/track, POST} route
+2024-03-31T15:08:39.108Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:08:39.108Z | ArtistController {/artist}:
+2024-03-31T15:08:39.108Z | Mapped {/artist, GET} route
+2024-03-31T15:08:39.109Z | Mapped {/artist, POST} route
+2024-03-31T15:08:39.108Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:08:39.109Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:08:39.109Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:08:39.109Z | Mapped {/album, GET} route
+2024-03-31T15:08:39.109Z | AlbumController {/album}:
+2024-03-31T15:08:39.109Z | Mapped {/album/:id, GET} route
+2024-03-31T15:08:39.109Z | Mapped {/album, POST} route
+2024-03-31T15:08:39.110Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:08:39.110Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:08:39.110Z | FavoritesController {/favs}:
+2024-03-31T15:08:39.110Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:08:39.110Z | Mapped {/favs, GET} route
+2024-03-31T15:08:39.110Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:08:39.111Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:08:39.111Z | AuthController {/auth}:
+2024-03-31T15:08:39.111Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:08:39.111Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:08:39.111Z | Mapped {/auth/login, POST} route
+2024-03-31T15:08:39.111Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:08:39.112Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:08:39.112Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:08:39.112Z | Nest application successfully started
+2024-03-31T15:08:39.110Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:09:10.371Z | Starting Nest application...
+2024-03-31T15:09:10.387Z | DatabaseModule dependencies initialized
+2024-03-31T15:09:10.388Z | JwtModule dependencies initialized
+2024-03-31T15:09:10.388Z | ConfigModule dependencies initialized
+2024-03-31T15:09:10.388Z | ConfigHostModule dependencies initialized
+2024-03-31T15:09:10.388Z | ConfigModule dependencies initialized
+2024-03-31T15:09:10.388Z | UserModule dependencies initialized
+2024-03-31T15:09:10.388Z | TrackModule dependencies initialized
+2024-03-31T15:09:10.389Z | ArtistModule dependencies initialized
+2024-03-31T15:09:10.389Z | AlbumModule dependencies initialized
+2024-03-31T15:09:10.389Z | FavoritesModule dependencies initialized
+2024-03-31T15:09:10.389Z | AppModule dependencies initialized
+2024-03-31T15:09:10.390Z | AuthModule dependencies initialized
+2024-03-31T15:09:10.390Z | UserController {/user}:
+2024-03-31T15:09:10.390Z | Mapped {/user, GET} route
+2024-03-31T15:09:10.390Z | Mapped {/user/:id, GET} route
+2024-03-31T15:09:10.390Z | Mapped {/user, POST} route
+2024-03-31T15:09:10.390Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:09:10.391Z | TrackController {/track}:
+2024-03-31T15:09:10.391Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:09:10.391Z | Mapped {/track/:id, GET} route
+2024-03-31T15:09:10.391Z | Mapped {/track, GET} route
+2024-03-31T15:09:10.391Z | Mapped {/track, POST} route
+2024-03-31T15:09:10.391Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:09:10.392Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:09:10.392Z | ArtistController {/artist}:
+2024-03-31T15:09:10.392Z | Mapped {/artist, GET} route
+2024-03-31T15:09:10.392Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:09:10.392Z | Mapped {/artist, POST} route
+2024-03-31T15:09:10.392Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:09:10.392Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:09:10.392Z | AlbumController {/album}:
+2024-03-31T15:09:10.393Z | Mapped {/album, GET} route
+2024-03-31T15:09:10.393Z | Mapped {/album/:id, GET} route
+2024-03-31T15:09:10.393Z | Mapped {/album, POST} route
+2024-03-31T15:09:10.393Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:09:10.393Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:09:10.393Z | FavoritesController {/favs}:
+2024-03-31T15:09:10.393Z | Mapped {/favs, GET} route
+2024-03-31T15:09:10.394Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:09:10.394Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:09:10.394Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:09:10.394Z | AuthController {/auth}:
+2024-03-31T15:09:10.394Z | Mapped {/auth/login, POST} route
+2024-03-31T15:09:10.395Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:09:10.395Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:09:10.395Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:09:10.395Z | Nest application successfully started
+2024-03-31T15:09:10.393Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:09:10.394Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:09:10.394Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:22:13.362Z | Starting Nest application...
+2024-03-31T15:22:13.384Z | DatabaseModule dependencies initialized
+2024-03-31T15:22:13.384Z | JwtModule dependencies initialized
+2024-03-31T15:22:13.384Z | ConfigHostModule dependencies initialized
+2024-03-31T15:22:13.385Z | ConfigModule dependencies initialized
+2024-03-31T15:22:13.385Z | ConfigModule dependencies initialized
+2024-03-31T15:22:13.385Z | UserModule dependencies initialized
+2024-03-31T15:22:13.385Z | TrackModule dependencies initialized
+2024-03-31T15:22:13.385Z | ArtistModule dependencies initialized
+2024-03-31T15:22:13.386Z | AlbumModule dependencies initialized
+2024-03-31T15:22:13.386Z | FavoritesModule dependencies initialized
+2024-03-31T15:22:13.386Z | AuthModule dependencies initialized
+2024-03-31T15:22:13.386Z | AppModule dependencies initialized
+2024-03-31T15:22:13.387Z | UserController {/user}:
+2024-03-31T15:22:13.387Z | Mapped {/user, GET} route
+2024-03-31T15:22:13.387Z | Mapped {/user/:id, GET} route
+2024-03-31T15:22:13.387Z | Mapped {/user, POST} route
+2024-03-31T15:22:13.388Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:22:13.388Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:22:13.388Z | Mapped {/track, GET} route
+2024-03-31T15:22:13.388Z | TrackController {/track}:
+2024-03-31T15:22:13.389Z | Mapped {/track/:id, GET} route
+2024-03-31T15:22:13.389Z | Mapped {/track, POST} route
+2024-03-31T15:22:13.389Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:22:13.389Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:22:13.389Z | Mapped {/artist, GET} route
+2024-03-31T15:22:13.389Z | ArtistController {/artist}:
+2024-03-31T15:22:13.390Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:22:13.390Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:22:13.390Z | Mapped {/artist, POST} route
+2024-03-31T15:22:13.390Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:22:13.390Z | AlbumController {/album}:
+2024-03-31T15:22:13.390Z | Mapped {/album, GET} route
+2024-03-31T15:22:13.391Z | Mapped {/album/:id, GET} route
+2024-03-31T15:22:13.391Z | Mapped {/album, POST} route
+2024-03-31T15:22:13.391Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:22:13.391Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:22:13.391Z | FavoritesController {/favs}:
+2024-03-31T15:22:13.391Z | Mapped {/favs, GET} route
+2024-03-31T15:22:13.392Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:22:13.392Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:22:13.392Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:22:13.392Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:22:13.392Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:22:13.392Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:22:13.393Z | Mapped {/auth/login, POST} route
+2024-03-31T15:22:13.393Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:22:13.393Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:22:13.393Z | Mapped {/auth/refresh, POST} route
+2024-03-31T15:22:13.393Z | AuthController {/auth}:
+2024-03-31T15:22:13.393Z | Nest application successfully started
+2024-03-31T15:23:07.134Z | Request: /auth/login , POST , {"0":"auth/login"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:11.277Z | Request: /auth/login , POST , {"0":"auth/login"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:12.789Z | Request: /auth/login , POST , {"0":"auth/login"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:13.456Z | Request: /auth/login , POST , {"0":"auth/login"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:13.990Z | Request: /auth/login , POST , {"0":"auth/login"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:14.329Z | Request: /auth/login , POST , {"0":"auth/login"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:24.792Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:26.443Z | Request: /auth/signup , POST , {"0":"auth/signup"} , {} , Response: 400 Bad Request
+2024-03-31T15:23:43.340Z | DatabaseModule dependencies initialized
+2024-03-31T15:23:43.323Z | Starting Nest application...
+2024-03-31T15:23:43.340Z | JwtModule dependencies initialized
+2024-03-31T15:23:43.340Z | ConfigHostModule dependencies initialized
+2024-03-31T15:23:43.341Z | ConfigModule dependencies initialized
+2024-03-31T15:23:43.341Z | ConfigModule dependencies initialized
+2024-03-31T15:23:43.341Z | UserModule dependencies initialized
+2024-03-31T15:23:43.341Z | TrackModule dependencies initialized
+2024-03-31T15:23:43.341Z | ArtistModule dependencies initialized
+2024-03-31T15:23:43.342Z | AlbumModule dependencies initialized
+2024-03-31T15:23:43.342Z | FavoritesModule dependencies initialized
+2024-03-31T15:23:43.342Z | AppModule dependencies initialized
+2024-03-31T15:23:43.342Z | AuthModule dependencies initialized
+2024-03-31T15:23:43.343Z | UserController {/user}:
+2024-03-31T15:23:43.343Z | Mapped {/user, GET} route
+2024-03-31T15:23:43.343Z | Mapped {/user/:id, GET} route
+2024-03-31T15:23:43.343Z | Mapped {/user, POST} route
+2024-03-31T15:23:43.344Z | Mapped {/user/:id, PUT} route
+2024-03-31T15:23:43.344Z | Mapped {/user/:id, DELETE} route
+2024-03-31T15:23:43.344Z | TrackController {/track}:
+2024-03-31T15:23:43.344Z | Mapped {/track, GET} route
+2024-03-31T15:23:43.344Z | Mapped {/track/:id, GET} route
+2024-03-31T15:23:43.345Z | Mapped {/track, POST} route
+2024-03-31T15:23:43.345Z | Mapped {/track/:id, PUT} route
+2024-03-31T15:23:43.345Z | Mapped {/track/:id, DELETE} route
+2024-03-31T15:23:43.345Z | ArtistController {/artist}:
+2024-03-31T15:23:43.345Z | Mapped {/artist, GET} route
+2024-03-31T15:23:43.345Z | Mapped {/artist/:id, GET} route
+2024-03-31T15:23:43.346Z | Mapped {/artist, POST} route
+2024-03-31T15:23:43.346Z | Mapped {/artist/:id, PUT} route
+2024-03-31T15:23:43.346Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T15:23:43.346Z | Mapped {/album, GET} route
+2024-03-31T15:23:43.346Z | AlbumController {/album}:
+2024-03-31T15:23:43.346Z | Mapped {/album, POST} route
+2024-03-31T15:23:43.346Z | Mapped {/album/:id, GET} route
+2024-03-31T15:23:43.347Z | Mapped {/album/:id, PUT} route
+2024-03-31T15:23:43.347Z | Mapped {/album/:id, DELETE} route
+2024-03-31T15:23:43.347Z | FavoritesController {/favs}:
+2024-03-31T15:23:43.347Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T15:23:43.348Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T15:23:43.348Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T15:23:43.347Z | Mapped {/favs, GET} route
+2024-03-31T15:23:43.348Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T15:23:43.348Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T15:23:43.347Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T15:23:43.348Z | Mapped {/auth/signup, POST} route
+2024-03-31T15:23:43.348Z | Mapped {/auth/login, POST} route
+2024-03-31T15:23:43.348Z | AuthController {/auth}:
+2024-03-31T15:23:43.349Z | Mapped {/auth/profile, GET} route
+2024-03-31T15:23:43.349Z | Nest application successfully started
+2024-03-31T15:23:43.349Z | Mapped {/auth/refresh, POST} route

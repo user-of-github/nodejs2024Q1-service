@@ -42,6 +42,7 @@ services:
     volumes:
       - ./src:/app/src
       - ./prisma:/app/prisma
+      # IMPORTANT: folders for logs must be same as in .env file
       - ./app_logs:/app/app_logs
     networks:
       - backend
