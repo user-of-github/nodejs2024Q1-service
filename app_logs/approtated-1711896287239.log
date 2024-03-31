@@ -1,0 +1,53 @@
+
+2024-03-31T14:38:13.880Z | Request: /user , GET , {"0":"user"} , {} , Response: 401 Unauthorized
+2024-03-31T14:38:13.928Z | Request: /favicon.ico , GET , {"0":"favicon.ico"} , {} , Response: 404 Not Found2024-03-31T14:38:57.691Z | Starting Nest application...
+2024-03-31T14:38:57.719Z | DatabaseModule dependencies initialized
+2024-03-31T14:38:57.720Z | JwtModule dependencies initialized
+2024-03-31T14:38:57.720Z | ConfigHostModule dependencies initialized
+2024-03-31T14:38:57.720Z | ConfigModule dependencies initialized
+2024-03-31T14:38:57.721Z | ConfigModule dependencies initialized
+2024-03-31T14:38:57.721Z | UserModule dependencies initialized
+2024-03-31T14:38:57.721Z | TrackModule dependencies initialized
+2024-03-31T14:38:57.721Z | ArtistModule dependencies initialized
+2024-03-31T14:38:57.722Z | FavoritesModule dependencies initialized
+2024-03-31T14:38:57.722Z | AlbumModule dependencies initialized
+2024-03-31T14:38:57.723Z | AppModule dependencies initialized
+2024-03-31T14:38:57.723Z | AuthModule dependencies initialized
+2024-03-31T14:38:57.723Z | UserController {/user}:
+2024-03-31T14:38:57.723Z | Mapped {/user, GET} route
+2024-03-31T14:38:57.724Z | Mapped {/user/:id, GET} route
+2024-03-31T14:38:57.724Z | Mapped {/user, POST} route
+2024-03-31T14:38:57.724Z | Mapped {/user/:id, PUT} route
+2024-03-31T14:38:57.724Z | Mapped {/user/:id, DELETE} route
+2024-03-31T14:38:57.725Z | TrackController {/track}:
+2024-03-31T14:38:57.725Z | Mapped {/track, GET} route
+2024-03-31T14:38:57.725Z | Mapped {/track/:id, GET} route
+2024-03-31T14:38:57.725Z | Mapped {/track, POST} route
+2024-03-31T14:38:57.726Z | Mapped {/track/:id, PUT} route
+2024-03-31T14:38:57.726Z | Mapped {/track/:id, DELETE} route
+2024-03-31T14:38:57.726Z | ArtistController {/artist}:
+2024-03-31T14:38:57.726Z | Mapped {/artist, GET} route
+2024-03-31T14:38:57.727Z | Mapped {/artist/:id, GET} route
+2024-03-31T14:38:57.727Z | Mapped {/artist, POST} route
+2024-03-31T14:38:57.727Z | Mapped {/artist/:id, PUT} route
+2024-03-31T14:38:57.727Z | Mapped {/artist/:id, DELETE} route
+2024-03-31T14:38:57.727Z | AlbumController {/album}:
+2024-03-31T14:38:57.728Z | Mapped {/album/:id, GET} route
+2024-03-31T14:38:57.728Z | Mapped {/album, GET} route
+2024-03-31T14:38:57.728Z | Mapped {/album, POST} route
+2024-03-31T14:38:57.728Z | Mapped {/album/:id, PUT} route
+2024-03-31T14:38:57.729Z | Mapped {/album/:id, DELETE} route
+2024-03-31T14:38:57.729Z | FavoritesController {/favs}:
+2024-03-31T14:38:57.729Z | Mapped {/favs/track/:id, DELETE} route
+2024-03-31T14:38:57.729Z | Mapped {/favs/track/:id, POST} route
+2024-03-31T14:38:57.730Z | Mapped {/favs/album/:id, DELETE} route
+2024-03-31T14:38:57.730Z | Mapped {/favs/album/:id, POST} route
+2024-03-31T14:38:57.730Z | Mapped {/favs/artist/:id, DELETE} route
+2024-03-31T14:38:57.730Z | Mapped {/favs/artist/:id, POST} route
+2024-03-31T14:38:57.729Z | Mapped {/favs, GET} route
+2024-03-31T14:38:57.731Z | Mapped {/auth/login, POST} route
+2024-03-31T14:38:57.731Z | Mapped {/auth/signup, POST} route
+2024-03-31T14:38:57.730Z | AuthController {/auth}:
+2024-03-31T14:38:57.731Z | Mapped {/auth/profile, GET} route
+2024-03-31T14:38:57.732Z | Nest application successfully started
+2024-03-31T14:38:57.731Z | Mapped {/auth/refresh, POST} route
