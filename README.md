@@ -35,12 +35,14 @@ _... waiting some time ..._
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)   
 
 ### 1.3 Testing
-- _// in separate terminal :)_
+- **_// in separate terminal :)_**
 - If you haven't done before, `npm install`    
-- `npm run test:auth`  
-- `npm run test:refresh`  
-- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    
-  ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
+- For now (3rd part of this project-task, `dev-3`) `AuthModule` is already implemented, so usual tests will fail. You need to run tests:
+  - `npm run test:auth`  
+  - `npm run test:refresh`  
+- __DOCKER CONTAINER WITH APP SHOULD BE ALREADY RUNNING :)__    
+  ![](./demo-for-readme/Screenshot%20from%202024-03-31%2018-29-35.png)  
+  ![](./demo-for-readme/Screenshot%20from%202024-03-31%2018-30-00.png)  
 
 ### 1.4 After everything:  
 - After testing and using, don't forget to run `sudo docker compose down` (even if you already pressed `ctrl+c` or `ctrl+z` in terminal)
