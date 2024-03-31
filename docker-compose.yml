@@ -54,3 +54,5 @@ services:
           target: /app/prisma
         - action: rebuild
           path: package.json
+        - action: rebuild
+          path: rebuild

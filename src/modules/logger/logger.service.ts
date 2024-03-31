@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { ConsoleLogger, Injectable, Logger, LoggerService as BaseLoggerService } from '@nestjs/common';
+import { ConsoleLogger, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
 type LogTypeName = 'log' | 'error' | 'warn' | 'debug' | 'verbose';
@@ -20,8 +20,8 @@ export class CustomLoggerService extends ConsoleLogger {
 
   public constructor(private readonly configService: ConfigService) {
     super();
-    this.logsFilePath = path.resolve(__dirname, configService.get('LOGS_FILE_PATH'));
-    this.errorsFilePath = path.resolve(__dirname, configService.get('LOGS_ERRORS_FILE_PATH'));
+    this.logsFilePath = path.resolve(__dirname, '../../../', configService.get('LOGS_FILE_PATH'));
+    this.errorsFilePath = path.resolve(__dirname, '../../../', configService.get('LOGS_ERRORS_FILE_PATH'));
 
     this.loggingLevel = Number(configService.get('LOGGING_LEVEL') || 0);
   }
@@ -68,5 +68,12 @@ export class CustomLoggerService extends ConsoleLogger {
 
   private doesNeedLog(logTypeName: LogTypeName): boolean {
     return CustomLoggerService.levels[logTypeName] <= this.loggingLevel;
+  }
+
+  private logToFile(
+    loggingLevel: LogTypeName,
+    message: string,
+  ): void {
+    const filePath = loggingLevel === 'error' ? this.logsFilePath : this.errorsFilePath;
   }
 }
