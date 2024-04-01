@@ -16,7 +16,17 @@ const bootstrap = async (): Promise<void> => {
     bufferLogs: true,
   });
 
-  app.useLogger(app.get(CustomLoggerService));
+  const logger = app.get(CustomLoggerService);
+
+  process.on('uncaughtException', (err, origin) => {
+    logger.error(`Uncaught Exception: ${err.message}`);
+  });
+
+  process.on('unhandledRejection', (reason, promise) => {
+    logger.error(`Unhandled Exception: ${JSON.stringify(reason)}`);
+  });
+
+  app.useLogger(logger);
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
   await app.listen(port);
