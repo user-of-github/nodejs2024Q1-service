@@ -5,6 +5,7 @@ export interface User {
   version: number; // integer number, increments on update
   createdAt: Date; // timestamp of creation
   updatedAt: Date; // timestamp of last update
+  refreshToken?: string;
 }
 
 export type UserResponse = Omit<

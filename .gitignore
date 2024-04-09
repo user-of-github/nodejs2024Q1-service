@@ -3,8 +3,6 @@
 /node_modules
 
 # Logs
-logs
-*.log
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
@@ -37,3 +35,6 @@ lerna-debug.log*
 pgdata/
 pglog/
 pgconf/
+
+# LOGS
+app_logs/*-rotated-*.log

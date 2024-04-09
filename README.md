@@ -14,23 +14,35 @@ __My ones are listed below:__
 ### 1.2 Cloning & running 
 - Clone this repository:   
 `git clone https://github.com/user-of-github/nodejs2024Q1-service.git .`
-- Switch to actual branch (for task 2 it is `dev-2`, __see actual branch in PR__):  
-`git checkout dev-2` _// or other actual branch with most recent changes_  
+- Switch to actual branch (for task 3 it is `dev-3`, __see actual branch in PR__. Or after course completion it should be just `master`):  
+`git checkout dev-3` _// or other actual branch with most recent changes_  
 - Ensure that ports are free (:5432, :4000) (see them in `.env`)
   - _Note: On Linux you can use command `sudo lsof -i:5432` and `sudo lsof -i:4000` to check, if ports are free_
 - Run `npm install`  
-- Run `docker compose up` or `sudo docker compose up`
+- Ensure that there is `app_logs/logs.log` file and `app_logs/errors.log` file (towards project root) (check relevant paths of lof-files in `.env` file). While running program you will be able to see online content of log-files, even if app is in docker, because directory is mounted  
+- Uncomment whole `docker-compose`, in `.env` make sure, that `DATABASE_URL` for DOCKER is used (see comments in `env`).  
+Run `docker compose up` or `sudo docker compose up`
+#### To run app without docker:  
+- Run your postgres instance locally from params in `.env` or you just can:  
+  - Comment `app` service in `docker-compose` (so only DB will be run in container)
+  - in `.env` make sure, that `DATABASE_URL` for LOCAL is used (see comments in `env`)
+- Run `npm run start` or `npm run start:dev`.
+- Before running, you can check, that 4000 and 5432 ports are free by using command (in Linux): `sudo lsof -i:5432`, `sudo lsof -i:4000`. And kill processes if they occupy these ports (`sudo kill <PROCESS_ID>`)  
 
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2022-59-31.png)  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-00-44.png)    
-_... WAITING ..._  
+_... waiting some time ..._  
 ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-02-40.png)   
 
 ### 1.3 Testing
-- If you haven't done before, `npm install`
-- `npm run test` _// in separate terminal :)_
-- __DOCKER CONTAINER WITH APP MUST BE ALREADY RUNNING__    
-  ![](./demo-for-readme/Screenshot%20from%202024-03-24%2023-04-33.png)
+- **_// in separate terminal :)_**
+- If you haven't done before, `npm install`    
+- For now (3rd part of this project-task, `dev-3`) `AuthModule` is already implemented, so usual tests will fail. You need to run tests:
+  - `npm run test:auth`  
+  - `npm run test:refresh`  
+- __DOCKER CONTAINER WITH APP SHOULD BE ALREADY RUNNING :)__    
+  ![](./demo-for-readme/Screenshot%20from%202024-03-31%2018-29-35.png)  
+  ![](./demo-for-readme/Screenshot%20from%202024-03-31%2018-30-00.png)  
 
 ### 1.4 After everything:  
 - After testing and using, don't forget to run `sudo docker compose down` (even if you already pressed `ctrl+c` or `ctrl+z` in terminal)
@@ -51,7 +63,9 @@ https://hub.docker.com/repository/docker/684684684/rs-nodejs-2024q1-service
 * _[TypeScript](https://www.typescriptlang.org/)_
 * _[Nest](https://nestjs.com/)_  
 * _[Prisma ORM](https://www.prisma.io/) with [PostgreSQL](https://www.postgresql.org/)_ 
-* _[Docker](https://www.docker.com/)_
+* _[Docker](https://www.docker.com/)_  
+* _[JWT Tokens](https://jwt.io/)_  
+* _[Passport](https://www.passportjs.org/)_
 
 ___  
 
@@ -61,8 +75,9 @@ ___
 * _Database has a separate module_
 * _Types_
 * _Linting_  
-* _Launch data stored in `.env`_
-
+* _Launch data stored in `.env`_  
+* _Auth via `passport.js` and `JWT`-tokens_ (for now entities are not binded to users, as it was not in task statement and there are no tests for it; But actually it is not a problem now to make reference of favourites to user)  
+* _Custom logging to file and logs-rotation; Logger Module; Middleware_
 ___  
 
 ## 5. Usage:
@@ -102,7 +117,11 @@ ___
     * `POST /favs/album/:id` - add album to the favorites
     * `DELETE /favs/album/:id` - delete album from favorites
     * `POST /favs/artist/:id` - add artist to the favorites
-    * `DELETE /favs/artist/:id` - delete artist from favorites
+    * `DELETE /favs/artist/:id` - delete artist from favorites  
+* `Auth`  
+    * `POST /auth/signup` - register with body `{login, password}`  
+    * `POST /auth/login` - login with  body `{login, password}`  
+    * `POST /auth/refresh` - refresh tokens with body `{refreshToken}`
 
 ___  
 &nbsp;
@@ -111,4 +130,6 @@ ___
 
 ###### _Created by Slutski Mikita_
 
-###### _RS NodeJS 2024Q1_
+###### _RS NodeJS 2024Q1_  
+
+###### © 2024

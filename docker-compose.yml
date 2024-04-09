@@ -6,7 +6,7 @@ networks:
 
 services:
   db:
-    image: postgres:bullseye
+    image: postgres:16-bullseye
     container_name: db
     environment:
       - POSTGRES_PORT=${DATABASE_PORT}
@@ -42,6 +42,8 @@ services:
     volumes:
       - ./src:/app/src
       - ./prisma:/app/prisma
+      # IMPORTANT: folders for logs must be same as in .env file
+      - ./app_logs:/app/app_logs
     networks:
       - backend
     develop:
@@ -54,3 +56,5 @@ services:
           target: /app/prisma
         - action: rebuild
           path: package.json
+        - action: rebuild
+          path: rebuild

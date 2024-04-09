@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service';
-import { toResponseUser, type UserResponse } from '../../types/User';
+import { toResponseUser, User, type UserResponse } from '../../types/User';
 import type { CreateUserDto } from './dto/createUser';
 import type { UpdatePasswordDto } from './dto/updatePassword';
 
@@ -25,7 +25,11 @@ export class UserService {
     if (!response) {
       throw new NotFoundException();
     }
-    return toResponseUser(response);
+    return response as unknown as UserResponse;
+  }
+
+  public async getUserByLogin(login: string): Promise<User | null> {
+    return await this.databaseService.getUserByLogin(login);
   }
 
   public async createUser(dto: CreateUserDto): Promise<UserResponse> {
@@ -64,5 +68,16 @@ export class UserService {
 
   public async deleteUser(id: string): Promise<void> {
     return await this.databaseService.deleteUser(id);
+  }
+
+  public async updateRefreshToken(id: string, token: string): Promise<void> {
+    await this.databaseService.user.update({
+      where: {
+        id: id,
+      },
+      data: {
+        refreshToken: token,
+      },
+    });
   }
 }
